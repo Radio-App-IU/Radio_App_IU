@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Radio_App_IU</string>
     <string name="sendername">Hitradio zAPP</string>
+    <string name="interpret">The Beatles</string>
+    <string name="musiktitel">Let it be</string>
+    <string name="trennzeichen">-</string>
 </resources>
