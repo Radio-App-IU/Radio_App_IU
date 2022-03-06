@@ -8,5 +8,6 @@
     <string name="songwunsch">Song wünschen</string>
     <string name="descAlbum">Albumcover</string>
     <string name="descPlaybutton">Playbutton</string>
+    <string name="playbuttoninvisible"> </string>
 
 </resources>
