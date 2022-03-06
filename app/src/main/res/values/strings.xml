@@ -6,4 +6,7 @@
     <string name="trennzeichen">-</string>
     <string name="bewerten">Bewerten</string>
     <string name="songwunsch">Song wünschen</string>
+    <string name="descAlbum">Albumcover</string>
+    <string name="descPlaybutton">Playbutton</string>
+
 </resources>
