@@ -4,4 +4,6 @@
     <string name="interpret">The Beatles</string>
     <string name="musiktitel">Let it be</string>
     <string name="trennzeichen">-</string>
+    <string name="bewerten">Bewerten</string>
+    <string name="songwunsch">Song wünschen</string>
 </resources>

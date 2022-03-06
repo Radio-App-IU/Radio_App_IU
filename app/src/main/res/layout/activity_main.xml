@@ -76,4 +76,34 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/interpret" />
 
+    <Button
+        android:id="@+id/buttonbewerten"
+        android:layout_width="153dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="24dp"
+        android:background="#C53434"
+        android:fontFamily="casual"
+        android:text="@string/bewerten"
+        android:textColor="#B4FFFD"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/songwunsch"
+        android:layout_width="152dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="24dp"
+        android:background="#C53434"
+        android:fontFamily="casual"
+        android:text="@string/songwunsch"
+        android:textColor="#B4FFFD"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.617"
+        app:layout_constraintStart_toEndOf="@+id/buttonbewerten" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
