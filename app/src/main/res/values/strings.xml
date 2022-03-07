@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Radio_App_IU</string>
+    <string name="SenderName">Radio Sender</string>
+    <string name="IBContent">Login Button</string>
+    <string name="BewertenButton">Bewerten</string>
+    <string name="WunschButton">Song wünschen</string>
+    <string name="AktuellerSong">Ed Sheeran - Perfect</string>
 </resources>
