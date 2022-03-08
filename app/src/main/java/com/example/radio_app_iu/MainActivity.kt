@@ -3,7 +3,9 @@ package com.example.radio_app_iu
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.radio_app_iu.databinding.ActivityMainBinding
 
@@ -32,6 +34,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater : MenuInflater = menuInflater
         inflater.inflate(R.menu.headmenu, menu)
+        return true
+    }
+
+    //program that will be executed if specific item of OptionsMenu is clicked
+    override fun onOptionsItemSelected(item : MenuItem): Boolean {
+            if(item.getItemId() == R.id.item1){
+               //code
+            }
         return true
     }
 }
