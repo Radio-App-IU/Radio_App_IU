@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Radio_App_IU</string>
+    <string name="BuLogoutBeschreibung">Logout Button</string>
+    <string name="BuLogoutText">Logout</string>
+    <string name="BewertungenModeratorBeschreibung">Hier werden die Bewertungen der Hörer angezeigt</string>
+    <string name="BewertungenÜberschrift">Bewertungen</string>
+    <string name="BuBewertungenAktualisieren">Aktualisieren</string>
+    <string name="ivBildBeschreibung">Playlist Bild</string>
 </resources>

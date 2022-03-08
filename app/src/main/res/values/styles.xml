@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Bewertung">
+        <item name="android:textSize">15sp</item>
+        <item name="android:background">@drawable/rounded_corner</item>
+    </style>
+</resources>

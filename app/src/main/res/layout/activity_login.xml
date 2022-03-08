@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#142149"
+    tools:context=".LoginActivity">
+
+    <Button
+        android:id="@+id/buLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#C53434"
+        android:contentDescription="@string/BuLogoutBeschreibung"
+        android:text="@string/BuLogoutText"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RedundantDescriptionCheck" />
+
+    <ScrollView
+        android:id="@+id/svBewertungen"
+        android:layout_width="309dp"
+        android:layout_height="276dp"
+        android:layout_marginBottom="100dp"
+        android:contentDescription="@string/BewertungenModeratorBeschreibung"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/lyBewertungen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvBewertung1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Bewertung"
+                android:text="Bewertung Inhalt" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tvBewertungenÜberschrift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/BewertungenÜberschrift"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/BewertungenÜberschrift"
+        app:layout_constraintBottom_toTopOf="@+id/svBewertungen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBild" />
+
+    <Button
+        android:id="@+id/buBewertungenAktualisieren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#64EFDD"
+        android:text="@string/BuBewertungenAktualisieren"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svBewertungen" />
+
+    <ImageView
+        android:id="@+id/ivBild"
+        android:layout_width="132dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#000000"
+        android:contentDescription="@string/ivBildBeschreibung" />
+</androidx.constraintlayout.widget.ConstraintLayout>
