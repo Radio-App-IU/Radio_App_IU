@@ -9,5 +9,6 @@
     <string name="descAlbum">Albumcover</string>
     <string name="descPlaybutton">Playbutton</string>
     <string name="playbuttoninvisible"> </string>
+    <string name="login">Login</string>
 
 </resources>

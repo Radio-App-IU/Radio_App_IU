@@ -2,6 +2,8 @@ package com.example.radio_app_iu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import com.example.radio_app_iu.databinding.ActivityMainBinding
 
@@ -12,8 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //binding.buttonbewerten.setBackgroundColor(0x00FF00);
 
+        //onClicklistener for the play buttons
         binding.playbuttoninvisible.setOnClickListener {
             binding.playbutton.setImageResource(R.drawable.playbutton1)
             binding.playbuttoninvisible.visibility = View.INVISIBLE
@@ -24,5 +26,11 @@ class MainActivity : AppCompatActivity() {
             binding.playbuttoninvisible2.visibility = View.INVISIBLE
             binding.playbuttoninvisible.visibility = View.VISIBLE
         }
+    }
+    //creating optiions menu headmenu.xml when creating Main Activity
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater : MenuInflater = menuInflater
+        inflater.inflate(R.menu.headmenu, menu)
+        return true
     }
 }
