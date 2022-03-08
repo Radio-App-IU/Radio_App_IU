@@ -67,7 +67,7 @@
         android:id="@+id/trennzeichen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="316dp"
+        android:layout_marginBottom="314dp"
         android:gravity="center"
         android:text="@string/trennzeichen"
         android:textColor="#B4FFFD"
@@ -83,20 +83,19 @@
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="24dp"
-        android:background="#C53434"
         android:fontFamily="casual"
         android:text="@string/bewerten"
         android:textColor="#B4FFFD"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:backgroundTint = "#210041"/>
 
     <Button
         android:id="@+id/songwunsch"
         android:layout_width="152dp"
         android:layout_height="60dp"
         android:layout_marginBottom="24dp"
-        android:background="#C53434"
         android:fontFamily="casual"
         android:text="@string/songwunsch"
         android:textColor="#B4FFFD"
@@ -104,7 +103,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.617"
-        app:layout_constraintStart_toEndOf="@+id/buttonbewerten" />
+        app:layout_constraintStart_toEndOf="@+id/buttonbewerten"
+        app:backgroundTint = "#210041"/>
 
     <ImageView
         android:id="@+id/album"
