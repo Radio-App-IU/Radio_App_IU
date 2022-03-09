@@ -29,8 +29,9 @@ class MainActivity : AppCompatActivity() {
             binding.playbuttoninvisible2.visibility = View.INVISIBLE
             binding.playbuttoninvisible.visibility = View.VISIBLE
         }
+
     }
-    //creating optiions menu headmenu.xml when creating Main Activity
+    //creating options menu headmenu.xml when creating Main Activity
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater : MenuInflater = menuInflater
         inflater.inflate(R.menu.headmenu, menu)
