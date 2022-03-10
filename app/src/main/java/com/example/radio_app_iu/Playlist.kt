@@ -10,7 +10,7 @@ object Playlist {
 
     var playlist : List<Song> = listOf(song1, song2)
 
-    fun stubPlayPlaylist() : Song {
-        return this.playlist[Random.nextInt(0, playlist.size)]
+    fun stubPlayPlaylist() : String {
+        return this.playlist[Random.nextInt(0, playlist.size)].getTitleAndInterpret()
     }
 }

@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Hitradio zAPP</string>
-    <string name="sendername">Hitradio zAPP</string>
+    <string name="broadcastName">Hitradio zAPP</string>
     <string name="interpret">The Beatles</string>
-    <string name="musiktitel">Let it be</string>
-    <string name="trennzeichen">-</string>
-    <string name="bewerten">Bewerten</string>
-    <string name="songwunsch">Song wünschen</string>
+    <string name="title">Let it be</string>
+    <string name="separator">-</string>
+    <string name="evaluate">Bewerten</string>
+    <string name="wishSong">Song wünschen</string>
     <string name="descAlbum">Albumcover</string>
     <string name="descPlaybutton">Playbutton</string>
     <string name="playbuttoninvisible"> </string>

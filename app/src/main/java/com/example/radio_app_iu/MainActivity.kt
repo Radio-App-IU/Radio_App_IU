@@ -17,12 +17,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        var playlist = Playlist
 
         //onClicklistener for the play buttons
         binding.playbuttoninvisible.setOnClickListener {
             binding.playbutton.setImageResource(R.drawable.playbutton1)
             binding.playbuttoninvisible.visibility = View.INVISIBLE
             binding.playbuttoninvisible2.visibility = View.VISIBLE
+            binding.songOutput.setText(playlist.stubPlayPlaylist())
                 }
         binding.playbuttoninvisible2.setOnClickListener {
             binding.playbutton.setImageResource(R.drawable.playbutton2)

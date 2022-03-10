@@ -17,95 +17,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/sendername"
-        android:layout_width="296dp"
-        android:layout_height="68dp"
-        android:fontFamily="serif-monospace"
-        android:gravity="center"
-        android:text="@string/sendername"
-        android:textColor="#8FB9E9FF"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/interpret"
-        android:layout_width="113dp"
-        android:layout_height="42dp"
-        android:layout_marginBottom="304dp"
-        android:gravity="center"
-        android:text="@string/interpret"
-        android:textColor="#B4FFFD"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.332"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/titel"
-        android:layout_width="86dp"
-        android:layout_height="42dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="304dp"
-        android:gravity="center"
-        android:text="@string/musiktitel"
-        android:textColor="#B4FFFD"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/interpret" />
-
-    <TextView
-        android:id="@+id/trennzeichen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="314dp"
-        android:gravity="center"
-        android:text="@string/trennzeichen"
-        android:textColor="#B4FFFD"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/titel"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/interpret" />
-
     <Button
-        android:id="@+id/buttonbewerten"
+        android:id="@+id/buttonEvaluate"
         android:layout_width="153dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="24dp"
         android:fontFamily="casual"
-        android:text="@string/bewerten"
+        android:text="@string/evaluate"
         android:textColor="#B4FFFD"
         android:textStyle="bold"
+        app:backgroundTint="#210041"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:backgroundTint = "#210041"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/songwunsch"
+        android:id="@+id/wishSong"
         android:layout_width="152dp"
         android:layout_height="60dp"
         android:layout_marginBottom="24dp"
         android:fontFamily="casual"
-        android:text="@string/songwunsch"
+        android:text="@string/wishSong"
         android:textColor="#B4FFFD"
         android:textStyle="bold"
+        app:backgroundTint="#210041"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.617"
-        app:layout_constraintStart_toEndOf="@+id/buttonbewerten"
-        app:backgroundTint = "#210041"/>
+        app:layout_constraintStart_toEndOf="@+id/buttonEvaluate" />
 
     <ImageView
         android:id="@+id/album"
@@ -115,7 +54,7 @@
         android:layout_marginEnd="88dp"
         android:contentDescription="@string/descAlbum"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/sendername"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/screen_background_dark" />
 
     <ImageView
@@ -127,7 +66,7 @@
         android:contentDescription="@string/descPlaybutton"
         android:focusable="auto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trennzeichen"
+        app:layout_constraintTop_toBottomOf="@id/songOutput"
         app:srcCompat="@drawable/playbutton2" />
 
     <Button
@@ -140,7 +79,7 @@
         android:text="@string/playbuttoninvisible"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trennzeichen" />
+        app:layout_constraintTop_toBottomOf="@id/songOutput" />
 
     <Button
         android:id="@+id/playbuttoninvisible2"
@@ -152,7 +91,20 @@
         android:text="@string/playbuttoninvisible"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trennzeichen" />
+        app:layout_constraintTop_toBottomOf="@id/songOutput" />
+
+    <TextView
+        android:id="@+id/songOutput"
+        android:layout_width="381dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:textColor="#8CFFF5"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/album" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

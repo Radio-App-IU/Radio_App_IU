@@ -7,7 +7,7 @@ class Song(var title : String, var interpret : String, var album : String) {
     }
 
     fun getTitleAndInterpret() : String{
-        return title + " - " + interpret
+        return title + "    -    " + interpret
     }
 
 }
