@@ -1,5 +1,8 @@
 package com.example.radio_app_iu
 
+import android.content.Context
+import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -11,6 +14,7 @@ import com.example.radio_app_iu.databinding.ActivityMainBinding
 
 
 private lateinit var binding: ActivityMainBinding
+var player = MediaPlayer()
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,17 +23,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         var playlist = Playlist
 
-        //onClicklistener for the play buttons
+        //onClicklistener for the playbuttons
         binding.playbuttoninvisible.setOnClickListener {
             binding.playbutton.setImageResource(R.drawable.playbutton1)
             binding.playbuttoninvisible.visibility = View.INVISIBLE
             binding.playbuttoninvisible2.visibility = View.VISIBLE
             binding.songOutput.setText(playlist.stubPlayPlaylist())
+            playSong()
                 }
         binding.playbuttoninvisible2.setOnClickListener {
             binding.playbutton.setImageResource(R.drawable.playbutton2)
             binding.playbuttoninvisible2.visibility = View.INVISIBLE
             binding.playbuttoninvisible.visibility = View.VISIBLE
+            pauseSong()
         }
 
     }
@@ -43,8 +49,26 @@ class MainActivity : AppCompatActivity() {
     //program that will be executed if specific item of OptionsMenu is clicked
     override fun onOptionsItemSelected(item : MenuItem): Boolean {
             if(item.getItemId() == R.id.item1){
-               //code
+               startActivity(Intent(this, PopUpLogin::class.java))
+
             }
         return true
+    }
+
+    fun playSong() {
+        if (!player.isPlaying) {
+            player = MediaPlayer.create(this, R.raw.thebeatlesletitbe)
+        }
+        player.setVolume(1f, 1f)
+        player.start()
+    }
+
+    fun pauseSong() {
+        player.setVolume(0f,0f)
+    }
+
+    override fun onStop(){
+        super.onStop()
+        player.release()
     }
 }

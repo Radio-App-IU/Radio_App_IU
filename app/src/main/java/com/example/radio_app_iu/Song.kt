@@ -1,5 +1,8 @@
 package com.example.radio_app_iu
 
+import android.media.MediaPlayer
+
+
 class Song(var title : String, var interpret : String, var album : String) {
 
     override fun toString() : String {
@@ -9,5 +12,4 @@ class Song(var title : String, var interpret : String, var album : String) {
     fun getTitleAndInterpret() : String{
         return title + "    -    " + interpret
     }
-
 }
