@@ -1,8 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/popup_window_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PopUpLogin"/>
+    tools:context=".PopUpLogin">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#142149"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ModeratorLogin"
+        android:layout_width="260dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="441dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="@string/loginmod"
+        android:textColor="#78EFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/slotPassword"
+        android:layout_width="266dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:gravity="bottom|center"
+        android:inputType="textPersonName"
+        android:text="@string/showLogin"
+        android:textColor="#C5B4B4"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slotUsername"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/slotUsername"
+        android:layout_width="268dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="96dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:gravity="bottom|center"
+        android:inputType="textPersonName"
+        android:text="@string/showUsername"
+        android:textColor="#C5B4B4"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ModeratorLogin"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="445dp"
+        android:background="#210041"
+        android:fontFamily="sans-serif"
+        android:text="@string/einloggen"
+        android:textColor="#ADFFF3"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.845"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

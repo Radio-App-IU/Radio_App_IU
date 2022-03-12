@@ -12,8 +12,8 @@ import com.example.radio_app_iu.databinding.ActivityMainBinding
 
 //values and variables used in several methods of this activity
 private lateinit var binding: ActivityMainBinding
-var player = MediaPlayer()
-val playlist = Playlist
+private var player = MediaPlayer()
+private val playlist = Playlist
 
 
 class MainActivity : AppCompatActivity() {

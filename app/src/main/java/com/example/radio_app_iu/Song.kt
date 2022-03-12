@@ -14,7 +14,7 @@ class Song(var title : String, var interpret : String, var album : String, var r
     }
 
     //returns a song's audio file resource
-    fun getCurrentAudioFile() : Int {
+   fun getCurrentAudioFile() : Int {
         return refSong
     }
 

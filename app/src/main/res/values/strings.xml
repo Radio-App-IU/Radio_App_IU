@@ -10,5 +10,9 @@
     <string name="descPlaybutton">Playbutton</string>
     <string name="playbuttoninvisible"> </string>
     <string name="login">Login</string>
+    <string name="loginmod">Moderator Login</string>
+    <string name="showLogin">Passwort</string>
+    <string name="showUsername">Benutzername</string>
+    <string name="einloggen">Einloggen</string>
 
 </resources>
