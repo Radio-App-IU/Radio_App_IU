@@ -1,16 +1,17 @@
 package com.example.radio_app_iu
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
-import android.view.MotionEvent
-import android.view.View.OnTouchListener
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.radio_app_iu.databinding.ActivityPopUpLoginBinding
 
 
 private lateinit var binding: ActivityPopUpLoginBinding
+private val logincheck = LoginCheck()
 
 class PopUpLogin : AppCompatActivity() {
 
@@ -23,7 +24,6 @@ class PopUpLogin : AppCompatActivity() {
         //sets OnclickListener for TextInput Password
         binding.slotPassword.setOnClickListener {
             binding.slotPassword.setTextColor(Color.BLACK)
-            binding.slotPassword.setText(" ")
 
             //sets Password invisible
             binding.slotPassword.setTransformationMethod(PasswordTransformationMethod.getInstance())
@@ -32,7 +32,19 @@ class PopUpLogin : AppCompatActivity() {
         //sets OnclickListener for TextInput Username
         binding.slotUsername.setOnClickListener {
             binding.slotUsername.setTextColor(Color.BLACK)
-            binding.slotUsername.setText(" ")
+        }
+
+        //onClickListener für das Login
+        binding.submit.setOnClickListener{
+            if(logincheck.checkLogin(binding.slotUsername.getText().toString(), binding.slotPassword.getText().toString())) {
+
+                //startActivity(Intent(this, LoginActivity::class.java))
+            }
+            else Toast.makeText(this, "Login nicht erfolgreich!", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.backbutton.setOnClickListener{
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 
