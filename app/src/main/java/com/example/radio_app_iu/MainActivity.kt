@@ -10,10 +10,11 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.radio_app_iu.databinding.ActivityMainBinding
 
-
+//values and variables used in several methods of this activity
 private lateinit var binding: ActivityMainBinding
 var player = MediaPlayer()
 val playlist = Playlist
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,19 +22,34 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //onClicklistener for the playbuttons
+        //onClicklistener for the playbutton
         binding.playbuttoninvisible.setOnClickListener {
             binding.playbutton.setImageResource(R.drawable.playbutton1)
+
+            //sets this button invisible/the pausebutton visible
             binding.playbuttoninvisible.visibility = View.INVISIBLE
             binding.playbuttoninvisible2.visibility = View.VISIBLE
+
+            //sets the title and interpret of the current song
             binding.songOutput.setText(playlist.getSong())
+
+            //sets album cover image
+            binding.album.setImageResource(playlist.getAlbumCover())
+
+            //calls the method to play the song
             playSong()
         }
+
+        //onClickListener for the pausebutton
         binding.playbuttoninvisible2.setOnClickListener {
             binding.playbutton.setImageResource(R.drawable.playbutton2)
+
+            //sets this button invisible/the playbutton visible
             binding.playbuttoninvisible2.visibility = View.INVISIBLE
             binding.playbuttoninvisible.visibility = View.VISIBLE
-            pauseSong()
+
+            //calls the method to mute the current song
+            muteSong()
         }
 
     }
@@ -53,18 +69,22 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    //method to play song of playlist/creates mediaplayer if not already playing
     private fun playSong() {
         if (!player.isPlaying) {
             player = MediaPlayer.create(this, playlist.getSongFile())
         }
+
+        //unmutes and starts player
         player.setVolume(1f, 1f)
         player.start()
     }
 
-    private fun pauseSong() {
+    private fun muteSong() {
         player.setVolume(0f,0f)
     }
 
+    //releases player's resources when app stops
     override fun onStop(){
         super.onStop()
         player.release()
