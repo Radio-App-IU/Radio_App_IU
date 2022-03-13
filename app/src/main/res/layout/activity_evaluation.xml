@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Evaluation">
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#142149"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/backbutton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/back"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/songevalutionbox"
+        android:layout_width="332dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="28dp"
+        android:background="#ABFFE7"
+        android:cursorVisible="true"
+        android:ellipsize="none"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:gravity="top|left"
+        android:hint="@string/songhint"
+        android:inputType="textMultiLine|text"
+        android:maxLines="5"
+        android:textColor="#242A95"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/anchorevalutionbox"
+        android:layout_width="332dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="50dp"
+        android:background="#ABFFE7"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:gravity="top|left"
+        android:hint="@string/anchorhint"
+        android:inputType="textMultiLine|text"
+        android:maxLines="5"
+        android:textColor="#242A95"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nickname" />
+
+    <EditText
+        android:id="@+id/nickname"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:background="#FFB5FBE7"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:hint="@string/nickhint"
+        android:inputType="textPersonName"
+        android:maxLength="14"
+        android:maxLines="1"
+        android:textColor="#242A95"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/songevalutionbox"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <EditText
+        android:id="@+id/nickname2"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="92dp"
+        android:background="#FFB5FBE7"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:hint="@string/nickhint"
+        android:inputType="textPersonName"
+        android:maxLength="14"
+        android:maxLines="1"
+        android:textColor="#242A95"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/okbutton2"
+        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anchorevalutionbox" />
+
+    <ImageButton
+        android:id="@+id/okbutton"
+        android:layout_width="67dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="16dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string(ok"
+        app:layout_constraintStart_toEndOf="@+id/nickname"
+        app:layout_constraintTop_toBottomOf="@+id/songevalutionbox"
+        app:srcCompat="@drawable/done"
+        app:tint="#43FB00"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/okbutton2"
+        android:layout_width="67dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="40dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/ok"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anchorevalutionbox"
+        app:srcCompat="@drawable/done"
+        app:tint="#43FB00"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

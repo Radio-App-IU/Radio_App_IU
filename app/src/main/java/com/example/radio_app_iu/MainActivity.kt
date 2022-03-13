@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.radio_app_iu.databinding.ActivityMainBinding
 
@@ -14,7 +15,6 @@ import com.example.radio_app_iu.databinding.ActivityMainBinding
 private lateinit var binding: ActivityMainBinding
 private var player = MediaPlayer()
 private val playlist = Playlist
-
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,6 +51,13 @@ class MainActivity : AppCompatActivity() {
             muteSong()
         }
 
+        binding.buttonEvaluate.setOnClickListener{
+            startActivity(Intent(this, Evaluation::class.java))
+        }
+
+        binding.wishSong.setOnClickListener{
+            Toast.makeText(this, "Song wünschen", Toast.LENGTH_SHORT).show()
+        }
     }
     //creating options menu headmenu.xml when creating Main Activity
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

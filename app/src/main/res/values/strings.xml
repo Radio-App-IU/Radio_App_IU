@@ -14,5 +14,12 @@
     <string name="showLogin">Passwort</string>
     <string name="showUsername">Benutzername</string>
     <string name="einloggen">Einloggen</string>
+    <string name="back">Zurück</string>
+    <string name="ok">Absenden</string>
+    <string name="unhint">Benutzername</string>
+    <string name="pwhint">Passwort</string>
+    <string name="songhint">Song bewerten</string>
+    <string name="anchorhint">Moderator bewerten</string>
+    <string name="nickhint">Nickname</string>
 
 </resources>
