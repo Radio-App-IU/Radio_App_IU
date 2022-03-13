@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
             //calls the method to play the song
             playSong()
         }
-
         //onClickListener for the pausebutton
         binding.playbuttoninvisible2.setOnClickListener {
             binding.playbutton.setImageResource(R.drawable.playbutton2)
@@ -82,11 +81,5 @@ class MainActivity : AppCompatActivity() {
 
     private fun muteSong() {
         player.setVolume(0f,0f)
-    }
-
-    //releases player's resources when app stops
-    override fun onStop(){
-        super.onStop()
-        player.release()
     }
 }
