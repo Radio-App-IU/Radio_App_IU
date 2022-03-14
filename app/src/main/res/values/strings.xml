@@ -1,9 +1,5 @@
 <resources>
     <string name="app_name">Hitradio zAPP</string>
-    <string name="broadcastName">Hitradio zAPP</string>
-    <string name="interpret">The Beatles</string>
-    <string name="title">Let it be</string>
-    <string name="separator">-</string>
     <string name="evaluate">Bewerten</string>
     <string name="wishSong">Song wünschen</string>
     <string name="descAlbum">Albumcover</string>
@@ -18,7 +14,7 @@
     <string name="ok">Absenden</string>
     <string name="unhint">Benutzername</string>
     <string name="pwhint">Passwort</string>
-    <string name="songhint">Song bewerten</string>
+    <string name="playlisthint">Playlist bewerten</string>
     <string name="anchorhint">Moderator bewerten</string>
     <string name="nickhint">Nickname</string>
 

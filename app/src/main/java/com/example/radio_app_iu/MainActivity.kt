@@ -87,6 +87,7 @@ class MainActivity : AppCompatActivity() {
         player.start()
     }
 
+    //method for muting the player
     private fun muteSong() {
         player.setVolume(0f,0f)
     }

@@ -30,7 +30,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/songevalutionbox"
+        android:id="@+id/playlistevalutionbox"
         android:layout_width="332dp"
         android:layout_height="120dp"
         android:layout_marginTop="28dp"
@@ -40,7 +40,7 @@
         android:ems="10"
         android:fontFamily="monospace"
         android:gravity="top|left"
-        android:hint="@string/songhint"
+        android:hint="@string/playlisthint"
         android:inputType="textMultiLine|text"
         android:maxLines="5"
         android:textColor="#242A95"
@@ -87,7 +87,7 @@
         android:textColor="#242A95"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/songevalutionbox"
+        app:layout_constraintTop_toBottomOf="@+id/playlistevalutionbox"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <EditText
@@ -118,9 +118,9 @@
         android:layout_marginStart="98dp"
         android:layout_marginTop="16dp"
         android:background="#00FFFFFF"
-        android:contentDescription="@string(ok"
+        android:contentDescription="@string/ok"
         app:layout_constraintStart_toEndOf="@+id/nickname"
-        app:layout_constraintTop_toBottomOf="@+id/songevalutionbox"
+        app:layout_constraintTop_toBottomOf="@+id/playlistevalutionbox"
         app:srcCompat="@drawable/done"
         app:tint="#43FB00"
         tools:ignore="SpeakableTextPresentCheck" />
