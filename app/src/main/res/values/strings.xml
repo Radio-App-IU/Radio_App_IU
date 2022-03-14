@@ -17,5 +17,6 @@
     <string name="playlisthint">Playlist bewerten</string>
     <string name="anchorhint">Moderator bewerten</string>
     <string name="nickhint">Nickname</string>
+    <string name="information">Information Button</string>
 
 </resources>
