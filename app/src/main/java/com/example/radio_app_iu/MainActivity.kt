@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setPauseButton()
 
         //onClicklistener for the playbutton
         binding.playbuttoninvisible.setOnClickListener {
@@ -88,5 +89,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun muteSong() {
         player.setVolume(0f,0f)
+    }
+
+    //if there's a change to another activity and the player is playing, the information will be set
+    private fun setPauseButton(){
+        if(player.isPlaying){
+            binding.playbutton.setImageResource(R.drawable.playbutton1)
+            binding.playbuttoninvisible.visibility = View.INVISIBLE
+            binding.playbuttoninvisible2.visibility = View.VISIBLE
+            binding.songOutput.setText(playlist.getSong())
+            binding.album.setImageResource(playlist.getAlbumCover())
+        }
     }
 }
