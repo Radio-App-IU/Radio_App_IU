@@ -3,10 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/timow/AndroidStudioProjects/Radio_App_IU_Login/app/src/main/res/drawable/rounded_corner.xml" value="0.372" />
-        <entry key="..\:/Users/timow/AndroidStudioProjects/Radio_App_IU_Login/app/src/main/res/layout/activity_login.xml" value="0.5" />
-        <entry key="..\:/Users/timow/AndroidStudioProjects/Radio_App_IU_Login/app/src/main/res/layout/activity_main.xml" value="0.31354166666666666" />
-        <entry key="..\:/Users/timow/AndroidStudioProjects/Radio_App_IU_Login/app/src/main/res/layout/login_activity.xml" value="0.31354166666666666" />
+        <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.2415" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.3653152465820313" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
       </map>
     </option>
   </component>

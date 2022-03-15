@@ -1,5 +1,6 @@
 package com.example.radio_app_iu
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -7,16 +8,19 @@ import com.example.radio_app_iu.databinding.ActivityLoginBinding
 import java.io.InputStreamReader
 import java.lang.Exception
 import android.widget.LinearLayout
+import androidx.annotation.RequiresApi
+import com.airbnb.paris.extensions.style
 
 private lateinit var bindingLogin: ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingLogin = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(bindingLogin.root)
 
-        val faktorDpToPx = resources.displayMetrics.density
+        bindingLogin.buLogout.setOnClickListener {finish()}
 
         //Funktion zum Lesen einer Datei "Datei.txt".
         fun inhalt():String {
@@ -49,8 +53,7 @@ class LoginActivity : AppCompatActivity() {
                         LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                     ) //Parameter der neuen Textview
-                    val mg = (5 * faktorDpToPx).toInt()
-                    lp.setMargins(mg, mg, mg, mg)
+                    tvNeu.style(R.style.Bewertung)
                     tvNeu.layoutParams = lp
                     tvNeu.text = "%s".format(zeilen[x])
                 }
