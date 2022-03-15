@@ -1,6 +1,6 @@
 package com.example.radio_app_iu
 
-class LoginCheck {
+class StubServerLoginCheck {
 
     val users = mapOf("Moderator1" to "abc", "Moderator2" to "xyz")
 

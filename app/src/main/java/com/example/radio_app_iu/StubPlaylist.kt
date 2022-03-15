@@ -3,7 +3,7 @@ package com.example.radio_app_iu
 import kotlin.random.Random
 
 //singleton
-object Playlist {
+object StubPlaylist {
 
     //creation of song instances
     private var song1 : Song = Song("Let it be", "The Beatles", "Let it be", R.raw.thebeatlesletitbe, R.drawable.coverletitbe)

@@ -15,7 +15,7 @@ import com.example.radio_app_iu.databinding.ActivityPopUpLoginBinding
 
 
 private lateinit var binding: ActivityPopUpLoginBinding
-private val logincheck = LoginCheck()
+private val logincheck = StubServerLoginCheck()
 
 class PopUpLogin : AppCompatActivity() {
 

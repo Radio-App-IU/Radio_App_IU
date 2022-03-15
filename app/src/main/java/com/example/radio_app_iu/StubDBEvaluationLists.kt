@@ -1,13 +1,13 @@
 package com.example.radio_app_iu
 
 //singleton
-object EvaluationLists {
+object StubDBEvaluationLists {
 
-    lateinit var playlistEvaluationList : MutableList<PlaylistEvaluation>
-    lateinit var radioHostEvaluationList : MutableList<RadioHostEvaluation>
+    lateinit var playlistEvaluationList : MutableList<StubServerPlaylistEvaluation>
+    lateinit var radioHostEvaluationList : MutableList<StubServerRadioHostEvaluation>
 
-    var playEva = PlaylistEvaluation()
-    var radHostEva = RadioHostEvaluation()
+    var playEva = StubServerPlaylistEvaluation()
+    var radHostEva = StubServerRadioHostEvaluation()
 
     //returns the content of one element of the PlaylistEvaluations list
     fun getPlaylistEvaluationsElement() : String {

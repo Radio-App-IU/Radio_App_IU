@@ -13,8 +13,8 @@ import com.example.radio_app_iu.databinding.ActivityMainBinding
 
 //values and variables used in several methods of this activity
 private lateinit var binding: ActivityMainBinding
-private var player = MediaPlayer()
-private val playlist = Playlist
+private var stubPlayer = MediaPlayer()
+private val playlist = StubPlaylist
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,23 +78,23 @@ class MainActivity : AppCompatActivity() {
 
     //method to play song of playlist/creates mediaplayer if not already playing
     private fun playSong() {
-        if (!player.isPlaying) {
-            player = MediaPlayer.create(this, playlist.getSongFile())
+        if (!stubPlayer.isPlaying) {
+            stubPlayer = MediaPlayer.create(this, playlist.getSongFile())
         }
 
         //unmutes and starts player
-        player.setVolume(1f, 1f)
-        player.start()
+        stubPlayer.setVolume(1f, 1f)
+        stubPlayer.start()
     }
 
     //method for muting the player
     private fun muteSong() {
-        player.setVolume(0f,0f)
+       stubPlayer.setVolume(0f,0f)
     }
 
     //if there's a change to another activity and the player is playing, the information will be set
     private fun setPauseButton(){
-        if(player.isPlaying){
+        if(stubPlayer.isPlaying){
             binding.playbutton.setImageResource(R.drawable.playbutton1)
             binding.playbuttoninvisible.visibility = View.INVISIBLE
             binding.playbuttoninvisible2.visibility = View.VISIBLE
