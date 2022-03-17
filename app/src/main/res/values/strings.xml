@@ -18,5 +18,11 @@
     <string name="anchorhint">Moderator bewerten</string>
     <string name="nickhint">Nickname</string>
     <string name="information">Information Button</string>
+    <string name="onestar">one star</string>
+    <string name="twostars">two stars</string>
+    <string name="threestars">three stars</string>
+    <string name="fourstars">four stars</string>
+    <string name="fivestars">five stars</string>
+
 
 </resources>

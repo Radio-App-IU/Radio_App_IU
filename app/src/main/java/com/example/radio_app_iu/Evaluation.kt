@@ -51,5 +51,45 @@ class Evaluation : AppCompatActivity() {
                 Toast.makeText(this, "Bitte Bewertung UND Nickname eingeben!", Toast.LENGTH_SHORT).show()
             }
         }
+
+        binding.onestar.setOnClickListener{
+            binding.onestar.setImageResource(R.drawable.star1)
+            binding.twostars.setImageResource(R.drawable.star2)
+            binding.threestars.setImageResource(R.drawable.star2)
+            binding.fourstars.setImageResource(R.drawable.star2)
+            binding.fivestars.setImageResource(R.drawable.star2)
+        }
+
+        binding.twostars.setOnClickListener{
+            binding.onestar.setImageResource(R.drawable.star1)
+            binding.twostars.setImageResource(R.drawable.star1)
+            binding.threestars.setImageResource(R.drawable.star2)
+            binding.fourstars.setImageResource(R.drawable.star2)
+            binding.fivestars.setImageResource(R.drawable.star2)
+        }
+
+        binding.threestars.setOnClickListener{
+            binding.onestar.setImageResource(R.drawable.star1)
+            binding.twostars.setImageResource(R.drawable.star1)
+            binding.threestars.setImageResource(R.drawable.star1)
+            binding.fourstars.setImageResource(R.drawable.star2)
+            binding.fivestars.setImageResource(R.drawable.star2)
+        }
+
+        binding.fourstars.setOnClickListener{
+            binding.onestar.setImageResource(R.drawable.star1)
+            binding.twostars.setImageResource(R.drawable.star1)
+            binding.threestars.setImageResource(R.drawable.star1)
+            binding.fourstars.setImageResource(R.drawable.star1)
+            binding.fivestars.setImageResource(R.drawable.star2)
+        }
+
+        binding.fivestars.setOnClickListener{
+            binding.onestar.setImageResource(R.drawable.star1)
+            binding.twostars.setImageResource(R.drawable.star1)
+            binding.threestars.setImageResource(R.drawable.star1)
+            binding.fourstars.setImageResource(R.drawable.star1)
+            binding.fivestars.setImageResource(R.drawable.star1)
+        }
     }
 }
