@@ -22,24 +22,34 @@ class Evaluation : AppCompatActivity() {
         //submit button for playlist evaluation
         binding.okbutton.setOnClickListener{
 
-            StubEvaluationDB.playlistEvaluation = binding.playlistevalutionbox.text.toString()
-            StubEvaluationDB.playlistEvaluationNickname = binding.nickname.text.toString()
-            StubEvaluationDB.idPlaylistEvaluation = 3
-            binding.playlistevalutionbox.setText("")
-            binding.nickname.setText("")
-            Toast.makeText(this, "Playlist bewertet", Toast.LENGTH_SHORT).show()
+            if(binding.playlistevalutionbox.text.toString().isNotEmpty() && binding.nickname.text.toString().isNotEmpty()){
+                StubEvaluationDB.playlistEvaluation = binding.playlistevalutionbox.text.toString()
+                StubEvaluationDB.playlistEvaluationNickname = binding.nickname.text.toString()
+                StubEvaluationDB.idPlaylistEvaluation = 3
+                binding.playlistevalutionbox.setText("")
+                binding.nickname.setText("")
+                Toast.makeText(this, "Playlist bewertet", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                Toast.makeText(this, "Bitte Bewertung UND Nickname eingeben!", Toast.LENGTH_SHORT).show()
+            }
         }
 
         //submit button for anchor evaluation
         binding.okbutton2.setOnClickListener{
 
-            StubEvaluationDB.radioHostEvaluation = binding.anchorevalutionbox.text.toString()
-            StubEvaluationDB.radioHostEvaluationNickname = binding.nickname2.text.toString()
-            StubEvaluationDB.idRadioHostEvaluation = 4
-            //StubEvaluationDB.moderator = StubGetCurrentRadioHost
-            binding.anchorevalutionbox.setText("")
-            binding.nickname2.setText("")
-            Toast.makeText(this, "Moderator bewertet", Toast.LENGTH_SHORT).show()
+            if(binding.anchorevalutionbox.text.toString().isNotEmpty() && binding.nickname2.text.toString().isNotEmpty()){
+                StubEvaluationDB.radioHostEvaluation = binding.anchorevalutionbox.text.toString()
+                StubEvaluationDB.radioHostEvaluationNickname = binding.nickname2.text.toString()
+                StubEvaluationDB.idRadioHostEvaluation = 4
+                //StubEvaluationDB.moderator = StubGetCurrentRadioHost
+                binding.anchorevalutionbox.setText("")
+                binding.nickname2.setText("")
+                Toast.makeText(this, "Moderator bewertet", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                Toast.makeText(this, "Bitte Bewertung UND Nickname eingeben!", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
