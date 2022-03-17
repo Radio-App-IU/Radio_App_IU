@@ -12,10 +12,7 @@ class TestActivity : AppCompatActivity() {
         binding = ActivityTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /**if(StubEvaluationDB.playlistEvaluationList.isNotEmpty()) {**/
-        //binding.textView.setText(stubEvaluationDB.getPlaylistEvaluationsElement()
-         binding.textView.setText(StubEvaluationDB.getPlaylistEvaluationsElement())
+        binding.textView.setText(StubEvaluationDB.getPlaylistEvaluationsElement())
+        binding.textView2.setText(StubEvaluationDB.getRadioHostEvaluationsElement())
         }
-        //else binding.textView.setText("leer")
-    //}
 }

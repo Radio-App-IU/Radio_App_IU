@@ -25,11 +25,20 @@ class Evaluation : AppCompatActivity() {
             StubEvaluationDB.playlistEvaluation = binding.playlistevalutionbox.text.toString()
             StubEvaluationDB.playlistEvaluationNickname = binding.nickname.text.toString()
             StubEvaluationDB.idPlaylistEvaluation = 3
+            binding.playlistevalutionbox.setText("")
+            binding.nickname.setText("")
             Toast.makeText(this, "Playlist bewertet", Toast.LENGTH_SHORT).show()
         }
 
         //submit button for anchor evaluation
         binding.okbutton2.setOnClickListener{
+
+            StubEvaluationDB.radioHostEvaluation = binding.anchorevalutionbox.text.toString()
+            StubEvaluationDB.radioHostEvaluationNickname = binding.nickname2.text.toString()
+            StubEvaluationDB.idRadioHostEvaluation = 4
+            //StubEvaluationDB.moderator = StubGetCurrentRadioHost
+            binding.anchorevalutionbox.setText("")
+            binding.nickname2.setText("")
             Toast.makeText(this, "Moderator bewertet", Toast.LENGTH_SHORT).show()
         }
     }

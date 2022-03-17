@@ -9,9 +9,20 @@ object StubEvaluationDB {
     var playlistEvaluation : String = ""
     var playlistEvaluationNickname : String = ""
 
+    var idRadioHostEvaluation : Int = 0
+    var radioHostEvaluation : String = ""
+    var radioHostEvaluationNickname : String = ""
+    var moderator : String = ""
+
     fun getPlaylistEvaluationsElement() : String {
         return this.idPlaylistEvaluation.toString() + "\n" +
                 this.playlistEvaluation + "\n" +
                 this.playlistEvaluationNickname
+    }
+
+    fun getRadioHostEvaluationsElement() : String {
+        return this.idRadioHostEvaluation.toString() + "\n" +
+                this.radioHostEvaluation + "\n" +
+                this.radioHostEvaluationNickname
     }
 }
