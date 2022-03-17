@@ -1,13 +1,6 @@
 package com.example.radio_app_iu
 
 class StubServerRadioHostEvaluation ( var idRadioHostEvaluation : Int = 0,
-                            var radioHostEvaluation : String = "",
-                            var radioHostEvaluationNickname : String = "",
-                            var moderator : String = "") {
-
-    var evaluationList = StubDBEvaluationLists
-
-    fun addToList(){
-        evaluationList.radioHostEvaluationList.add(this)
-    }
-}
+                                      var radioHostEvaluation : String = "",
+                                      var radioHostEvaluationNickname : String = "",
+                                      var moderator : String = "ein Moderator")

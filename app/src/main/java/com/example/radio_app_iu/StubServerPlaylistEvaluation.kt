@@ -1,12 +1,6 @@
 package com.example.radio_app_iu
 
 class StubServerPlaylistEvaluation ( var idPlaylistEvaluation : Int = 0,
-                           var playlistEvaluation : String = "",
-                           var playlistEvaluationNickname : String = "") {
-
-    var evaluationList = StubDBEvaluationLists
-
-    fun addToList(){ //Problem to solve: Increase each number of ID by 1 (list.size doesn't work)
-        evaluationList.playlistEvaluationList.add(this)
-    }
+                                     var playlistEvaluation : String = "",
+                                     var playlistEvaluationNickname : String = "") {
 }

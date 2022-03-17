@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.radio_app_iu.databinding.ActivityEvaluationBinding
-import com.example.radio_app_iu.databinding.ActivityMainBinding
 
 private lateinit var binding: ActivityEvaluationBinding
 
@@ -20,9 +19,13 @@ class Evaluation : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
-        //submit button for song evaluation
+        //submit button for playlist evaluation
         binding.okbutton.setOnClickListener{
-            Toast.makeText(this, "Song bewertet", Toast.LENGTH_SHORT).show()
+
+            StubEvaluationDB.playlistEvaluation = binding.playlistevalutionbox.text.toString()
+            StubEvaluationDB.playlistEvaluationNickname = binding.nickname.text.toString()
+            StubEvaluationDB.idPlaylistEvaluation = 3
+            Toast.makeText(this, "Playlist bewertet", Toast.LENGTH_SHORT).show()
         }
 
         //submit button for anchor evaluation

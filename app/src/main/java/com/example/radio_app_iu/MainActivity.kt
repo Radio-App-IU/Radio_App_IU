@@ -59,6 +59,12 @@ class MainActivity : AppCompatActivity() {
         binding.wishSong.setOnClickListener{
             Toast.makeText(this, "Song wünschen", Toast.LENGTH_SHORT).show()
         }
+
+        binding.infobutton.setOnClickListener{
+            startActivity(Intent(this, TestActivity::class.java))
+        }
+
+
     }
     //creating options menu headmenu.xml when creating Main Activity
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -71,7 +77,6 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item : MenuItem): Boolean {
             if(item.getItemId() == R.id.item1){
                startActivity(Intent(this, PopUpLogin::class.java))
-
             }
         return true
     }
