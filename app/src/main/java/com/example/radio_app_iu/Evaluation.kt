@@ -14,8 +14,8 @@ class Evaluation : AppCompatActivity() {
         binding = ActivityEvaluationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var radioHostEvaluationRatingCount : Int = 1
-        var playlistEvaluationRatingCount : Int = 1
+        var playlistEvaluationRatingCount = 1
+        var radioHostEvaluationRatingCount = 1
 
         //return button
         binding.backbutton2.setOnClickListener {
@@ -29,6 +29,8 @@ class Evaluation : AppCompatActivity() {
                 StubEvaluationDB.playlistEvaluation = binding.playlistevalutionbox.text.toString()
                 StubEvaluationDB.playlistEvaluationNickname = binding.nickname.text.toString()
                 StubEvaluationDB.idPlaylistEvaluation = 3
+                StubEvaluationDB.playlistRating = playlistEvaluationRatingCount
+
                 binding.playlistevalutionbox.setText("")
                 binding.nickname.setText("")
                 binding.onestar.setImageResource(R.drawable.star1)
@@ -36,6 +38,7 @@ class Evaluation : AppCompatActivity() {
                 binding.threestars.setImageResource(R.drawable.star2)
                 binding.fourstars.setImageResource(R.drawable.star2)
                 binding.fivestars.setImageResource(R.drawable.star2)
+
                 playlistEvaluationRatingCount = 1
                 Toast.makeText(this, "Playlist bewertet", Toast.LENGTH_SHORT).show()
             }
@@ -51,9 +54,17 @@ class Evaluation : AppCompatActivity() {
                 StubEvaluationDB.radioHostEvaluation = binding.anchorevalutionbox.text.toString()
                 StubEvaluationDB.radioHostEvaluationNickname = binding.nickname2.text.toString()
                 StubEvaluationDB.idRadioHostEvaluation = 4
+                StubEvaluationDB.radioHostRating = radioHostEvaluationRatingCount
                 //StubEvaluationDB.moderator = StubGetCurrentRadioHost
+
                 binding.anchorevalutionbox.setText("")
                 binding.nickname2.setText("")
+                binding.onestaranchor.setImageResource(R.drawable.star1)
+                binding.twostaranchor.setImageResource(R.drawable.star2)
+                binding.threestaranchor.setImageResource(R.drawable.star2)
+                binding.fourstaranchor.setImageResource(R.drawable.star2)
+                binding.fivestaranchor.setImageResource(R.drawable.star2)
+
                 radioHostEvaluationRatingCount = 1
                 Toast.makeText(this, "Moderator bewertet", Toast.LENGTH_SHORT).show()
             }
@@ -105,6 +116,51 @@ class Evaluation : AppCompatActivity() {
             binding.fourstars.setImageResource(R.drawable.star1)
             binding.fivestars.setImageResource(R.drawable.star1)
             playlistEvaluationRatingCount = 5
+        }
+
+        binding.onestaranchor.setOnClickListener{
+            binding.onestaranchor.setImageResource(R.drawable.star1)
+            binding.twostaranchor.setImageResource(R.drawable.star2)
+            binding.threestaranchor.setImageResource(R.drawable.star2)
+            binding.fourstaranchor.setImageResource(R.drawable.star2)
+            binding.fivestaranchor.setImageResource(R.drawable.star2)
+            radioHostEvaluationRatingCount = 1
+        }
+
+        binding.twostaranchor.setOnClickListener{
+            binding.onestaranchor.setImageResource(R.drawable.star1)
+            binding.twostaranchor.setImageResource(R.drawable.star1)
+            binding.threestaranchor.setImageResource(R.drawable.star2)
+            binding.fourstaranchor.setImageResource(R.drawable.star2)
+            binding.fivestaranchor.setImageResource(R.drawable.star2)
+            radioHostEvaluationRatingCount = 2
+        }
+
+        binding.threestaranchor.setOnClickListener{
+            binding.onestaranchor.setImageResource(R.drawable.star1)
+            binding.twostaranchor.setImageResource(R.drawable.star1)
+            binding.threestaranchor.setImageResource(R.drawable.star1)
+            binding.fourstaranchor.setImageResource(R.drawable.star2)
+            binding.fivestaranchor.setImageResource(R.drawable.star2)
+            radioHostEvaluationRatingCount = 3
+        }
+
+        binding.fourstaranchor.setOnClickListener{
+            binding.onestaranchor.setImageResource(R.drawable.star1)
+            binding.twostaranchor.setImageResource(R.drawable.star1)
+            binding.threestaranchor.setImageResource(R.drawable.star1)
+            binding.fourstaranchor.setImageResource(R.drawable.star1)
+            binding.fivestaranchor.setImageResource(R.drawable.star2)
+            radioHostEvaluationRatingCount = 4
+        }
+
+        binding.fivestaranchor.setOnClickListener{
+            binding.onestaranchor.setImageResource(R.drawable.star1)
+            binding.twostaranchor.setImageResource(R.drawable.star1)
+            binding.threestaranchor.setImageResource(R.drawable.star1)
+            binding.fourstaranchor.setImageResource(R.drawable.star1)
+            binding.fivestaranchor.setImageResource(R.drawable.star1)
+            radioHostEvaluationRatingCount = 5
         }
     }
 }

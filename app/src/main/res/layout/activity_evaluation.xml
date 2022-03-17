@@ -16,6 +16,57 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/onestaranchor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/onestar"
+        app:layout_constraintStart_toEndOf="@+id/nickname2"
+        app:layout_constraintTop_toBottomOf="@+id/anchorevalutionbox"
+        app:srcCompat="@drawable/star1" />
+
+    <ImageView
+        android:id="@+id/twostaranchor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/twostars"
+        app:layout_constraintStart_toEndOf="@+id/onestaranchor"
+        app:layout_constraintTop_toBottomOf="@+id/anchorevalutionbox"
+        app:srcCompat="@drawable/star2" />
+
+    <ImageView
+        android:id="@+id/threestaranchor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/threestars"
+        app:layout_constraintStart_toEndOf="@+id/twostaranchor"
+        app:layout_constraintTop_toBottomOf="@+id/anchorevalutionbox"
+        app:srcCompat="@drawable/star2" />
+
+    <ImageView
+        android:id="@+id/fourstaranchor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/fourstars"
+        app:layout_constraintStart_toEndOf="@+id/threestaranchor"
+        app:layout_constraintTop_toBottomOf="@+id/anchorevalutionbox"
+        app:srcCompat="@drawable/star2" />
+
+    <ImageView
+        android:id="@+id/fivestaranchor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/fivestars"
+        app:layout_constraintStart_toEndOf="@+id/fourstaranchor"
+        app:layout_constraintTop_toBottomOf="@+id/anchorevalutionbox"
+        app:srcCompat="@drawable/star2" />
+
     <ImageButton
         android:id="@+id/backbutton2"
         android:layout_width="wrap_content"
@@ -87,7 +138,7 @@
         android:textColor="#242A95"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/okbutton2"
-        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/anchorevalutionbox" />
 
@@ -95,8 +146,8 @@
         android:id="@+id/okbutton2"
         android:layout_width="67dp"
         android:layout_height="63dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="44dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/ok"
         app:layout_constraintEnd_toEndOf="parent"

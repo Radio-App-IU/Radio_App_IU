@@ -14,5 +14,6 @@ class TestActivity : AppCompatActivity() {
 
         binding.textView.setText(StubEvaluationDB.getPlaylistEvaluationsElement())
         binding.textView2.setText(StubEvaluationDB.getRadioHostEvaluationsElement())
+        binding.textView3.setText(StubEvaluationDB.getPlaylistElementRating().toString())
         }
 }
