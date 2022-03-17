@@ -14,6 +14,9 @@ class Evaluation : AppCompatActivity() {
         binding = ActivityEvaluationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        var radioHostEvaluationRatingCount : Int = 1
+        var playlistEvaluationRatingCount : Int = 1
+
         //return button
         binding.backbutton2.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
@@ -28,6 +31,12 @@ class Evaluation : AppCompatActivity() {
                 StubEvaluationDB.idPlaylistEvaluation = 3
                 binding.playlistevalutionbox.setText("")
                 binding.nickname.setText("")
+                binding.onestar.setImageResource(R.drawable.star1)
+                binding.twostars.setImageResource(R.drawable.star2)
+                binding.threestars.setImageResource(R.drawable.star2)
+                binding.fourstars.setImageResource(R.drawable.star2)
+                binding.fivestars.setImageResource(R.drawable.star2)
+                playlistEvaluationRatingCount = 1
                 Toast.makeText(this, "Playlist bewertet", Toast.LENGTH_SHORT).show()
             }
             else {
@@ -45,6 +54,7 @@ class Evaluation : AppCompatActivity() {
                 //StubEvaluationDB.moderator = StubGetCurrentRadioHost
                 binding.anchorevalutionbox.setText("")
                 binding.nickname2.setText("")
+                radioHostEvaluationRatingCount = 1
                 Toast.makeText(this, "Moderator bewertet", Toast.LENGTH_SHORT).show()
             }
             else {
@@ -58,6 +68,7 @@ class Evaluation : AppCompatActivity() {
             binding.threestars.setImageResource(R.drawable.star2)
             binding.fourstars.setImageResource(R.drawable.star2)
             binding.fivestars.setImageResource(R.drawable.star2)
+            playlistEvaluationRatingCount = 1
         }
 
         binding.twostars.setOnClickListener{
@@ -66,6 +77,7 @@ class Evaluation : AppCompatActivity() {
             binding.threestars.setImageResource(R.drawable.star2)
             binding.fourstars.setImageResource(R.drawable.star2)
             binding.fivestars.setImageResource(R.drawable.star2)
+            playlistEvaluationRatingCount = 2
         }
 
         binding.threestars.setOnClickListener{
@@ -74,6 +86,7 @@ class Evaluation : AppCompatActivity() {
             binding.threestars.setImageResource(R.drawable.star1)
             binding.fourstars.setImageResource(R.drawable.star2)
             binding.fivestars.setImageResource(R.drawable.star2)
+            playlistEvaluationRatingCount = 3
         }
 
         binding.fourstars.setOnClickListener{
@@ -82,6 +95,7 @@ class Evaluation : AppCompatActivity() {
             binding.threestars.setImageResource(R.drawable.star1)
             binding.fourstars.setImageResource(R.drawable.star1)
             binding.fivestars.setImageResource(R.drawable.star2)
+            playlistEvaluationRatingCount = 4
         }
 
         binding.fivestars.setOnClickListener{
@@ -90,6 +104,7 @@ class Evaluation : AppCompatActivity() {
             binding.threestars.setImageResource(R.drawable.star1)
             binding.fourstars.setImageResource(R.drawable.star1)
             binding.fivestars.setImageResource(R.drawable.star1)
+            playlistEvaluationRatingCount = 5
         }
     }
 }
