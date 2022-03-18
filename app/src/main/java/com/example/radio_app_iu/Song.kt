@@ -2,7 +2,7 @@ package com.example.radio_app_iu
 
 import android.media.MediaPlayer
 
-class Song(var title : String, var interpret : String, var album : String, var refSong : Int, var refAlbumImage : Int) {
+class Song(var title : String, var interpret : String, var album : String, var refSong : Int, var refAlbumImage : Int, var year : String, var length : String) {
 
     //called by song information button
     override fun toString() : String {
@@ -21,5 +21,25 @@ class Song(var title : String, var interpret : String, var album : String, var r
     //returns a song's album image file resource
     fun getCurrentAlbumImage() : Int {
         return refAlbumImage
+    }
+
+    fun getSongTitle() : String {
+        return "Titel: " + title
+    }
+
+    fun getSongInterpret() : String {
+        return "Interpret: " + interpret
+    }
+
+    fun getAlbumName() : String {
+        return "Album: " + album
+    }
+
+    fun getSongLength() : String {
+        return "Länge: " + length
+    }
+
+    fun getSongYear() : String {
+        return "Jahr: " + year
     }
 }

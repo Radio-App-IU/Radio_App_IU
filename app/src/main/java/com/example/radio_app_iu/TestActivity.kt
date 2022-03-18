@@ -12,8 +12,17 @@ class TestActivity : AppCompatActivity() {
         binding = ActivityTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.textView.setText(StubEvaluationDB.getPlaylistEvaluationsElement())
-        binding.textView2.setText(StubEvaluationDB.getRadioHostEvaluationsElement())
-        binding.textView3.setText(StubEvaluationDB.getPlaylistElementRating().toString())
+        savePlaylistEvaluationInList()
+        saveRadioHostEvaluationInList()
         }
+
+    fun savePlaylistEvaluationInList(){
+        val string = StubEvaluationDB.playlistEvaluationList[0].returnPlaylistEvaluation() + "\n" + StubEvaluationDB.playlistEvaluationList[0].returnNickname()
+        binding.textView4.setText(string)
+    }
+
+    fun saveRadioHostEvaluationInList(){
+        val string = StubEvaluationDB.radioHostEvaluationList[0].returnRadioHostEvaluation() + "\n" + StubEvaluationDB.radioHostEvaluationList[0].returnNickname()
+        binding.textView2.setText(string)
+    }
 }

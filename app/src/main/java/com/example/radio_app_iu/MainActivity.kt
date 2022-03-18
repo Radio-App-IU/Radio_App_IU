@@ -60,6 +60,10 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Song wünschen", Toast.LENGTH_SHORT).show()
         }
 
+        /**binding.infobutton.setOnTouchListener{
+
+        }**/
+
         binding.infobutton.setOnClickListener{
             startActivity(Intent(this, TestActivity::class.java))
         }

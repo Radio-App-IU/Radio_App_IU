@@ -26,10 +26,16 @@ class Evaluation : AppCompatActivity() {
         binding.okbutton.setOnClickListener{
 
             if(binding.playlistevalutionbox.text.toString().isNotEmpty() && binding.nickname.text.toString().isNotEmpty()){
-                StubEvaluationDB.playlistEvaluation = binding.playlistevalutionbox.text.toString()
-                StubEvaluationDB.playlistEvaluationNickname = binding.nickname.text.toString()
-                StubEvaluationDB.idPlaylistEvaluation = 3
-                StubEvaluationDB.playlistRating = playlistEvaluationRatingCount
+
+                //variables receiving the input of the EditTexts and rating
+                val playlistEvaluation = binding.playlistevalutionbox.text.toString()
+                val playlistEvaluationNickname = binding.nickname.text.toString()
+                val idPlaylistEvaluation = 3
+                val playlistRating = playlistEvaluationRatingCount
+
+                //creates a playlistEvaluation object and puts it in the playlistEvaluationList of the StubEvaluationDB Class
+                val playlistEvaluationObject = PlaylistEvaluation(idPlaylistEvaluation, playlistEvaluation, playlistEvaluationNickname, playlistRating)
+                StubEvaluationDB.playlistEvaluationList.add(playlistEvaluationObject)
 
                 binding.playlistevalutionbox.setText("")
                 binding.nickname.setText("")
@@ -38,6 +44,7 @@ class Evaluation : AppCompatActivity() {
                 binding.threestars.setImageResource(R.drawable.star2)
                 binding.fourstars.setImageResource(R.drawable.star2)
                 binding.fivestars.setImageResource(R.drawable.star2)
+
 
                 playlistEvaluationRatingCount = 1
                 Toast.makeText(this, "Playlist bewertet", Toast.LENGTH_SHORT).show()
@@ -50,12 +57,17 @@ class Evaluation : AppCompatActivity() {
         //submit button for anchor evaluation
         binding.okbutton2.setOnClickListener{
 
+            //variables receiving the input of the EditTexts and rating
             if(binding.anchorevalutionbox.text.toString().isNotEmpty() && binding.nickname2.text.toString().isNotEmpty()){
-                StubEvaluationDB.radioHostEvaluation = binding.anchorevalutionbox.text.toString()
-                StubEvaluationDB.radioHostEvaluationNickname = binding.nickname2.text.toString()
-                StubEvaluationDB.idRadioHostEvaluation = 4
-                StubEvaluationDB.radioHostRating = radioHostEvaluationRatingCount
+                val radioHostEvaluation = binding.anchorevalutionbox.text.toString()
+                val radioHostEvaluationNickname = binding.nickname2.text.toString()
+                val idRadioHostEvaluation = 4
+                val radioHostRating = radioHostEvaluationRatingCount
                 //StubEvaluationDB.moderator = StubGetCurrentRadioHost
+
+                //creates a radioHostEvaluation object and puts it in the radioHostEvaluationList of the StubEvaluationDB Class
+                val radioHostEvaluationObject = RadioHostEvaluation(idRadioHostEvaluation, radioHostEvaluation, radioHostEvaluationNickname, radioHostRating)
+                StubEvaluationDB.radioHostEvaluationList.add(radioHostEvaluationObject)
 
                 binding.anchorevalutionbox.setText("")
                 binding.nickname2.setText("")
