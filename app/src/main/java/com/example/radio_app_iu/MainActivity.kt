@@ -19,6 +19,7 @@ class ActivityMainBinding {
 
 private var stubPlayer = MediaPlayer()
 private val playlist = StubPlaylist
+private var nextLine = "\n"
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility")
@@ -71,7 +72,13 @@ class MainActivity : AppCompatActivity() {
         binding.infobox.setOnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
 
-                binding.infobox.setText("Hallo")
+                if(stubPlayer.isPlaying){
+                    binding.infobox.setText(playlist.getAlbumName() + nextLine + nextLine + playlist.getSongInterpret() + nextLine +
+                            nextLine + playlist.getAlbumName() + nextLine + nextLine + playlist.getSongYear() + nextLine + nextLine + playlist.getSongLength())
+                }
+                else {
+                    binding.infobox.setText("Keine Informationen verfügbar!")
+                }
                 binding.infobox.setBackgroundResource(R.drawable.window)
                 true
             }

@@ -22,24 +22,4 @@ class Song(var title : String, var interpret : String, var album : String, var r
     fun getCurrentAlbumImage() : Int {
         return refAlbumImage
     }
-
-    fun getSongTitle() : String {
-        return "Titel: " + title
-    }
-
-    fun getSongInterpret() : String {
-        return "Interpret: " + interpret
-    }
-
-    fun getAlbumName() : String {
-        return "Album: " + album
-    }
-
-    fun getSongLength() : String {
-        return "Länge: " + length
-    }
-
-    fun getSongYear() : String {
-        return "Jahr: " + year
-    }
 }

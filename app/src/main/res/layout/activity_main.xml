@@ -137,6 +137,8 @@
         android:fontFamily="serif-monospace"
         android:gravity="center"
         android:textColor="#1A2483"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

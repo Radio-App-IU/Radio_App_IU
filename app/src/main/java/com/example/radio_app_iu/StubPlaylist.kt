@@ -29,4 +29,24 @@ object StubPlaylist {
     fun getAlbumCover() : Int {
         return this.randomSong.getCurrentAlbumImage()
     }
+
+    fun getSongTitle() : String {
+        return "Titel: " + randomSong.title
+    }
+
+    fun getSongInterpret() : String {
+        return "Interpret: " + randomSong.interpret
+    }
+
+    fun getAlbumName() : String {
+        return "Album: " + randomSong.album
+    }
+
+    fun getSongLength() : String {
+        return "Länge: " + randomSong.length
+    }
+
+    fun getSongYear() : String {
+        return "Jahr: " + randomSong.year
+    }
 }
