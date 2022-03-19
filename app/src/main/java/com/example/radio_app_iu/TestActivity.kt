@@ -1,7 +1,7 @@
 package com.example.radio_app_iu
 
 //Just a test activity for testing the outputs of set data before integration with radioHost activity
-//Will be deleted at final product
+//Will be deleted at final product!
 
 
 import androidx.appcompat.app.AppCompatActivity
