@@ -85,6 +85,7 @@ class Evaluation : AppCompatActivity() {
             }
         }
 
+        //onClickListeners for rating star 1 - 5 of playlist and radioHost evaluation
         binding.onestar.setOnClickListener{
             binding.onestar.setImageResource(R.drawable.star1)
             binding.twostars.setImageResource(R.drawable.star2)

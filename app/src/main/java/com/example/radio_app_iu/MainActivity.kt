@@ -52,12 +52,14 @@ class MainActivity : AppCompatActivity() {
             muteSong()
         }
 
+        //starting EvaluationActivity
         binding.buttonEvaluate.setOnClickListener{
             startActivity(Intent(this, Evaluation::class.java))
         }
 
+        //starting WishSongActivity
         binding.wishSong.setOnClickListener{
-            Toast.makeText(this, "Song wünschen", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, WishSongActivity::class.java))
         }
 
         /**binding.infobutton.setOnTouchListener{
@@ -67,7 +69,6 @@ class MainActivity : AppCompatActivity() {
         binding.infobutton.setOnClickListener{
             startActivity(Intent(this, TestActivity::class.java))
         }
-
 
     }
     //creating options menu headmenu.xml when creating Main Activity

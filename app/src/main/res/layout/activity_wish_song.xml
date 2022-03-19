@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WishSongActivity">
+
+    <View
+        android:id="@+id/background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#142149"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/wishSongBox"
+        android:layout_width="332dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="168dp"
+        android:background="#ABFFE7"
+        android:cursorVisible="true"
+        android:ellipsize="none"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:gravity="top|left"
+        android:hint="@string/wishSongHint"
+        android:inputType="textMultiLine|text"
+        android:maxLines="5"
+        android:textColor="#242A95"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/wishSongNickname"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="#FFB5FBE7"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:hint="@string/nickhint"
+        android:inputType="textPersonName"
+        android:maxLength="14"
+        android:maxLines="1"
+        android:textColor="#242A95"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wishSongBox"
+        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/okbutton3"
+        android:layout_width="67dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="301dp"
+        android:layout_marginTop="27dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/ok"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toBottomOf="@+id/wishSongBox"
+        app:srcCompat="@drawable/done"
+        app:tint="#43FB00"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/wishSongDescription"
+        android:layout_width="333dp"
+        android:layout_height="105dp"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="@string/wishSongdescription"
+        android:textColor="#81FBE3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/wishSongBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/backbutton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/back"
+        tools:ignore="SpeakableTextPresentCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>
