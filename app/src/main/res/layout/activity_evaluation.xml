@@ -6,15 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".Evaluation">
 
-    <View
-        android:id="@+id/view3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#142149"
+    <ImageView
+        android:id="@+id/viewblue2"
+        android:layout_width="833dp"
+        android:layout_height="621dp"
+        android:contentDescription="@string/bgdesc"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/blueview" />
 
     <ImageView
         android:id="@+id/onestaranchor"
@@ -234,12 +235,12 @@
         android:id="@+id/fivestars"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="327dp"
+        android:layout_marginStart="524dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="24dp"
         android:contentDescription="@string/fivestars"
         app:layout_constraintBottom_toTopOf="@+id/okbutton"
-        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/viewblue2"
         app:layout_constraintTop_toBottomOf="@+id/playlistevalutionbox"
         app:srcCompat="@drawable/star2" />
 

@@ -6,15 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".WishSongActivity">
 
-    <View
-        android:id="@+id/background"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#142149"
+    <ImageView
+        android:id="@+id/viewblue4"
+        android:layout_width="833dp"
+        android:layout_height="621dp"
+        android:contentDescription="@string/bgdesc"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/blueview" />
 
     <EditText
         android:id="@+id/wishSongBox"
@@ -63,11 +64,11 @@
         android:id="@+id/okbutton3"
         android:layout_width="67dp"
         android:layout_height="63dp"
-        android:layout_marginStart="301dp"
+        android:layout_marginStart="498dp"
         android:layout_marginTop="27dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/ok"
-        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintStart_toStartOf="@+id/viewblue4"
         app:layout_constraintTop_toBottomOf="@+id/wishSongBox"
         app:srcCompat="@drawable/done"
         app:tint="#43FB00"

@@ -68,11 +68,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         //OnTouchListener for infobox
-        binding.infobox.setOnTouchListener(View.OnTouchListener { v, event ->
+        binding.infobox.setOnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
 
                 binding.infobox.setText("Hallo")
-                binding.infobox.setBackgroundColor(Color.parseColor("#8DF6FA"))
+                binding.infobox.setBackgroundResource(R.drawable.window)
                 true
             }
             else {
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                     binding.infobox.setBackgroundColor(Color.TRANSPARENT)
                 true
             }
-        })
+        }
 
 
         /**binding.infobutton.setOnClickListener{
