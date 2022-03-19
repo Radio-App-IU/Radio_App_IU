@@ -1,22 +1,27 @@
 package com.example.radio_app_iu
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.radio_app_iu.databinding.ActivityMainBinding
 
 //values and variables used in several methods of this activity
 private lateinit var binding: ActivityMainBinding
+
+class ActivityMainBinding {
+
+}
+
 private var stubPlayer = MediaPlayer()
 private val playlist = StubPlaylist
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -62,13 +67,25 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, WishSongActivity::class.java))
         }
 
-        /**binding.infobutton.setOnTouchListener{
+        //OnTouchListener for infobox
+        binding.infobox.setOnTouchListener(View.OnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
 
-        }**/
+                binding.infobox.setText("Hallo")
+                binding.infobox.setBackgroundColor(Color.parseColor("#8DF6FA"))
+                true
+            }
+            else {
+                    binding.infobox.setText("")
+                    binding.infobox.setBackgroundColor(Color.TRANSPARENT)
+                true
+            }
+        })
 
-        binding.infobutton.setOnClickListener{
+
+        /**binding.infobutton.setOnClickListener{
             startActivity(Intent(this, TestActivity::class.java))
-        }
+        }**/
 
     }
     //creating options menu headmenu.xml when creating Main Activity
