@@ -13,10 +13,6 @@ import com.example.radio_app_iu.databinding.ActivityMainBinding
 //values and variables used in several methods of this activity
 private lateinit var binding: ActivityMainBinding
 
-class ActivityMainBinding {
-
-}
-
 private var stubPlayer = MediaPlayer()
 private val playlist = StubPlaylist
 private var nextLine = "\n"
@@ -88,11 +84,9 @@ class MainActivity : AppCompatActivity() {
                 true
             }
         }
-
-
-        /**binding.infobutton.setOnClickListener{
+        binding.infobutton.setOnClickListener{
             startActivity(Intent(this, TestActivity::class.java))
-        }**/
+        }
 
     }
     //creating options menu headmenu.xml when creating Main Activity

@@ -30,7 +30,7 @@ class Evaluation : AppCompatActivity() {
                 //variables receiving the input of the EditTexts and rating
                 val playlistEvaluation = binding.playlistevalutionbox.text.toString()
                 val playlistEvaluationNickname = binding.nickname.text.toString()
-                val idPlaylistEvaluation = 3
+                val idPlaylistEvaluation = StubEvaluationDB.playlistEvaluationList.size + 1
                 val playlistRating = playlistEvaluationRatingCount
 
                 //creates a playlistEvaluation object and puts it in the playlistEvaluationList of the StubEvaluationDB Class
@@ -61,7 +61,7 @@ class Evaluation : AppCompatActivity() {
             if(binding.anchorevalutionbox.text.toString().isNotEmpty() && binding.nickname2.text.toString().isNotEmpty()){
                 val radioHostEvaluation = binding.anchorevalutionbox.text.toString()
                 val radioHostEvaluationNickname = binding.nickname2.text.toString()
-                val idRadioHostEvaluation = 4
+                val idRadioHostEvaluation = StubEvaluationDB.radioHostEvaluationList.size + 1
                 val radioHostRating = radioHostEvaluationRatingCount
                 //StubEvaluationDB.moderator = StubGetCurrentRadioHost
 

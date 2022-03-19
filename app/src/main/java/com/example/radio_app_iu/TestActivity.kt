@@ -23,7 +23,8 @@ class TestActivity : AppCompatActivity() {
 
     fun savePlaylistEvaluationInList(){
         if (StubEvaluationDB.playlistEvaluationList.isNotEmpty()){
-            val string = StubEvaluationDB.playlistEvaluationList[0].returnPlaylistEvaluation() + "\n" + StubEvaluationDB.playlistEvaluationList[0].returnNickname()
+            val string = "ID: " + StubEvaluationDB.playlistEvaluationList[0].idPlaylistEvaluation.toString() + "\n" + StubEvaluationDB.playlistEvaluationList[0].returnPlaylistEvaluation() +
+                    "\n" + "Nickname: " + StubEvaluationDB.playlistEvaluationList[0].returnNickname() + "\n" + "Rating: " + StubEvaluationDB.playlistEvaluationList[0].playlistRating.toString()
             binding.textView4.setText(string)
             }
         else  binding.textView4.setText("Playlist ohne Bewertungen")
@@ -31,7 +32,8 @@ class TestActivity : AppCompatActivity() {
 
     fun saveRadioHostEvaluationInList(){
         if(StubEvaluationDB.radioHostEvaluationList.isNotEmpty()){
-            val string = StubEvaluationDB.radioHostEvaluationList[0].returnRadioHostEvaluation() + "\n" + StubEvaluationDB.radioHostEvaluationList[0].returnNickname()
+            val string = "ID: " + StubEvaluationDB.radioHostEvaluationList[0].returnId().toString() + "\n" + StubEvaluationDB.radioHostEvaluationList[0].returnRadioHostEvaluation() +
+                    "\n" + "Nickname: " + StubEvaluationDB.radioHostEvaluationList[0].returnNickname() + "\n" + "Rating: " + StubEvaluationDB.radioHostEvaluationList[0].radioHostRating.toString()
             binding.textView2.setText(string)
         }
         else binding.textView2.setText("Moderator ohne Bewertung")
@@ -39,7 +41,7 @@ class TestActivity : AppCompatActivity() {
 
     fun saveWishSongInList() {
         if (StubEvaluationDB.wishSongList.isNotEmpty()){
-        val string = StubEvaluationDB.wishSongList[0].returnWishedSong() + "\n" + StubEvaluationDB.wishSongList[0].returnNickname()
+        val string = "ID: " + StubEvaluationDB.wishSongList[0].idWishSong.toString() + "\n" +StubEvaluationDB.wishSongList[0].returnWishedSong() + "\n" + "Nickname: " + StubEvaluationDB.wishSongList[0].returnNickname()
         binding.textView3.setText(string)
         }
     else  binding.textView3.setText("Keine Wunschsongs")

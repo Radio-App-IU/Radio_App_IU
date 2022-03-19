@@ -23,7 +23,7 @@
     <string name="threestars">three stars</string>
     <string name="fourstars">four stars</string>
     <string name="fivestars">five stars</string>
-    <string name="wishSongdescription">Trage zur Playlist bei und wünsche dir einen Song!</string>
+    <string name="wishSongdescription">Trage zur Playlist bei und \n\n wünsche dir einen Song!</string>
     <string name="wishSongHint">Wunschsong</string>
     <string name="bgdesc">background</string>
 </resources>

@@ -29,7 +29,7 @@ class WishSongActivity : AppCompatActivity() {
                 //variables receiving the input of the EditTexts
                 val wishSongText = binding.wishSongBox.text.toString()
                 val wishSongNickname = binding.wishSongNickname.text.toString()
-                val idWishSong = 3
+                val idWishSong = StubEvaluationDB.wishSongList.size + 1
 
                 //creates a WishSong object and puts it in the WishSongList of the StubEvaluationDB Class
                 val wishSongObject = WishSong(idWishSong, wishSongText, wishSongNickname)
