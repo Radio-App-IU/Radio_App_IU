@@ -5,7 +5,7 @@
     android:id="@+id/popup_window_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PopUpLogin">
+    tools:context=".Login">
 
     <ImageView
         android:id="@+id/viewblue3"
