@@ -23,7 +23,7 @@ class TestActivity : AppCompatActivity() {
 
     fun savePlaylistEvaluationInList(){
         if (StubEvaluationDB.playlistEvaluationList.isNotEmpty()){
-            val string = "ID: " + StubEvaluationDB.playlistEvaluationList[0].idPlaylistEvaluation.toString() + "\n" + StubEvaluationDB.playlistEvaluationList[0].returnPlaylistEvaluation() +
+            val string = "ID: " + StubEvaluationDB.playlistEvaluationList[0].returnId().toString() + "\n" + StubEvaluationDB.playlistEvaluationList[0].returnPlaylistEvaluation() +
                     "\n" + "Nickname: " + StubEvaluationDB.playlistEvaluationList[0].returnNickname() + "\n" + "Rating: " + StubEvaluationDB.playlistEvaluationList[0].playlistRating.toString()
             binding.textView4.setText(string)
             }
@@ -41,7 +41,7 @@ class TestActivity : AppCompatActivity() {
 
     fun saveWishSongInList() {
         if (StubEvaluationDB.wishSongList.isNotEmpty()){
-        val string = "ID: " + StubEvaluationDB.wishSongList[0].idWishSong.toString() + "\n" +StubEvaluationDB.wishSongList[0].returnWishedSong() + "\n" + "Nickname: " + StubEvaluationDB.wishSongList[0].returnNickname()
+        val string = "ID: " + StubEvaluationDB.wishSongList[0].returnWishSongId().toString() + "\n" +StubEvaluationDB.wishSongList[0].returnWishedSong() + "\n" + "Nickname: " + StubEvaluationDB.wishSongList[0].returnNickname()
         binding.textView3.setText(string)
         }
     else  binding.textView3.setText("Keine Wunschsongs")

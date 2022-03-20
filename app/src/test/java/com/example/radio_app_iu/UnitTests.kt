@@ -5,8 +5,12 @@ import org.junit.Test
 import org.junit.Assert.*
 
 var stubServerLoginCheck = StubServerLoginCheck()
+var radioHostEvaluation = RadioHostEvaluation (11, "eineBewertung", "einNick", 1, "einModerator")
+var playlistEvaluation = PlaylistEvaluation (1, "eineBewertung", "einNick", 5)
+var wishSong = WishSong (2, "einSong", "einNick")
 
 class UnitTests {
+
     @Test
     fun checkCorrectLogin() {
         assertTrue("valid login", stubServerLoginCheck.checkLogin("Moderator2", "xyz"))
@@ -19,7 +23,7 @@ class UnitTests {
 
     @Test
     fun getSongTitle(){
-        var title = "Titel: "
+        val title = "Titel: "
         assertTrue("got Song back", StubPlaylist.getSongTitle() == (title + "Let it be") || StubPlaylist.getSongTitle() == (title + "Perfect"))
     }
 
@@ -57,5 +61,22 @@ class UnitTests {
     @Test
     fun getSongYear(){
         assertTrue("Year received", StubPlaylist.getSongYear() == ("Jahr: 1970") || StubPlaylist.getSongYear() == ("Jahr: 2017"))
+    }
+
+    @Test
+    fun passRadioHostEvaluation(){
+    assertTrue("Data passed", radioHostEvaluation.returnId() == 11 && radioHostEvaluation.returnRadioHostEvaluation() == "eineBewertung" &&
+            radioHostEvaluation.returnNickname() == "einNick" && radioHostEvaluation.returnRating() == 1 && radioHostEvaluation.moderator == "einModerator")
+    }
+
+    @Test
+    fun passPlaylistEvaluation(){
+        assertTrue("Data passed", playlistEvaluation.returnId() == 1 && playlistEvaluation.returnPlaylistEvaluation() == "eineBewertung" &&
+            playlistEvaluation.returnNickname() == "einNick" && playlistEvaluation.playlistRating == 5)
+    }
+
+    @Test
+    fun passWishSong() {
+        assertTrue("Data passed", wishSong.returnWishSongId() == 2 && wishSong.returnWishedSong() == "einSong" && wishSong.returnNickname() == "einNick")
     }
 }
