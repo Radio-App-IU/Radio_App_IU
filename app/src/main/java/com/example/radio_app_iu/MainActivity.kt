@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
     //program that will be executed if specific item of OptionsMenu is clicked
     override fun onOptionsItemSelected(item : MenuItem): Boolean {
             if(item.getItemId() == R.id.item1){
-               startActivity(Intent(this, PopUpLogin::class.java))
+               startActivity(Intent(this, Login::class.java))
             }
         return true
     }

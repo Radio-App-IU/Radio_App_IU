@@ -19,7 +19,7 @@
             android:name=".Evaluation"
             android:exported="false" />
         <activity
-            android:name=".PopUpLogin"
+            android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
