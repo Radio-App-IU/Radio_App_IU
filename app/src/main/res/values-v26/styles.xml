@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Bewertung">
+
+    <style name="Bewertungen">
         <item name="android:textSize">20sp</item>
         <item name="android:background">@drawable/rounded_corner</item>
-        <item name="android:paddingStart">6dp</item>
+        <item name="android:paddingHorizontal">8dp</item>
+        <item name="android:paddingBottom">5dp</item>
     </style>
+
 </resources>

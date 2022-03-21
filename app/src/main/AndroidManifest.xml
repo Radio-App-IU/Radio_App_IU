@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Radio_App_IU">
         <activity
+            android:name=".PlaylistBewertungenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ModeratorBewertungenActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity

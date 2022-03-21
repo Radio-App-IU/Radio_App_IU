@@ -1,4 +1,4 @@
-package com.example.radio_app_iu
+package com.example.radio_app_iu.com.example.radio_app_iu
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

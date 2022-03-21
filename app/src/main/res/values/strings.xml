@@ -1,9 +1,16 @@
 <resources>
     <string name="app_name">Radio_App_IU</string>
     <string name="BuLogoutBeschreibung">Logout Button</string>
-    <string name="BuLogoutText">Logout</string>
-    <string name="BewertungenModeratorBeschreibung">Hier werden die Bewertungen der Hörer angezeigt</string>
-    <string name="BewertungenÜberschrift">Bewertungen</string>
-    <string name="BuBewertungenAktualisieren">Aktualisieren</string>
+    <string name="BewertungenModeratorBeschreibung">Hier werden die Moderator-Bewertungen der Hörer angezeigt</string>
+    <string name="BewertungenPlaylistBeschreibung">Hier werden die Playlist-Bewertungen der Hörer angezeigt</string>
+    <string name="BewertungenModeratorUeberschrift">Moderator Bewertungen</string>
+    <string name="BewertungenPlaylistUeberschrift">Playlist Bewertungen</string>
+    <string name="SongWunschUeberschrift">Songwünsche</string>
+    <string name="BuBewertungenAktualisieren">Einträge Aktualisieren</string>
     <string name="ivBildBeschreibung">Playlist Bild</string>
+    <string name="logout">Logout</string>
+    <string name="tvEintraegeAktualisieren">Bitte Aktualisieren</string>
+    <string name="BuPlaylistBewertungen">Playlist Bewertungen</string>
+    <string name="BuModeratorBewertungen">Moderator Bewertungen</string>
+    <string name="RadioBild">Hier ist das Bild des Radio Senders zu sehen</string>
 </resources>
