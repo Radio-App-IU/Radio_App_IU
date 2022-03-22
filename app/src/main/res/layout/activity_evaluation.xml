@@ -139,7 +139,7 @@
         android:textColor="#242A95"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/okbutton2"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.947"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/anchorevalutionbox" />
 

@@ -8,6 +8,7 @@ var stubServerLoginCheck = StubServerLoginCheck()
 var radioHostEvaluation = RadioHostEvaluation (11, "eineBewertung", "einNick", 1, "einModerator")
 var playlistEvaluation = PlaylistEvaluation (1, "eineBewertung", "einNick", 5)
 var wishSong = WishSong (2, "einSong", "einNick")
+var song = Song("Titel", "Interpret", "Album", 66, 77, "2000", "12min")
 
 class UnitTests {
 
@@ -79,4 +80,25 @@ class UnitTests {
     fun passWishSong() {
         assertTrue("Data passed", wishSong.returnWishSongId() == 2 && wishSong.returnWishedSong() == "einSong" && wishSong.returnNickname() == "einNick")
     }
+
+    @Test
+    fun toStringTest() {
+        assertTrue("Title, Interpret, Album received", song.toString() == "Titel by Interpret from album: Album")
+    }
+
+    @Test
+    fun getFileAndInterpret(){
+        assertTrue("File and Interpret received", song.getTitleAndInterpret() == "Titel    -    Interpret")
+    }
+
+    @Test
+    fun getCurrentAudioFile(){
+        assertTrue("Audio File received", song.getCurrentAudioFile() == 66)
+    }
+
+    @Test
+    fun getCurrentAlbumImage(){
+        assertTrue("Album Image received", song.getCurrentAlbumImage() == 77)
+    }
+
 }
