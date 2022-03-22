@@ -12,7 +12,7 @@
     <ImageView
         android:id="@+id/viewblue"
         android:layout_width="833dp"
-        android:layout_height="621dp"
+        android:layout_height="match_parent"
         android:contentDescription="background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

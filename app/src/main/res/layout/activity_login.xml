@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/viewblue3"
         android:layout_width="833dp"
-        android:layout_height="621dp"
+        android:layout_height="match_parent"
         android:contentDescription="@string/bgdesc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
