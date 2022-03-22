@@ -19,6 +19,9 @@ class TestActivity : AppCompatActivity() {
         savePlaylistEvaluationInList()
         saveRadioHostEvaluationInList()
         saveWishSongInList()
+
+        val username = intent.getStringExtra("username")
+        binding.textView4.setText(username)
         }
 
     fun savePlaylistEvaluationInList(){

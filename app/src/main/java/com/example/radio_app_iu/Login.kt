@@ -44,7 +44,11 @@ class Login : AppCompatActivity() {
         if (logincheck.checkLogin(binding.slotUsername.getText().toString(), binding.slotPassword.getText().toString())) {
 
             Toast.makeText(this, "Login erfolgreich!", Toast.LENGTH_SHORT).show()
-            //startActivity(Intent(this, LoginActivity::class.java))
+
+            //passing the username to the radioHost activity
+            val intent = Intent(this, TestActivity::class.java)
+            intent.putExtra("username", binding.slotUsername.getText().toString())
+            startActivity(intent)
 
         } else Toast.makeText(this, "Login nicht erfolgreich!", Toast.LENGTH_SHORT).show()
     }
