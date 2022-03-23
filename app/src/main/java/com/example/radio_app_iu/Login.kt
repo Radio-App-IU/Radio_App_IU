@@ -13,11 +13,9 @@ import com.example.radio_app_iu.databinding.ActivityLoginBinding
 
 private lateinit var binding: ActivityLoginBinding
 
-
 private val logincheck = StubServerLoginCheck()
 
 class Login : AppCompatActivity() {
-
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,18 +37,24 @@ class Login : AppCompatActivity() {
         binding.slotUsername.setTextColor(Color.BLACK)
     }
 
-    //onClickListener für das Login
+    //onClickListener for the login
     binding.submit.setOnClickListener {
         if (logincheck.checkLogin(binding.slotUsername.getText().toString(), binding.slotPassword.getText().toString())) {
 
             Toast.makeText(this, "Login erfolgreich!", Toast.LENGTH_SHORT).show()
 
             //passing the username to the radioHost activity
-            val intent = Intent(this, TestActivity::class.java)
-            intent.putExtra("username", binding.slotUsername.getText().toString())
-            startActivity(intent)
+            var name = binding.slotUsername.getText().toString()
+            logincheck.userList.forEach {
+                if(it.first == name) {
+                    name = it.third
+                }
+            }
+                val intent = Intent(this, TestActivity::class.java).putExtra("username", name)
+                startActivity(intent)
 
-        } else Toast.makeText(this, "Login nicht erfolgreich!", Toast.LENGTH_SHORT).show()
+        }
+        else Toast.makeText(this, "Login nicht erfolgreich!", Toast.LENGTH_SHORT).show()
     }
 
     binding.backbutton.setOnClickListener {

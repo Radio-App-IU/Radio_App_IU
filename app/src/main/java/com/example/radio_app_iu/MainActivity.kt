@@ -16,7 +16,6 @@ private lateinit var binding: ActivityMainBinding
 private var stubPlayer = MediaPlayer()
 private val playlist = StubPlaylist
 private var nextLine = "\n"
-private var sep = ""
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility")
@@ -71,11 +70,11 @@ class MainActivity : AppCompatActivity() {
 
                 if(stubPlayer.isPlaying){
 
-                    binding.infoText.setText(nextLine + sep + playlist.getSongTitle() + nextLine + nextLine + sep + playlist.getSongInterpret() + nextLine +
-                            nextLine + sep + playlist.getAlbumName() + nextLine + nextLine + sep +playlist.getSongYear() + nextLine + nextLine + sep + playlist.getSongLength())
+                    binding.infoText.setText(nextLine + playlist.getSongTitle() + nextLine + nextLine + playlist.getSongInterpret() + nextLine +
+                            nextLine + playlist.getAlbumName() + nextLine + nextLine + playlist.getSongYear() + nextLine + nextLine + playlist.getSongLength())
                 }
                 else {
-                    binding.infoText.setText(nextLine + sep + "Keine Informationen verfügbar!")
+                    binding.infoText.setText(nextLine + "Keine Informationen verfügbar!")
                 }
                 binding.infobox.setBackgroundResource(R.drawable.blueinfobox)
                 true
