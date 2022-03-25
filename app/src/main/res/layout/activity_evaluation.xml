@@ -11,6 +11,7 @@
         android:layout_width="833dp"
         android:layout_height="match_parent"
         android:contentDescription="@string/bgdesc"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.469"
@@ -24,6 +25,7 @@
         android:layout_marginStart="23dp"
         android:layout_marginTop="12dp"
         android:contentDescription="@string/onestar"
+        app:layout_constraintEnd_toStartOf="@+id/twostaranchor"
         app:layout_constraintStart_toEndOf="@+id/nickname2"
         app:layout_constraintTop_toBottomOf="@+id/anchorevalutionbox"
         app:srcCompat="@drawable/star1" />
@@ -34,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:contentDescription="@string/twostars"
+        app:layout_constraintEnd_toStartOf="@+id/threestaranchor"
         app:layout_constraintStart_toEndOf="@+id/onestaranchor"
         app:layout_constraintTop_toBottomOf="@+id/anchorevalutionbox"
         app:srcCompat="@drawable/star2" />
@@ -44,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:contentDescription="@string/threestars"
+        app:layout_constraintEnd_toStartOf="@+id/fourstaranchor"
         app:layout_constraintStart_toEndOf="@+id/twostaranchor"
         app:layout_constraintTop_toBottomOf="@+id/anchorevalutionbox"
         app:srcCompat="@drawable/star2" />
@@ -54,6 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:contentDescription="@string/fourstars"
+        app:layout_constraintEnd_toStartOf="@+id/fivestaranchor"
         app:layout_constraintStart_toEndOf="@+id/threestaranchor"
         app:layout_constraintTop_toBottomOf="@+id/anchorevalutionbox"
         app:srcCompat="@drawable/star2" />
@@ -85,13 +90,15 @@
         android:id="@+id/playlistevalutionbox"
         android:layout_width="332dp"
         android:layout_height="120dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
         android:background="@color/lightblue"
         android:cursorVisible="true"
         android:ellipsize="none"
         android:ems="10"
         android:fontFamily="monospace"
-        android:gravity="top|left"
+        android:gravity="start"
         android:hint="@string/playlisthint"
         android:inputType="textMultiLine|text"
         android:maxLines="5"
@@ -100,18 +107,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/anchorevalutionbox"
         android:layout_width="332dp"
         android:layout_height="120dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="80dp"
+        android:layout_marginEnd="16dp"
         android:background="@color/lightblue"
         android:cursorVisible="true"
         android:ems="10"
         android:fontFamily="monospace"
-        android:gravity="top|left"
+        android:gravity="start"
         android:hint="@string/anchorhint"
         android:inputType="textMultiLine|text"
         android:maxLines="5"
@@ -120,14 +131,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nickname" />
+        app:layout_constraintTop_toBottomOf="@+id/nickname"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/nickname2"
         android:layout_width="170dp"
         android:layout_height="48dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="92dp"
         android:background="@color/lightblue"
         android:cursorVisible="true"
         android:ems="10"
@@ -138,53 +150,59 @@
         android:maxLines="1"
         android:textColor="@color/darkblue"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/okbutton2"
-        app:layout_constraintHorizontal_bias="0.947"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/anchorevalutionbox" />
+        app:layout_constraintStart_toStartOf="@+id/anchorevalutionbox"
+        app:layout_constraintTop_toBottomOf="@+id/anchorevalutionbox"
+        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck"
+        android:importantForAutofill="no" />
 
     <ImageButton
         android:id="@+id/okbutton2"
-        android:layout_width="67dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="44dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
         android:background="@color/transparent"
         android:contentDescription="@string/ok"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/nickname2"
         app:layout_constraintTop_toBottomOf="@+id/anchorevalutionbox"
         app:srcCompat="@drawable/done"
         app:tint="@color/green"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
     <EditText
         android:id="@+id/nickname"
         android:layout_width="170dp"
         android:layout_height="48dp"
-        android:layout_marginStart="36dp"
         android:layout_marginTop="12dp"
         android:background="@color/lightblue"
         android:cursorVisible="true"
         android:ems="10"
         android:fontFamily="monospace"
         android:hint="@string/nickhint"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:maxLength="14"
         android:maxLines="1"
         android:textColor="@color/betweenblue"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/playlistevalutionbox"
         app:layout_constraintTop_toBottomOf="@+id/playlistevalutionbox"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 
     <ImageButton
         android:id="@+id/okbutton"
-        android:layout_width="67dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
         android:background="@color/transparent"
         android:contentDescription="@string/ok"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toEndOf="@+id/nickname"
         app:layout_constraintTop_toBottomOf="@+id/playlistevalutionbox"
         app:srcCompat="@drawable/done"
@@ -195,9 +213,11 @@
         android:id="@+id/onestar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
         android:layout_marginTop="12dp"
         android:contentDescription="@string/onestar"
         app:layout_constraintEnd_toStartOf="@+id/twostars"
+        app:layout_constraintStart_toEndOf="@+id/nickname"
         app:layout_constraintTop_toBottomOf="@+id/playlistevalutionbox"
         app:srcCompat="@drawable/star1" />
 
@@ -208,6 +228,7 @@
         android:layout_marginTop="12dp"
         android:contentDescription="@string/twostars"
         app:layout_constraintEnd_toStartOf="@+id/threestars"
+        app:layout_constraintStart_toEndOf="@+id/onestar"
         app:layout_constraintTop_toBottomOf="@+id/playlistevalutionbox"
         app:srcCompat="@drawable/star2" />
 
@@ -218,6 +239,7 @@
         android:layout_marginTop="12dp"
         android:contentDescription="@string/threestars"
         app:layout_constraintEnd_toStartOf="@+id/fourstars"
+        app:layout_constraintStart_toEndOf="@+id/twostars"
         app:layout_constraintTop_toBottomOf="@+id/playlistevalutionbox"
         app:srcCompat="@drawable/star2" />
 
@@ -228,6 +250,7 @@
         android:layout_marginTop="12dp"
         android:contentDescription="@string/fourstars"
         app:layout_constraintEnd_toStartOf="@+id/fivestars"
+        app:layout_constraintStart_toEndOf="@+id/threestars"
         app:layout_constraintTop_toBottomOf="@+id/playlistevalutionbox"
         app:srcCompat="@drawable/star2" />
 
@@ -235,12 +258,9 @@
         android:id="@+id/fivestars"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="524dp"
         android:layout_marginTop="12dp"
-        android:layout_marginBottom="24dp"
         android:contentDescription="@string/fivestars"
-        app:layout_constraintBottom_toTopOf="@+id/okbutton"
-        app:layout_constraintStart_toStartOf="@+id/viewblue2"
+        app:layout_constraintStart_toEndOf="@+id/fourstars"
         app:layout_constraintTop_toBottomOf="@+id/playlistevalutionbox"
         app:srcCompat="@drawable/star2" />
 
