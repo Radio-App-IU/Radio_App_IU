@@ -21,6 +21,8 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
         fun lesen() {
             if (StubEvaluationDB.wishSongList.isNotEmpty()) {
                 binding.lySongWunsch.removeAllViews()
