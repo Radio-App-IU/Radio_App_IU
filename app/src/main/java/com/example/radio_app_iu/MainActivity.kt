@@ -85,9 +85,9 @@ class MainActivity : AppCompatActivity() {
                 true
             }
         }
-        binding.infobutton.setOnClickListener{
+        /*binding.infobutton.setOnClickListener{
             startActivity(Intent(this, TestActivity::class.java))
-        }
+        } Entfernen*/
 
     }
     //creating options menu headmenu.xml when creating Main Activity
