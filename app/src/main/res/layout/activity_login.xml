@@ -9,20 +9,24 @@
 
     <ImageView
         android:id="@+id/viewblue3"
-        android:layout_width="833dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/bgdesc"
+        android:scaleType="fitXY"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/blueview" />
 
     <TextView
         android:id="@+id/ModeratorLogin"
-        android:layout_width="260dp"
-        android:layout_height="56dp"
-        android:layout_marginBottom="505dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="monospace"
         android:gravity="center"
         android:text="@string/loginmod"
@@ -31,14 +35,18 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/viewblue3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039" />
 
     <EditText
         android:id="@+id/slotUsername"
         android:layout_width="268dp"
         android:layout_height="48dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="56dp"
+        android:layout_marginEnd="16dp"
         android:autofillHints=""
         android:background="@color/white"
         android:ems="10"
@@ -53,13 +61,15 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ModeratorLogin"
-        tools:ignore="TextContrastCheck,SpeakableTextPresentCheck" />
+        tools:ignore="TextContrastCheck,SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
     <EditText
         android:id="@+id/slotPassword"
         android:layout_width="266dp"
         android:layout_height="48dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="44dp"
+        android:layout_marginEnd="16dp"
         android:autofillHints=""
         android:background="@color/white"
         android:ems="10"
@@ -74,13 +84,15 @@
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/slotUsername"
-        tools:ignore="TextContrastCheck,SpeakableTextPresentCheck" />
+        tools:ignore="TextContrastCheck,SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
     <Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="136dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@color/darkblue"
         android:fontFamily="sans-serif"
         android:text="@string/einloggen"
@@ -89,12 +101,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.856"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <TextView
         android:id="@+id/benutzername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:fontFamily="monospace"
         android:text="@string/showUsername"
         android:textColor="@color/lightblue"
@@ -107,6 +121,7 @@
         android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:fontFamily="monospace"
         android:text="@string/showLogin"
         android:textColor="@color/lightblue"
