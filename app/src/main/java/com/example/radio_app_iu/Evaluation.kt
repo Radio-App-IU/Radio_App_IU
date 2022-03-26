@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.radio_app_iu.databinding.ActivityEvaluationBinding
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
+import java.text.SimpleDateFormat
+import java.util.*
 
 private lateinit var binding: ActivityEvaluationBinding
-val dateTimeFormatter = DateTimeFormatter.ofPattern("d.M.y H:m:ss")
+private val dateTimeFormat = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())
 
 class Evaluation : AppCompatActivity() {
 
@@ -37,8 +37,7 @@ class Evaluation : AppCompatActivity() {
                 val playlistEvaluationNickname = binding.nickname.text.toString()
                 val idPlaylistEvaluation = StubEvaluationDB.playlistEvaluationList.size + 1
                 val playlistRating = playlistEvaluationRatingCount
-                val time = LocalDateTime.now()
-                val playlistTimestamp = dateTimeFormatter.format(time).toString()
+                val playlistTimestamp = dateTimeFormat.format(Calendar.getInstance().time)
 
                 //creates a playlistEvaluation object and puts it in the playlistEvaluationList of the StubEvaluationDB Class
                 val playlistEvaluationObject = PlaylistEvaluation(idPlaylistEvaluation, playlistEvaluation, playlistEvaluationNickname, playlistRating, playlistTimestamp)
@@ -70,8 +69,8 @@ class Evaluation : AppCompatActivity() {
                 val radioHostEvaluationNickname = binding.nickname2.text.toString()
                 val idRadioHostEvaluation = StubEvaluationDB.radioHostEvaluationList.size + 1
                 val radioHostRating = radioHostEvaluationRatingCount
-                val time = LocalDateTime.now()
-                val radioHostTimestamp = dateTimeFormatter.format(time).toString()
+                //format gets applied on the passed object(the current time)
+                val radioHostTimestamp = dateTimeFormat.format(Calendar.getInstance().time)
                 //StubEvaluationDB.moderator = StubGetCurrentRadioHost
 
                 //creates a radioHostEvaluation object and puts it in the radioHostEvaluationList of the StubEvaluationDB Class

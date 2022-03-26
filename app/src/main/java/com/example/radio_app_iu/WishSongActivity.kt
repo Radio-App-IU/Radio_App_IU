@@ -6,10 +6,11 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.radio_app_iu.databinding.ActivityMainBinding
 import com.example.radio_app_iu.databinding.ActivityWishSongBinding
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
+import java.text.SimpleDateFormat
+import java.util.*
 
 private lateinit var binding: ActivityWishSongBinding
+private val dateTimeFormat = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())
 
 class WishSongActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,13 +33,11 @@ class WishSongActivity : AppCompatActivity() {
                 val wishSongText = binding.wishSongBox.text.toString()
                 val wishSongNickname = binding.wishSongNickname.text.toString()
                 val idWishSong = StubEvaluationDB.wishSongList.size + 1
-                val time = LocalDateTime.now()
-                val dateTimeFormatter = DateTimeFormatter.ofPattern("d.M.y H:m:ss")
-                val wishsongTimestamp = dateTimeFormatter.format(time).toString()
+                val wishSongTimestamp = dateTimeFormat.format(Calendar.getInstance().time)
 
 
                 //creates a WishSong object and puts it in the WishSongList of the StubEvaluationDB Class
-                val wishSongObject = WishSong(idWishSong, wishSongText, wishSongNickname, wishsongTimestamp)
+                val wishSongObject = WishSong(idWishSong, wishSongText, wishSongNickname, wishSongTimestamp)
                 StubEvaluationDB.wishSongList.add(wishSongObject)
 
                 binding.wishSongBox.setText("")
