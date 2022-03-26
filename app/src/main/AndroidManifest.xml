@@ -11,19 +11,24 @@
         android:theme="@style/Theme.Radio_App_IU">
         <activity
             android:name=".WishSongActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="sensorPortrait"/>
         <activity
             android:name=".TestActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="sensorPortrait"/>
         <activity
             android:name=".Evaluation"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="sensorPortrait"/>
         <activity
             android:name=".Login"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="sensorPortrait"/>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="sensorPortrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
