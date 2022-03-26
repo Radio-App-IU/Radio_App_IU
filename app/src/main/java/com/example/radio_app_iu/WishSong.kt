@@ -1,6 +1,6 @@
 package com.example.radio_app_iu
 
-class WishSong (var idWishSong : Int = 0, var song : String = "", var nickname : String = "") {
+class WishSong (var idWishSong : Int = 0, var song : String = "", var nickname : String = "", var wishsongTimestamp : String) {
 
     fun returnWishSongId() : Int {
         return this.idWishSong
@@ -12,5 +12,9 @@ class WishSong (var idWishSong : Int = 0, var song : String = "", var nickname :
 
     fun returnNickname() : String {
         return this.nickname
+    }
+
+    fun returnTimestamp() : String {
+        return this.wishsongTimestamp
     }
 }

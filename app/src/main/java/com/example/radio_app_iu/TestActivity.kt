@@ -27,16 +27,18 @@ class TestActivity : AppCompatActivity() {
     fun savePlaylistEvaluationInList(){
         if (StubEvaluationDB.playlistEvaluationList.isNotEmpty()){
             val string = "ID: " + StubEvaluationDB.playlistEvaluationList[0].returnId().toString() + "\n" + StubEvaluationDB.playlistEvaluationList[0].returnPlaylistEvaluation() +
-                    "\n" + "Nickname: " + StubEvaluationDB.playlistEvaluationList[0].returnNickname() + "\n" + "Rating: " + StubEvaluationDB.playlistEvaluationList[0].playlistRating.toString()
-            binding.textView4.setText(string)
+                    "\n" + "Nickname: " + StubEvaluationDB.playlistEvaluationList[0].returnNickname() + "\n" + "Rating: " + StubEvaluationDB.playlistEvaluationList[0].playlistRating.toString() +
+                    "\n" + "Zeit: " + StubEvaluationDB.playlistEvaluationList[0].returnTimestamp()
+            binding.textView.setText(string)
             }
-        else  binding.textView4.setText("Playlist ohne Bewertungen")
+        else  binding.textView.setText("Playlist ohne Bewertungen")
     }
 
     fun saveRadioHostEvaluationInList(){
         if(StubEvaluationDB.radioHostEvaluationList.isNotEmpty()){
             val string = "ID: " + StubEvaluationDB.radioHostEvaluationList[0].returnId().toString() + "\n" + StubEvaluationDB.radioHostEvaluationList[0].returnRadioHostEvaluation() +
-                    "\n" + "Nickname: " + StubEvaluationDB.radioHostEvaluationList[0].returnNickname() + "\n" + "Rating: " + StubEvaluationDB.radioHostEvaluationList[0].radioHostRating.toString()
+                    "\n" + "Nickname: " + StubEvaluationDB.radioHostEvaluationList[0].returnNickname() + "\n" + "Rating: " + StubEvaluationDB.radioHostEvaluationList[0].radioHostRating.toString() +
+                    "\n" + "Zeit: " + StubEvaluationDB.radioHostEvaluationList[0].returnTimestamp()
             binding.textView2.setText(string)
         }
         else binding.textView2.setText("Moderator ohne Bewertung")
@@ -44,7 +46,8 @@ class TestActivity : AppCompatActivity() {
 
     fun saveWishSongInList() {
         if (StubEvaluationDB.wishSongList.isNotEmpty()){
-        val string = "ID: " + StubEvaluationDB.wishSongList[0].returnWishSongId().toString() + "\n" +StubEvaluationDB.wishSongList[0].returnWishedSong() + "\n" + "Nickname: " + StubEvaluationDB.wishSongList[0].returnNickname()
+        val string = "ID: " + StubEvaluationDB.wishSongList[0].returnWishSongId().toString() + "\n" +StubEvaluationDB.wishSongList[0].returnWishedSong() + "\n" +
+                "Nickname: " + StubEvaluationDB.wishSongList[0].returnNickname() + "\n" + "Zeit: " + StubEvaluationDB.wishSongList[0].returnTimestamp()
         binding.textView3.setText(string)
         }
     else  binding.textView3.setText("Keine Wunschsongs")
