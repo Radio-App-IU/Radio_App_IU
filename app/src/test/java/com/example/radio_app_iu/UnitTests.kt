@@ -3,12 +3,15 @@ package com.example.radio_app_iu
 import org.junit.Test
 
 import org.junit.Assert.*
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 var stubServerLoginCheck = StubServerLoginCheck()
-var radioHostEvaluation = RadioHostEvaluation (11, "eineBewertung", "einNick", 1, "einModerator")
-var playlistEvaluation = PlaylistEvaluation (1, "eineBewertung", "einNick", 5)
-var wishSong = WishSong (2, "einSong", "einNick")
+var radioHostEvaluation = RadioHostEvaluation (11, "eineBewertung", "einNick", 1, "einModerator", "")
+var playlistEvaluation = PlaylistEvaluation (1, "eineBewertung", "einNick", 5, "")
+var wishSong = WishSong (2, "einSong", "einNick", "")
 var song = Song("Titel", "Interpret", "Album", 66, 77, "2000", "12min")
+val dateTimeFormatter = DateTimeFormatter.ofPattern("d.M.y H:m:ss")
 
 class UnitTests {
 
@@ -99,6 +102,30 @@ class UnitTests {
     @Test
     fun getCurrentAlbumImage(){
         assertTrue("Album Image received", song.getCurrentAlbumImage() == 77)
+    }
+
+    @Test
+    fun returnRadioHostTimestamp(){
+        val time = LocalDateTime.now()
+        val radioHostTimestamp = dateTimeFormatter.format(time).toString()
+        val radHoEv = RadioHostEvaluation(0, "", "", 1, "", radioHostTimestamp)
+        assertTrue("Local DateTime received", radHoEv.returnTimestamp() == dateTimeFormatter.format(LocalDateTime.now()).toString())
+    }
+
+    @Test
+    fun returnPlaylistTimestamp(){
+        val time = LocalDateTime.now()
+        val playlistTimestamp = dateTimeFormatter.format(time).toString()
+        val plLEv = PlaylistEvaluation(0, "", "", 1, playlistTimestamp)
+        assertTrue("Local DateTime received", plLEv.returnTimestamp() == dateTimeFormatter.format(LocalDateTime.now()).toString())
+    }
+
+    @Test
+    fun returnWishsongTimestamp(){
+        val time = LocalDateTime.now()
+        val wishSongTimestamp = dateTimeFormatter.format(time).toString()
+        val wiS = WishSong(0, "", "", wishSongTimestamp)
+        assertTrue("Local DateTime received", wiS.returnTimestamp() == dateTimeFormatter.format(LocalDateTime.now()).toString())
     }
 
 }
