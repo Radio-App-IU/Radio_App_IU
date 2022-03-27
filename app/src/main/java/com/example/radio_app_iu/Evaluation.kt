@@ -24,7 +24,7 @@ class Evaluation : AppCompatActivity() {
 
         //return button
         binding.backbutton2.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
 
         //submit button for playlist evaluation

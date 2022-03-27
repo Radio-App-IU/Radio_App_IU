@@ -58,7 +58,7 @@ class Login : AppCompatActivity() {
     }
 
     binding.backbutton.setOnClickListener {
-        startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 }
 }

@@ -20,7 +20,7 @@ class WishSongActivity : AppCompatActivity() {
 
         //return button
         binding.backbutton3.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
 
         //submit button for wish song
