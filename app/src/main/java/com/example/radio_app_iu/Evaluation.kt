@@ -10,7 +10,6 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 private lateinit var binding: ActivityEvaluationBinding
-private val dateTimeFormat = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())
 
 class Evaluation : AppCompatActivity() {
 
@@ -21,6 +20,8 @@ class Evaluation : AppCompatActivity() {
 
         var playlistEvaluationRatingCount = 1
         var radioHostEvaluationRatingCount = 1
+
+        val dateTimeFormat = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())
 
         //return button
         binding.backbutton2.setOnClickListener {
@@ -74,7 +75,7 @@ class Evaluation : AppCompatActivity() {
                 //StubEvaluationDB.moderator = StubGetCurrentRadioHost
 
                 //creates a radioHostEvaluation object and puts it in the radioHostEvaluationList of the StubEvaluationDB Class
-                val radioHostEvaluationObject = RadioHostEvaluation(idRadioHostEvaluation, radioHostEvaluation, radioHostEvaluationNickname, radioHostRating, "einModerator", radioHostTimestamp)
+                val radioHostEvaluationObject = RadioHostEvaluation(idRadioHostEvaluation, radioHostEvaluation, radioHostEvaluationNickname, radioHostRating, stubGetCurrentRadioHost() , radioHostTimestamp)
                 StubEvaluationDB.radioHostEvaluationList.add(radioHostEvaluationObject)
 
                 binding.anchorevalutionbox.setText("")
@@ -183,5 +184,9 @@ class Evaluation : AppCompatActivity() {
             binding.fivestaranchor.setImageResource(R.drawable.star1)
             radioHostEvaluationRatingCount = 5
         }
+    }
+
+    fun stubGetCurrentRadioHost() : String {
+        return "Moderator1"
     }
 }
