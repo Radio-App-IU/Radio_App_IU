@@ -13,4 +13,5 @@
     <string name="BuPlaylistBewertungen">Playlist Bewertungen</string>
     <string name="BuModeratorBewertungen">Moderator Bewertungen</string>
     <string name="RadioBild">Hier ist das Bild des Radio Senders zu sehen</string>
+    <string name="ModeratorBegruessung">Hallo Moderator!</string>
 </resources>

@@ -9,8 +9,8 @@
 
     <ScrollView
         android:id="@+id/svBewertungen"
-        android:layout_width="345dp"
-        android:layout_height="506dp"
+        android:layout_width="350dp"
+        android:layout_height="500dp"
         android:contentDescription="@string/BewertungenPlaylistBeschreibung"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,10 +29,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:textStyle="italic"
                 android:text="@string/tvEintraegeAktualisieren"
                 android:textColor="#FFFFFF"
-                android:textSize="@dimen/BewertungenAktualisieren" />
+                android:textSize="@dimen/BewertungenAktualisieren"
+                android:textStyle="italic" />
 
         </LinearLayout>
 
