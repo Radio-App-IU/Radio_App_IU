@@ -11,9 +11,9 @@ import android.widget.TextView
 import com.example.radio_app_iu.databinding.ActivityLoginBinding
 import android.widget.LinearLayout
 import com.airbnb.paris.extensions.style
-import com.example.radio_app_iu.com.example.radio_app_iu.Evaluation
 
 private lateinit var binding: ActivityLoginBinding
+private val logincheck = StubServerLoginCheck()
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +21,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val modBegruessung = stubGetCurrentRadioHost()
+        val modBegruessung = intent.getStringExtra("username").toString()
         binding.tvModeratorBegruessung.text = "Hallo %s!".format(modBegruessung)
 
         fun lesen() {
