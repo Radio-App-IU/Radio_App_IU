@@ -10,13 +10,14 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 private lateinit var binding: ActivityWishSongBinding
-private val dateTimeFormat = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())
 
 class WishSongActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWishSongBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val dateTimeFormat = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())
 
         //return button
         binding.backbutton3.setOnClickListener {
