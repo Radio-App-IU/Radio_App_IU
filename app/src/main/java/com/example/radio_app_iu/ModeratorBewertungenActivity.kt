@@ -33,7 +33,8 @@ class ModeratorBewertungenActivity : AppCompatActivity() {
                     val bewertung = it.returnRadioHostEvaluation()
                     val nickname = it.returnNickname()
                     val rating = it.returnRating()
-                    val daten = "%s\n\n%s: %d/5".format(bewertung, nickname, rating)
+                    val time = it.returnTimestamp()
+                    val daten = "%s\n\n%s: %d/5 %s".format(bewertung, nickname, rating, time)
                     val tvNeu = TextView(this)
                     binding.lyBewertungen.addView(tvNeu)
                     val lp = LinearLayout.LayoutParams(

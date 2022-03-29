@@ -32,7 +32,8 @@ class PlaylistBewertungenActivity : AppCompatActivity() {
                     val bewertung = it.returnPlaylistEvaluation()
                     val nickname = it.returnNickname()
                     val rating = it.returnRating()
-                    val daten = "%s: %d/5\n%s".format(nickname, rating, bewertung)
+                    val time = it.returnPlaylistEvaluation()
+                    val daten = "%s: %d/5\n%s %s".format(nickname, rating, bewertung, time)
                     val tvNeu = TextView(this)
                     binding.lyBewertungen.addView(tvNeu)
                     val lp = LinearLayout.LayoutParams(

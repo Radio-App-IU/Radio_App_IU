@@ -4,7 +4,8 @@ class RadioHostEvaluation (var idRadioHostEvaluation : Int = 0,
                            var radioHostEvaluation : String = "",
                            var radioHostEvaluationNickname : String = "",
                            var radioHostRating : Int = 1,
-                           var moderator : String = "ein Moderator") {
+                           var moderator : String = "ein Moderator",
+                           var radioHostTimestamp : String) {
 
     fun returnId() : Int {
         return this.idRadioHostEvaluation
@@ -20,5 +21,9 @@ class RadioHostEvaluation (var idRadioHostEvaluation : Int = 0,
 
     fun returnRating() : Int {
         return this.radioHostRating
+    }
+
+    fun returnTimestamp() : String {
+        return this.radioHostTimestamp
     }
 }
