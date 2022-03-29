@@ -30,7 +30,8 @@ class LoginActivity : AppCompatActivity() {
                 StubEvaluationDB.wishSongList.forEach { it ->
                     val song = it.returnWishedSong()
                     val nickname = it.returnNickname()
-                    val daten = "%s:\n%s".format(nickname, song)
+                    val time = it.returnTimestamp()
+                    val daten = "%s:\n%s %s".format(nickname, song, time)
                     val tvNeu = TextView(this)
                     binding.lySongWunsch.addView(tvNeu)
                     val lp = LinearLayout.LayoutParams(
