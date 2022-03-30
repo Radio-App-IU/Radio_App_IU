@@ -32,16 +32,18 @@
         android:fontFamily="monospace"
         android:gravity="start"
         android:hint="@string/wishSongHint"
+        android:importantForAutofill="no"
         android:inputType="textMultiLine|text"
-        android:maxLines="5"
+        android:isScrollContainer="true"
+        android:maxLines="10"
+        android:scrollbars="vertical"
         android:textColor="#242A95"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/wishSongNickname"

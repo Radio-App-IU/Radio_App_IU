@@ -12,14 +12,4 @@ class Song(var title : String, var interpret : String, var album : String, var r
     fun getTitleAndInterpret() : String{
         return title + "    -    " + interpret
     }
-
-    //returns a song's audio file resource
-   fun getCurrentAudioFile() : Int {
-        return refSong
-    }
-
-    //returns a song's album image file resource
-    fun getCurrentAlbumImage() : Int {
-        return refAlbumImage
-    }
 }

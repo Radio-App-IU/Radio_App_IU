@@ -22,12 +22,11 @@ object StubPlaylist {
 
     //getting the current song's audio resource
     fun getSongFile() : Int {
-        return this.randomSong.getCurrentAudioFile()
+        return this.randomSong.refSong
     }
-
     //getting the current song's album image resource
     fun getAlbumCover() : Int {
-        return this.randomSong.getCurrentAlbumImage()
+        return this.randomSong.refAlbumImage
     }
 
     fun getSongTitle() : String {

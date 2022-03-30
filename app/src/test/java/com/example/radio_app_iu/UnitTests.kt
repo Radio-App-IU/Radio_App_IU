@@ -81,15 +81,6 @@ class UnitTests {
         assertTrue("File and Interpret received", song.getTitleAndInterpret() == "Titel    -    Interpret")
     }
 
-    @Test
-    fun getCurrentAudioFile() {
-        assertTrue("Audio File received", song.getCurrentAudioFile() == 66)
-    }
-
-    @Test
-    fun getCurrentAlbumImage() {
-        assertTrue("Album Image received", song.getCurrentAlbumImage() == 77)
-    }
 
     @Test
     fun returnRadioHostTimestamp() {

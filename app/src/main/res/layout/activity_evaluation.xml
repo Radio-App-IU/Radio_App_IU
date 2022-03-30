@@ -100,16 +100,18 @@
         android:fontFamily="monospace"
         android:gravity="start"
         android:hint="@string/playlisthint"
+        android:importantForAutofill="no"
         android:inputType="textMultiLine|text"
-        android:maxLines="5"
+        android:isScrollContainer="true"
+        android:maxLines="10"
+        android:scrollbars="vertical"
         android:textColor="@color/betweenblue"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/anchorevalutionbox"
@@ -124,16 +126,18 @@
         android:fontFamily="monospace"
         android:gravity="start"
         android:hint="@string/anchorhint"
+        android:importantForAutofill="no"
         android:inputType="textMultiLine|text"
-        android:maxLines="5"
+        android:isScrollContainer="true"
+        android:maxLines="10"
+        android:scrollbars="vertical"
         android:textColor="@color/darkblue"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nickname"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/nickname2"
