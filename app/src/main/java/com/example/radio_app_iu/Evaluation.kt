@@ -24,18 +24,18 @@ class Evaluation : AppCompatActivity() {
         val dateTimeFormat = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())
 
         //return button
-        binding.backbutton2.setOnClickListener {
+        binding.ibBackbutton.setOnClickListener {
             finish()
         }
 
         //submit button for playlist evaluation
-        binding.okbutton.setOnClickListener{
+        binding.ibOkbutton.setOnClickListener{
 
-            if(binding.playlistevalutionbox.text.toString().isNotEmpty() && binding.nickname.text.toString().isNotEmpty()){
+            if(binding.etPlaylistevaluationbox.text.toString().isNotEmpty() && binding.etNickname2.text.toString().isNotEmpty()){
 
                 //variables receiving the input of the EditTexts and rating
-                val playlistEvaluation = binding.playlistevalutionbox.text.toString()
-                val playlistEvaluationNickname = binding.nickname.text.toString()
+                val playlistEvaluation = binding.etPlaylistevaluationbox.text.toString()
+                val playlistEvaluationNickname = binding.etNickname2.text.toString()
                 val idPlaylistEvaluation = StubEvaluationDB.playlistEvaluationList.size + 1
                 val playlistRating = playlistEvaluationRatingCount
                 val playlistTimestamp = dateTimeFormat.format(Calendar.getInstance().time)
@@ -44,13 +44,13 @@ class Evaluation : AppCompatActivity() {
                 val playlistEvaluationObject = PlaylistEvaluation(idPlaylistEvaluation, playlistEvaluation, playlistEvaluationNickname, playlistRating, playlistTimestamp)
                 StubEvaluationDB.playlistEvaluationList.add(playlistEvaluationObject)
 
-                binding.playlistevalutionbox.setText("")
-                binding.nickname.setText("")
-                binding.onestar.setImageResource(R.drawable.star1)
-                binding.twostars.setImageResource(R.drawable.star2)
-                binding.threestars.setImageResource(R.drawable.star2)
-                binding.fourstars.setImageResource(R.drawable.star2)
-                binding.fivestars.setImageResource(R.drawable.star2)
+                binding.etPlaylistevaluationbox.setText("")
+                binding.etNickname2.setText("")
+                binding.ivOnestar.setImageResource(R.drawable.star1)
+                binding.ivTwostars.setImageResource(R.drawable.star2)
+                binding.ivThreestars.setImageResource(R.drawable.star2)
+                binding.ivFourstars.setImageResource(R.drawable.star2)
+                binding.ivFivestars.setImageResource(R.drawable.star2)
 
 
                 playlistEvaluationRatingCount = 1
@@ -62,12 +62,12 @@ class Evaluation : AppCompatActivity() {
         }
 
         //submit button for anchor evaluation
-        binding.okbutton2.setOnClickListener{
+        binding.ibOkbutton2.setOnClickListener{
 
             //variables receiving the input of the EditTexts and rating
-            if(binding.anchorevalutionbox.text.toString().isNotEmpty() && binding.nickname2.text.toString().isNotEmpty()){
-                val radioHostEvaluation = binding.anchorevalutionbox.text.toString()
-                val radioHostEvaluationNickname = binding.nickname2.text.toString()
+            if(binding.etAnchorevaluationbox.text.toString().isNotEmpty() && binding.etNickname.text.toString().isNotEmpty()){
+                val radioHostEvaluation = binding.etAnchorevaluationbox.text.toString()
+                val radioHostEvaluationNickname = binding.etNickname.text.toString()
                 val idRadioHostEvaluation = StubEvaluationDB.radioHostEvaluationList.size + 1
                 val radioHostRating = radioHostEvaluationRatingCount
                 //format gets applied on the passed object(the current time)
@@ -78,13 +78,13 @@ class Evaluation : AppCompatActivity() {
                 val radioHostEvaluationObject = RadioHostEvaluation(idRadioHostEvaluation, radioHostEvaluation, radioHostEvaluationNickname, radioHostRating, stubGetCurrentRadioHost() , radioHostTimestamp)
                 StubEvaluationDB.radioHostEvaluationList.add(radioHostEvaluationObject)
 
-                binding.anchorevalutionbox.setText("")
-                binding.nickname2.setText("")
-                binding.onestaranchor.setImageResource(R.drawable.star1)
-                binding.twostaranchor.setImageResource(R.drawable.star2)
-                binding.threestaranchor.setImageResource(R.drawable.star2)
-                binding.fourstaranchor.setImageResource(R.drawable.star2)
-                binding.fivestaranchor.setImageResource(R.drawable.star2)
+                binding.etAnchorevaluationbox.setText("")
+                binding.etNickname.setText("")
+                binding.ivOnestaranchor.setImageResource(R.drawable.star1)
+                binding.ivTwostaranchor.setImageResource(R.drawable.star2)
+                binding.ivThreestaranchor.setImageResource(R.drawable.star2)
+                binding.ivFourstaranchor.setImageResource(R.drawable.star2)
+                binding.ivFivestaranchor.setImageResource(R.drawable.star2)
 
                 radioHostEvaluationRatingCount = 1
                 Toast.makeText(this, "Moderator bewertet", Toast.LENGTH_SHORT).show()
@@ -95,93 +95,93 @@ class Evaluation : AppCompatActivity() {
         }
 
         //onClickListeners for rating star 1 - 5 of playlist and radioHost evaluation
-        binding.onestar.setOnClickListener{
-            binding.onestar.setImageResource(R.drawable.star1)
-            binding.twostars.setImageResource(R.drawable.star2)
-            binding.threestars.setImageResource(R.drawable.star2)
-            binding.fourstars.setImageResource(R.drawable.star2)
-            binding.fivestars.setImageResource(R.drawable.star2)
+        binding.ivOnestar.setOnClickListener{
+            binding.ivOnestar.setImageResource(R.drawable.star1)
+            binding.ivTwostars.setImageResource(R.drawable.star2)
+            binding.ivThreestars.setImageResource(R.drawable.star2)
+            binding.ivFourstars.setImageResource(R.drawable.star2)
+            binding.ivFivestars.setImageResource(R.drawable.star2)
             playlistEvaluationRatingCount = 1
         }
 
-        binding.twostars.setOnClickListener{
-            binding.onestar.setImageResource(R.drawable.star1)
-            binding.twostars.setImageResource(R.drawable.star1)
-            binding.threestars.setImageResource(R.drawable.star2)
-            binding.fourstars.setImageResource(R.drawable.star2)
-            binding.fivestars.setImageResource(R.drawable.star2)
+        binding.ivTwostars.setOnClickListener{
+            binding.ivOnestar.setImageResource(R.drawable.star1)
+            binding.ivTwostars.setImageResource(R.drawable.star1)
+            binding.ivThreestars.setImageResource(R.drawable.star2)
+            binding.ivFourstars.setImageResource(R.drawable.star2)
+            binding.ivFivestars.setImageResource(R.drawable.star2)
             playlistEvaluationRatingCount = 2
         }
 
-        binding.threestars.setOnClickListener{
-            binding.onestar.setImageResource(R.drawable.star1)
-            binding.twostars.setImageResource(R.drawable.star1)
-            binding.threestars.setImageResource(R.drawable.star1)
-            binding.fourstars.setImageResource(R.drawable.star2)
-            binding.fivestars.setImageResource(R.drawable.star2)
+        binding.ivThreestars.setOnClickListener{
+            binding.ivOnestar.setImageResource(R.drawable.star1)
+            binding.ivTwostars.setImageResource(R.drawable.star1)
+            binding.ivThreestars.setImageResource(R.drawable.star1)
+            binding.ivFourstars.setImageResource(R.drawable.star2)
+            binding.ivFivestars.setImageResource(R.drawable.star2)
             playlistEvaluationRatingCount = 3
         }
 
-        binding.fourstars.setOnClickListener{
-            binding.onestar.setImageResource(R.drawable.star1)
-            binding.twostars.setImageResource(R.drawable.star1)
-            binding.threestars.setImageResource(R.drawable.star1)
-            binding.fourstars.setImageResource(R.drawable.star1)
-            binding.fivestars.setImageResource(R.drawable.star2)
+        binding.ivFourstars.setOnClickListener{
+            binding.ivOnestar.setImageResource(R.drawable.star1)
+            binding.ivTwostars.setImageResource(R.drawable.star1)
+            binding.ivThreestars.setImageResource(R.drawable.star1)
+            binding.ivFourstars.setImageResource(R.drawable.star1)
+            binding.ivFivestars.setImageResource(R.drawable.star2)
             playlistEvaluationRatingCount = 4
         }
 
-        binding.fivestars.setOnClickListener{
-            binding.onestar.setImageResource(R.drawable.star1)
-            binding.twostars.setImageResource(R.drawable.star1)
-            binding.threestars.setImageResource(R.drawable.star1)
-            binding.fourstars.setImageResource(R.drawable.star1)
-            binding.fivestars.setImageResource(R.drawable.star1)
+        binding.ivFivestars.setOnClickListener{
+            binding.ivOnestar.setImageResource(R.drawable.star1)
+            binding.ivTwostars.setImageResource(R.drawable.star1)
+            binding.ivThreestars.setImageResource(R.drawable.star1)
+            binding.ivFourstars.setImageResource(R.drawable.star1)
+            binding.ivFivestars.setImageResource(R.drawable.star1)
             playlistEvaluationRatingCount = 5
         }
 
-        binding.onestaranchor.setOnClickListener{
-            binding.onestaranchor.setImageResource(R.drawable.star1)
-            binding.twostaranchor.setImageResource(R.drawable.star2)
-            binding.threestaranchor.setImageResource(R.drawable.star2)
-            binding.fourstaranchor.setImageResource(R.drawable.star2)
-            binding.fivestaranchor.setImageResource(R.drawable.star2)
+        binding.ivOnestaranchor.setOnClickListener{
+            binding.ivOnestaranchor.setImageResource(R.drawable.star1)
+            binding.ivTwostaranchor.setImageResource(R.drawable.star2)
+            binding.ivThreestaranchor.setImageResource(R.drawable.star2)
+            binding.ivFourstaranchor.setImageResource(R.drawable.star2)
+            binding.ivFivestaranchor.setImageResource(R.drawable.star2)
             radioHostEvaluationRatingCount = 1
         }
 
-        binding.twostaranchor.setOnClickListener{
-            binding.onestaranchor.setImageResource(R.drawable.star1)
-            binding.twostaranchor.setImageResource(R.drawable.star1)
-            binding.threestaranchor.setImageResource(R.drawable.star2)
-            binding.fourstaranchor.setImageResource(R.drawable.star2)
-            binding.fivestaranchor.setImageResource(R.drawable.star2)
+        binding.ivTwostaranchor.setOnClickListener{
+            binding.ivOnestaranchor.setImageResource(R.drawable.star1)
+            binding.ivTwostaranchor.setImageResource(R.drawable.star1)
+            binding.ivThreestaranchor.setImageResource(R.drawable.star2)
+            binding.ivFourstaranchor.setImageResource(R.drawable.star2)
+            binding.ivFivestaranchor.setImageResource(R.drawable.star2)
             radioHostEvaluationRatingCount = 2
         }
 
-        binding.threestaranchor.setOnClickListener{
-            binding.onestaranchor.setImageResource(R.drawable.star1)
-            binding.twostaranchor.setImageResource(R.drawable.star1)
-            binding.threestaranchor.setImageResource(R.drawable.star1)
-            binding.fourstaranchor.setImageResource(R.drawable.star2)
-            binding.fivestaranchor.setImageResource(R.drawable.star2)
+        binding.ivThreestaranchor.setOnClickListener{
+            binding.ivOnestaranchor.setImageResource(R.drawable.star1)
+            binding.ivTwostaranchor.setImageResource(R.drawable.star1)
+            binding.ivThreestaranchor.setImageResource(R.drawable.star1)
+            binding.ivFourstaranchor.setImageResource(R.drawable.star2)
+            binding.ivFivestaranchor.setImageResource(R.drawable.star2)
             radioHostEvaluationRatingCount = 3
         }
 
-        binding.fourstaranchor.setOnClickListener{
-            binding.onestaranchor.setImageResource(R.drawable.star1)
-            binding.twostaranchor.setImageResource(R.drawable.star1)
-            binding.threestaranchor.setImageResource(R.drawable.star1)
-            binding.fourstaranchor.setImageResource(R.drawable.star1)
-            binding.fivestaranchor.setImageResource(R.drawable.star2)
+        binding.ivFourstaranchor.setOnClickListener{
+            binding.ivOnestaranchor.setImageResource(R.drawable.star1)
+            binding.ivTwostaranchor.setImageResource(R.drawable.star1)
+            binding.ivThreestaranchor.setImageResource(R.drawable.star1)
+            binding.ivFourstaranchor.setImageResource(R.drawable.star1)
+            binding.ivFivestaranchor.setImageResource(R.drawable.star2)
             radioHostEvaluationRatingCount = 4
         }
 
-        binding.fivestaranchor.setOnClickListener{
-            binding.onestaranchor.setImageResource(R.drawable.star1)
-            binding.twostaranchor.setImageResource(R.drawable.star1)
-            binding.threestaranchor.setImageResource(R.drawable.star1)
-            binding.fourstaranchor.setImageResource(R.drawable.star1)
-            binding.fivestaranchor.setImageResource(R.drawable.star1)
+        binding.ivFivestaranchor.setOnClickListener{
+            binding.ivOnestaranchor.setImageResource(R.drawable.star1)
+            binding.ivTwostaranchor.setImageResource(R.drawable.star1)
+            binding.ivThreestaranchor.setImageResource(R.drawable.star1)
+            binding.ivFourstaranchor.setImageResource(R.drawable.star1)
+            binding.ivFivestaranchor.setImageResource(R.drawable.star1)
             radioHostEvaluationRatingCount = 5
         }
     }

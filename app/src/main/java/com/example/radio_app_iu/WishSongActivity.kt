@@ -20,29 +20,29 @@ class WishSongActivity : AppCompatActivity() {
         val dateTimeFormat = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())
 
         //return button
-        binding.backbutton3.setOnClickListener {
+        binding.ibBackbutton.setOnClickListener {
             finish()
         }
 
         //submit button for wish song
-        binding.okbutton3.setOnClickListener {
+        binding.ibOkbutton.setOnClickListener {
 
-            if (binding.wishSongBox.text.toString().isNotEmpty() && binding.wishSongNickname.text.toString().isNotEmpty()
+            if (binding.etWishSongBox.text.toString().isNotEmpty() && binding.etWishSongNickname.text.toString().isNotEmpty()
             ) {
 
                 //variables receiving the input of the EditTexts
-                val wishSongText = binding.wishSongBox.text.toString()
-                val wishSongNickname = binding.wishSongNickname.text.toString()
+                val wishSongText = binding.etWishSongBox.text.toString()
+                val edWishSongNickname = binding.etWishSongNickname.text.toString()
                 val idWishSong = StubEvaluationDB.wishSongList.size + 1
                 val wishSongTimestamp = dateTimeFormat.format(Calendar.getInstance().time)
 
 
                 //creates a WishSong object and puts it in the WishSongList of the StubEvaluationDB Class
-                val wishSongObject = WishSong(idWishSong, wishSongText, wishSongNickname, wishSongTimestamp)
+                val wishSongObject = WishSong(idWishSong, wishSongText, edWishSongNickname, wishSongTimestamp)
                 StubEvaluationDB.wishSongList.add(wishSongObject)
 
-                binding.wishSongBox.setText("")
-                binding.wishSongNickname.setText("")
+                binding.etWishSongBox.setText("")
+                binding.etWishSongNickname.setText("")
 
                 Toast.makeText(this, "Wunschsong abgesendet", Toast.LENGTH_SHORT).show()
             }

@@ -10,7 +10,7 @@
     tools:layout_editor_absoluteY="81dp">
 
     <ImageView
-        android:id="@+id/viewblue"
+        android:id="@+id/ivViewblue"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:contentDescription="@string/bgdesc"
@@ -22,7 +22,7 @@
         app:srcCompat="@drawable/blueview" />
 
     <Button
-        android:id="@+id/buttonEvaluate"
+        android:id="@+id/buEvaluate"
         android:layout_width="153dp"
         android:layout_height="60dp"
         android:layout_marginStart="40dp"
@@ -38,7 +38,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/wishSong"
+        android:id="@+id/buWishSong"
         android:layout_width="153dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
@@ -54,10 +54,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.617"
-        app:layout_constraintStart_toEndOf="@+id/buttonEvaluate" />
+        app:layout_constraintStart_toEndOf="@+id/buEvaluate" />
 
     <ImageView
-        android:id="@+id/album"
+        android:id="@+id/ivAlbum"
         android:layout_width="234dp"
         android:layout_height="209dp"
         android:layout_marginTop="24dp"
@@ -70,7 +70,7 @@
         tools:ignore="ImageContrastCheck" />
 
     <ImageView
-        android:id="@+id/playbutton"
+        android:id="@+id/ivPlaybutton"
         android:layout_width="158dp"
         android:layout_height="145dp"
         android:layout_marginStart="16dp"
@@ -80,12 +80,12 @@
         android:focusable="auto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/playbuttoninvisible2"
-        app:layout_constraintTop_toBottomOf="@id/songOutput"
+        app:layout_constraintStart_toStartOf="@+id/buPlaybuttoninvisible2"
+        app:layout_constraintTop_toBottomOf="@id/tvSongOutput"
         app:srcCompat="@drawable/playbutton2" />
 
     <Button
-        android:id="@+id/playbuttoninvisible"
+        android:id="@+id/buPlaybuttoninvisible"
         android:layout_width="158dp"
         android:layout_height="145dp"
         android:layout_marginStart="16dp"
@@ -98,11 +98,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/songOutput"
+        app:layout_constraintTop_toBottomOf="@id/tvSongOutput"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/playbuttoninvisible2"
+        android:id="@+id/buPlaybuttoninvisible2"
         android:layout_width="158dp"
         android:layout_height="144dp"
         android:layout_marginStart="16dp"
@@ -115,10 +115,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.407"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/songOutput" />
+        app:layout_constraintTop_toBottomOf="@id/tvSongOutput" />
 
     <TextView
-        android:id="@+id/songOutput"
+        android:id="@+id/tvSongOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -131,10 +131,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/album" />
+        app:layout_constraintTop_toBottomOf="@+id/ivAlbum" />
 
     <ImageView
-        android:id="@+id/blueInfobox"
+        android:id="@+id/ivBlueInfobox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -146,22 +146,22 @@
         app:srcCompat="@drawable/blueinfobox" />
 
     <TextView
-        android:id="@+id/infobox"
+        android:id="@+id/tvInfobox"
         android:layout_width="240dp"
         android:layout_height="223dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="64dp"
         android:layout_marginBottom="319dp"
-        app:layout_constraintBottom_toBottomOf="@+id/blueInfobox"
-        app:layout_constraintEnd_toEndOf="@+id/album"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBlueInfobox"
+        app:layout_constraintEnd_toEndOf="@+id/ivAlbum"
         app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toStartOf="@+id/album"
+        app:layout_constraintStart_toStartOf="@+id/ivAlbum"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/infoText"
+        android:id="@+id/tvInfoText"
         android:layout_width="230dp"
         android:layout_height="214dp"
         android:layout_marginStart="135dp"
@@ -172,11 +172,11 @@
         android:textColor="@color/betweenblue"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/blueInfobox"
-        app:layout_constraintEnd_toEndOf="@+id/blueInfobox"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBlueInfobox"
+        app:layout_constraintEnd_toEndOf="@+id/ivBlueInfobox"
         app:layout_constraintHorizontal_bias="0.257"
-        app:layout_constraintStart_toStartOf="@+id/blueInfobox"
-        app:layout_constraintTop_toTopOf="@+id/blueInfobox"
+        app:layout_constraintStart_toStartOf="@+id/ivBlueInfobox"
+        app:layout_constraintTop_toTopOf="@+id/ivBlueInfobox"
         app:layout_constraintVertical_bias="0.005" />
 
 

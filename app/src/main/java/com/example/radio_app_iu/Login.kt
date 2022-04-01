@@ -25,26 +25,26 @@ class Login : AppCompatActivity() {
     setContentView(binding.root)
 
     //sets OnclickListener for TextInput Password
-    binding.slotPassword.setOnClickListener {
-        binding.slotPassword.setTextColor(Color.BLACK)
+    binding.etSlotPassword.setOnClickListener {
+        binding.etSlotPassword.setTextColor(Color.BLACK)
 
         //sets Password invisible
-        binding.slotPassword.setTransformationMethod(PasswordTransformationMethod.getInstance())
+        binding.etSlotPassword.setTransformationMethod(PasswordTransformationMethod.getInstance())
     }
 
     //sets OnclickListener for TextInput Username
-    binding.slotUsername.setOnClickListener {
-        binding.slotUsername.setTextColor(Color.BLACK)
+    binding.etSlotUsername.setOnClickListener {
+        binding.etSlotUsername.setTextColor(Color.BLACK)
     }
 
     //onClickListener for the login
-    binding.submit.setOnClickListener {
-        if (logincheck.checkLogin(binding.slotUsername.getText().toString(), binding.slotPassword.getText().toString())) {
+    binding.buSubmit.setOnClickListener {
+        if (logincheck.checkLogin(binding.etSlotUsername.getText().toString(), binding.etSlotPassword.getText().toString())) {
 
             Toast.makeText(this, "Login erfolgreich!", Toast.LENGTH_SHORT).show()
 
             //passing the username to the radioHost activity
-            var name = binding.slotUsername.getText().toString()
+            var name = binding.etSlotUsername.getText().toString()
             logincheck.userList.forEach {
                 if(it.first == name) {
                     name = it.third
@@ -57,7 +57,7 @@ class Login : AppCompatActivity() {
         else Toast.makeText(this, "Login nicht erfolgreich!", Toast.LENGTH_SHORT).show()
     }
 
-    binding.backbutton.setOnClickListener {
+    binding.ivBackbutton.setOnClickListener {
         finish()
     }
 }

@@ -8,7 +8,7 @@
     tools:context=".Login">
 
     <ImageView
-        android:id="@+id/viewblue3"
+        android:id="@+id/ivBlueBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/bgdesc"
@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/blueview" />
 
     <TextView
-        android:id="@+id/ModeratorLogin"
+        android:id="@+id/tvModeratorLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -33,7 +33,7 @@
         android:textColor="@color/lightblue"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/viewblue3"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBlueBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
         app:layout_constraintVertical_bias="0.039" />
 
     <EditText
-        android:id="@+id/slotUsername"
+        android:id="@+id/etSlotUsername"
         android:drawableStart="@drawable/person"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
@@ -64,11 +64,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ModeratorLogin"
+        app:layout_constraintTop_toBottomOf="@+id/tvModeratorLogin"
         tools:ignore="TextContrastCheck,SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
     <EditText
-        android:id="@+id/slotPassword"
+        android:id="@+id/etSlotPassword"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/password"
         android:paddingStart="10dp"
@@ -91,11 +91,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/slotUsername"
+        app:layout_constraintTop_toBottomOf="@+id/etSlotUsername"
         tools:ignore="TextContrastCheck,SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
     <Button
-        android:id="@+id/submit"
+        android:id="@+id/buSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="85dp"
@@ -110,10 +110,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.856"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPassword"/>
 
     <TextView
-        android:id="@+id/benutzername"
+        android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -123,10 +123,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.77"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/slotUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/etSlotUsername" />
 
     <TextView
-        android:id="@+id/password"
+        android:id="@+id/tvPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -136,10 +136,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.793"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/slotPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/etSlotPassword" />
 
     <ImageButton
-        android:id="@+id/backbutton"
+        android:id="@+id/ivBackbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

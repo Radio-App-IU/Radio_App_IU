@@ -26,62 +26,62 @@ class MainActivity : AppCompatActivity() {
         setPauseButton()
 
         //onClicklistener for the playbutton
-        binding.playbuttoninvisible.setOnClickListener {
-            binding.playbutton.setImageResource(R.drawable.playbutton1)
+        binding.buPlaybuttoninvisible.setOnClickListener {
+            binding.ivPlaybutton.setImageResource(R.drawable.playbutton1)
 
             //sets this button invisible/the pausebutton visible
-            binding.playbuttoninvisible.visibility = View.INVISIBLE
-            binding.playbuttoninvisible2.visibility = View.VISIBLE
+            binding.buPlaybuttoninvisible.visibility = View.INVISIBLE
+            binding.buPlaybuttoninvisible2.visibility = View.VISIBLE
 
             //sets the title and interpret of the current song
-            binding.songOutput.setText(playlist.getSong())
+            binding.tvSongOutput.setText(playlist.getSong())
 
             //sets album cover image
-            binding.album.setImageResource(playlist.getAlbumCover())
+            binding.ivAlbum.setImageResource(playlist.getAlbumCover())
 
             //calls the method to play the song
             playSong()
         }
         //onClickListener for the pausebutton
-        binding.playbuttoninvisible2.setOnClickListener {
-            binding.playbutton.setImageResource(R.drawable.playbutton2)
+        binding.buPlaybuttoninvisible2.setOnClickListener {
+            binding.ivPlaybutton.setImageResource(R.drawable.playbutton2)
 
             //sets this button invisible/the playbutton visible
-            binding.playbuttoninvisible2.visibility = View.INVISIBLE
-            binding.playbuttoninvisible.visibility = View.VISIBLE
+            binding.buPlaybuttoninvisible2.visibility = View.INVISIBLE
+            binding.buPlaybuttoninvisible.visibility = View.VISIBLE
 
             //calls the method to mute the current song
             muteSong()
         }
 
         //starting EvaluationActivity
-        binding.buttonEvaluate.setOnClickListener{
+        binding.buEvaluate.setOnClickListener{
             startActivity(Intent(this, Evaluation::class.java))
         }
 
         //starting WishSongActivity
-        binding.wishSong.setOnClickListener{
+        binding.buWishSong.setOnClickListener{
             startActivity(Intent(this, WishSongActivity::class.java))
         }
 
-        //OnTouchListener for infobox
-        binding.infobox.setOnTouchListener { v, event ->
+        //OnTouchListener for tvInfobox
+        binding.tvInfobox.setOnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
 
                 if(stubPlayer.isPlaying){
 
-                    binding.infoText.setText(nextLine + playlist.getSongTitle() + nextLine + nextLine + playlist.getSongInterpret() + nextLine +
+                    binding.tvInfoText.setText(nextLine + playlist.getSongTitle() + nextLine + nextLine + playlist.getSongInterpret() + nextLine +
                             nextLine + playlist.getAlbumName() + nextLine + nextLine + playlist.getSongYear() + nextLine + nextLine + playlist.getSongLength())
                 }
                 else {
-                    binding.infoText.setText(nextLine + "Keine Informationen verfügbar!")
+                    binding.tvInfoText.setText(nextLine + "Keine Informationen verfügbar!")
                 }
-                binding.infobox.setBackgroundResource(R.drawable.blueinfobox)
+                binding.tvInfobox.setBackgroundResource(R.drawable.blueinfobox)
                 true
             }
             else {
-                    binding.infoText.setText("")
-                    binding.infobox.setBackgroundColor(Color.TRANSPARENT)
+                    binding.tvInfoText.setText("")
+                    binding.tvInfobox.setBackgroundColor(Color.TRANSPARENT)
                 true
             }
         }
@@ -124,11 +124,11 @@ class MainActivity : AppCompatActivity() {
     //if there's a change to another activity and the player is playing, the information will be set
     private fun setPauseButton(){
         if(stubPlayer.isPlaying){
-            binding.playbutton.setImageResource(R.drawable.playbutton1)
-            binding.playbuttoninvisible.visibility = View.INVISIBLE
-            binding.playbuttoninvisible2.visibility = View.VISIBLE
-            binding.songOutput.setText(playlist.getSong())
-            binding.album.setImageResource(playlist.getAlbumCover())
+            binding.ivPlaybutton.setImageResource(R.drawable.playbutton1)
+            binding.buPlaybuttoninvisible.visibility = View.INVISIBLE
+            binding.buPlaybuttoninvisible2.visibility = View.VISIBLE
+            binding.tvSongOutput.setText(playlist.getSong())
+            binding.ivAlbum.setImageResource(playlist.getAlbumCover())
         }
     }
 }
