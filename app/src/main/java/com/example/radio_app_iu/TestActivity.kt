@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.Toast
 import com.example.radio_app_iu.databinding.ActivityTestBinding
 
 private lateinit var binding: ActivityTestBinding
@@ -22,16 +23,23 @@ class TestActivity : AppCompatActivity() {
         savePlaylistEvaluationInList()
         saveRadioHostEvaluationInList()
         saveWishSongInList()
+        var radioHostEvaluationCounter = StubEvaluationDB.radioHostEvaluationList.size
+
+        val currentRadioHost = RadioStation().stubGetCurrentRadioHost()
+        val username = intent.getStringExtra("username")
+        binding.textView4.setText(username)
 
         //Handler with Looper
         val handling = Handler(Looper.getMainLooper())
 
-        //creating RUnnable object
+        //creating Runnable object
         val event = object : Runnable {
             override fun run() {
-                    if(true){
-                        binding.textView5.setText("Eine neue Bewertung")
-                        binding.textView4.setTextColor(Color.GREEN)
+
+                    //if logged in radio host is current radio host:
+                    if(username == currentRadioHost && StubEvaluationDB.radioHostEvaluationList.size > 0/*'radioHostEvaluationCounter*/){
+                        Toast.makeText(applicationContext, "$username, du hast eine neue Bewertung erhalten!", Toast.LENGTH_SHORT).show()
+                        radioHostEvaluationCounter = StubEvaluationDB.radioHostEvaluationList.size
                     }
                 handling.postDelayed(this, 5000L)
             }
@@ -40,13 +48,11 @@ class TestActivity : AppCompatActivity() {
         //calling the Handler with Looper at onCreate
         handling.postDelayed(event, 0L)
 
-        val username = intent.getStringExtra("username")
-        binding.textView4.setText(username)
 
         binding.button.setOnClickListener {
-            binding.textView5.setText("NEUNEUNEUNEU")
+            binding.textView5.setText(username)
         }
-        }
+    }
 
 
     fun savePlaylistEvaluationInList(){

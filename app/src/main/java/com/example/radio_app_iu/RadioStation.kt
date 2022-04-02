@@ -5,6 +5,6 @@ class RadioStation {
 
     //interface to radio station server serving current radio host
     fun stubGetCurrentRadioHost() : String {
-        return "Moderator1"
+        return "Daniel"
     }
 }

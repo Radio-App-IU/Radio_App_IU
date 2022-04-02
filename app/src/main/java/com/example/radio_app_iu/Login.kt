@@ -19,46 +19,45 @@ class Login : AppCompatActivity() {
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
+        super.onCreate(savedInstanceState)
 
-    binding = ActivityLoginBinding.inflate(layoutInflater)
-    setContentView(binding.root)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    //sets OnclickListener for TextInput Password
-    binding.etSlotPassword.setOnClickListener {
-        binding.etSlotPassword.setTextColor(Color.BLACK)
+        //sets OnclickListener for TextInput Password
+        binding.etSlotPassword.setOnClickListener {
+            binding.etSlotPassword.setTextColor(Color.BLACK)
 
-        //sets Password invisible
-        binding.etSlotPassword.setTransformationMethod(PasswordTransformationMethod.getInstance())
-    }
-
-    //sets OnclickListener for TextInput Username
-    binding.etSlotUsername.setOnClickListener {
-        binding.etSlotUsername.setTextColor(Color.BLACK)
-    }
-
-    //onClickListener for the login
-    binding.buSubmit.setOnClickListener {
-        if (logincheck.checkLogin(binding.etSlotUsername.getText().toString(), binding.etSlotPassword.getText().toString())) {
-
-            Toast.makeText(this, "Login erfolgreich!", Toast.LENGTH_SHORT).show()
-
-            //passing the username to the radioHost activity
-            var name = binding.etSlotUsername.getText().toString()
-            logincheck.userList.forEach {
-                if(it.first == name) {
-                    name = it.third
-                }
-            }
-                val intent = Intent(this, TestActivity::class.java).putExtra("username", name)
-                startActivity(intent)
-
+            //sets Password invisible
+            binding.etSlotPassword.setTransformationMethod(PasswordTransformationMethod.getInstance())
         }
-        else Toast.makeText(this, "Login nicht erfolgreich!", Toast.LENGTH_SHORT).show()
-    }
 
-    binding.ivBackbutton.setOnClickListener {
-        finish()
+        //sets OnclickListener for TextInput Username
+        binding.etSlotUsername.setOnClickListener {
+            binding.etSlotUsername.setTextColor(Color.BLACK)
+        }
+
+        //onClickListener for the login
+        binding.buSubmit.setOnClickListener {
+            if (logincheck.checkLogin(binding.etSlotUsername.getText().toString(), binding.etSlotPassword.getText().toString())) {
+
+                Toast.makeText(this, "Login erfolgreich!", Toast.LENGTH_SHORT).show()
+
+                //passing the username to the radioHost activity
+                var name = binding.etSlotUsername.getText().toString()
+                logincheck.userList.forEach {
+                    if(it.first == name) {
+                        name = it.third
+                    }
+                }
+                    val intent = Intent(this, TestActivity::class.java).putExtra("username", name)
+                    startActivity(intent)
+            }
+            else Toast.makeText(this, "Login nicht erfolgreich!", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.ivBackbutton.setOnClickListener {
+            finish()
+        }
     }
-}
 }
