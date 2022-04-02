@@ -4,8 +4,11 @@ package com.example.radio_app_iu
 //Will be deleted at final product!
 
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import com.example.radio_app_iu.databinding.ActivityTestBinding
 
 private lateinit var binding: ActivityTestBinding
@@ -20,9 +23,31 @@ class TestActivity : AppCompatActivity() {
         saveRadioHostEvaluationInList()
         saveWishSongInList()
 
+        //Handler with Looper
+        val handling = Handler(Looper.getMainLooper())
+
+        //creating RUnnable object
+        val event = object : Runnable {
+            override fun run() {
+                    if(true){
+                        binding.textView5.setText("Eine neue Bewertung")
+                        binding.textView4.setTextColor(Color.GREEN)
+                    }
+                handling.postDelayed(this, 5000L)
+            }
+        }
+
+        //calling the Handler with Looper at onCreate
+        handling.postDelayed(event, 0L)
+
         val username = intent.getStringExtra("username")
         binding.textView4.setText(username)
+
+        binding.button.setOnClickListener {
+            binding.textView5.setText("NEUNEUNEUNEU")
         }
+        }
+
 
     fun savePlaylistEvaluationInList(){
         if (StubEvaluationDB.playlistEvaluationList.isNotEmpty()){

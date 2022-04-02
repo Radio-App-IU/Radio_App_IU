@@ -40,6 +40,7 @@ class Evaluation : AppCompatActivity() {
                 val playlistRating = playlistEvaluationRatingCount
                 val playlistTimestamp = dateTimeFormat.format(Calendar.getInstance().time)
 
+
                 //creates a playlistEvaluation object and puts it in the playlistEvaluationList of the StubEvaluationDB Class
                 val playlistEvaluationObject = PlaylistEvaluation(idPlaylistEvaluation, playlistEvaluation, playlistEvaluationNickname, playlistRating, playlistTimestamp)
                 StubEvaluationDB.playlistEvaluationList.add(playlistEvaluationObject)
@@ -72,10 +73,10 @@ class Evaluation : AppCompatActivity() {
                 val radioHostRating = radioHostEvaluationRatingCount
                 //format gets applied on the passed object(the current time)
                 val radioHostTimestamp = dateTimeFormat.format(Calendar.getInstance().time)
-                //StubEvaluationDB.moderator = StubGetCurrentRadioHost
+                val currentRadioHost = RadioStation().stubGetCurrentRadioHost()
 
                 //creates a radioHostEvaluation object and puts it in the radioHostEvaluationList of the StubEvaluationDB Class
-                val radioHostEvaluationObject = RadioHostEvaluation(idRadioHostEvaluation, radioHostEvaluation, radioHostEvaluationNickname, radioHostRating, stubGetCurrentRadioHost() , radioHostTimestamp)
+                val radioHostEvaluationObject = RadioHostEvaluation(idRadioHostEvaluation, radioHostEvaluation, radioHostEvaluationNickname, radioHostRating, currentRadioHost, radioHostTimestamp)
                 StubEvaluationDB.radioHostEvaluationList.add(radioHostEvaluationObject)
 
                 binding.etAnchorevaluationbox.setText("")
@@ -184,9 +185,5 @@ class Evaluation : AppCompatActivity() {
             binding.ivFivestaranchor.setImageResource(R.drawable.star1)
             radioHostEvaluationRatingCount = 5
         }
-    }
-
-    fun stubGetCurrentRadioHost() : String {
-        return "Moderator1"
     }
 }
