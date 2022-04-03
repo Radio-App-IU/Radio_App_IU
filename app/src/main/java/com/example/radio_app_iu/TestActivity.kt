@@ -37,11 +37,11 @@ class TestActivity : AppCompatActivity() {
             override fun run() {
 
                     //if logged in radio host is current radio host:
-                    if(username == currentRadioHost && StubEvaluationDB.radioHostEvaluationList.size > 0/*'radioHostEvaluationCounter*/){
+                    if(username == currentRadioHost && StubEvaluationDB.radioHostEvaluationList.size > radioHostEvaluationCounter){
                         Toast.makeText(applicationContext, "$username, du hast eine neue Bewertung erhalten!", Toast.LENGTH_SHORT).show()
                         radioHostEvaluationCounter = StubEvaluationDB.radioHostEvaluationList.size
                     }
-                handling.postDelayed(this, 5000L)
+                handling.postDelayed(this, 8000L)
             }
         }
 
@@ -51,6 +51,12 @@ class TestActivity : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             binding.textView5.setText(username)
+        }
+
+        //logout stops the Handler with Runnable
+        binding.button2.setOnClickListener{
+            handling.removeCallbacks(event)
+            finish()
         }
     }
 
