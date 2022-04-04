@@ -77,15 +77,15 @@
         app:layout_constraintTop_toBottomOf="@+id/tvBewertungenUeberschrift" />
 
     <ImageButton
-        android:id="@+id/backbutton3"
+        android:id="@+id/backbutton"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:background="#00FFFFFF"
-        android:contentDescription="@string/back"
+        android:contentDescription="back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/back" />
+        app:srcCompat="@drawable/logout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

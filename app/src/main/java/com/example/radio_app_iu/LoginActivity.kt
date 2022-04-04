@@ -3,13 +3,17 @@ package com.example.radio_app_iu
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.TextView
 import com.example.radio_app_iu.databinding.ActivityLoginBinding
 import android.widget.LinearLayout
+import android.widget.Toast
 import com.airbnb.paris.extensions.style
 
 private lateinit var binding: ActivityLoginBinding
@@ -21,8 +25,11 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val modBegruessung = intent.getStringExtra("username").toString()
-        binding.tvModeratorBegruessung.text = "Hallo %s!".format(modBegruessung)
+        var radioHostEvaluationCounter = StubEvaluationDB.radioHostEvaluationList.size
+        val currentRadioHost = RadioStation().stubGetCurrentRadioHost()
+        val username = intent.getStringExtra("username").toString()
+
+        binding.tvModeratorBegruessung.text = "Hallo %s!".format(username)
 
         fun lesen() {
             if (StubEvaluationDB.wishSongList.isNotEmpty()) {

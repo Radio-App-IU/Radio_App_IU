@@ -30,11 +30,11 @@ class ModeratorBewertungenActivity : AppCompatActivity() {
             if (StubEvaluationDB.radioHostEvaluationList.isNotEmpty()) {
                 binding.lyBewertungen.removeAllViews()
                 StubEvaluationDB.radioHostEvaluationList.forEach { it ->
-                    val bewertung = it.returnRadioHostEvaluation()
-                    val nickname = it.returnNickname()
-                    val rating = it.returnRating()
-                    val time = it.returnTimestamp()
-                    val daten = "%s\n\n%s: %d/5 %s".format(bewertung, nickname, rating, time)
+                    val bewertung = it.radioHostEvaluation
+                    val nickname = it.radioHostEvaluationNickname
+                    val rating = it.radioHostRating
+                    val time = it.radioHostTimestamp
+                    val daten = "%s\n\n%s:   %d/5   %s".format(bewertung, nickname, rating, time)
                     val tvNeu = TextView(this)
                     binding.lyBewertungen.addView(tvNeu)
                     val lp = LinearLayout.LayoutParams(
@@ -56,6 +56,10 @@ class ModeratorBewertungenActivity : AppCompatActivity() {
             lesen()
             if (durchschnitt.isNaN())
             else binding.tvBewertungenDurchschnitt.text = "Durchschnitts Rating: %.1f".format(durchschnitt)
+        }
+
+        binding.backbutton.setOnClickListener {
+            finish()
         }
     }
 

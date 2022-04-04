@@ -2,12 +2,15 @@ package com.example.radio_app_iu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import com.airbnb.paris.extensions.style
 import com.example.radio_app_iu.databinding.ActivityPlaylistBewertungenBinding
 
@@ -19,6 +22,10 @@ class PlaylistBewertungenActivity : AppCompatActivity() {
         binding = ActivityPlaylistBewertungenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        var radioHostEvaluationCounter = StubEvaluationDB.radioHostEvaluationList.size
+        val currentRadioHost = RadioStation().stubGetCurrentRadioHost()
+        val username = intent.getStringExtra("username").toString()
+
         var summe = 0.0
         StubEvaluationDB.playlistEvaluationList.forEach { it ->
             summe += it.returnRating()
@@ -29,11 +36,11 @@ class PlaylistBewertungenActivity : AppCompatActivity() {
             if (StubEvaluationDB.playlistEvaluationList.isNotEmpty()) {
                 binding.lyBewertungen.removeAllViews()
                 StubEvaluationDB.playlistEvaluationList.forEach { it ->
-                    val bewertung = it.returnPlaylistEvaluation()
-                    val nickname = it.returnNickname()
-                    val rating = it.returnRating()
-                    val time = it.returnPlaylistEvaluation()
-                    val daten = "%s: %d/5\n%s %s".format(nickname, rating, bewertung, time)
+                    val bewertung = it.playlistEvaluation
+                    val nickname = it.playlistEvaluationNickname
+                    val rating = it.playlistRating
+                    val time = it.playlistTimestamp
+                    val daten = "%s\n\n%s:   %d/5   %s".format(bewertung, nickname, rating, time)
                     val tvNeu = TextView(this)
                     binding.lyBewertungen.addView(tvNeu)
                     val lp = LinearLayout.LayoutParams(
@@ -55,6 +62,31 @@ class PlaylistBewertungenActivity : AppCompatActivity() {
             lesen()
             if (durchschnitt.isNaN())
                 else binding.tvBewertungenDurchschnitt.text = "Durchschnitts Rating: %.1f".format(durchschnitt)
+        }
+
+        //Handler with Looper
+        val handling = Handler(Looper.getMainLooper())
+
+        //creating Runnable object
+        val event = object : Runnable {
+            override fun run() {
+
+                //if logged in radio host is current radio host:
+                if(username == currentRadioHost && StubEvaluationDB.radioHostEvaluationList.size > radioHostEvaluationCounter){
+                    Toast.makeText(applicationContext, "$username, du hast eine neue Bewertung erhalten!", Toast.LENGTH_SHORT).show()
+                    radioHostEvaluationCounter = StubEvaluationDB.radioHostEvaluationList.size
+                }
+                handling.postDelayed(this, 8000L)
+            }
+        }
+
+        //calling the Handler with Looper at onCreate
+        handling.postDelayed(event, 0L)
+
+        //logout stops the Handler with Runnable
+        binding.backbutton.setOnClickListener{
+            handling.removeCallbacks(event)
+            finish()
         }
     }
 

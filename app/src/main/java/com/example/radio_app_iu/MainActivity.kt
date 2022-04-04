@@ -5,14 +5,21 @@ import android.os.Bundle
 import com.example.radio_app_iu.databinding.ActivityMainBinding
 import android.content.Intent
 import android.content.ContentValues
+import android.os.Build
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.example.radio_app_iu.com.example.radio_app_iu.DatenbankKlasse
 import com.example.radio_app_iu.com.example.radio_app_iu.WishSong
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 private lateinit var binding:ActivityMainBinding
+@RequiresApi(Build.VERSION_CODES.O)
+val dateTimeFormatter = DateTimeFormatter.ofPattern("d.M.y H:m:ss")
 
 class MainActivity : AppCompatActivity() {
     private val datenbank = DatenbankKlasse(this)
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -31,9 +38,11 @@ class MainActivity : AppCompatActivity() {
                 val nickname = binding.etNickname.text.toString()
                 val id = StubEvaluationDB.radioHostEvaluationList.size + 1
                 val rating: Int = binding.etRating.text.toString().toInt()
+                val time = LocalDateTime.now()
+                val radioHostTimestamp = dateTimeFormatter.format(time).toString()
 
                 //creates a WishSong object and puts it in the WishSongList of the StubEvaluationDB Class
-                val radioHostEvaluationObject = RadioHostEvaluation(id, text, nickname, rating)
+                val radioHostEvaluationObject = RadioHostEvaluation(id, text, nickname, rating, "da", radioHostTimestamp)
                 StubEvaluationDB.radioHostEvaluationList.add(radioHostEvaluationObject)
 
                 binding.etBewertungstext.setText("")
@@ -54,9 +63,13 @@ class MainActivity : AppCompatActivity() {
                 val wishSongText = binding.etBewertungstext1.text.toString()
                 val wishSongNickname = binding.etNickname1.text.toString()
                 val idWishSong = StubEvaluationDB.wishSongList.size + 1
+                val time = LocalDateTime.now()
+                val dateTimeFormatter = DateTimeFormatter.ofPattern("d.M.y H:m:ss")
+                val wishsongTimestamp = dateTimeFormatter.format(time).toString()
+
 
                 //creates a WishSong object and puts it in the WishSongList of the StubEvaluationDB Class
-                val wishSongObject = WishSong(idWishSong, wishSongText, wishSongNickname)
+                val wishSongObject = WishSong(idWishSong, wishSongText, wishSongNickname, wishsongTimestamp)
                 StubEvaluationDB.wishSongList.add(wishSongObject)
 
                 binding.etBewertungstext1.setText("")
