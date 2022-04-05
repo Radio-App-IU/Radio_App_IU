@@ -14,4 +14,6 @@
     <string name="BuModeratorBewertungen">Moderator Bewertungen</string>
     <string name="RadioBild">Hier ist das Bild des Radio Senders zu sehen</string>
     <string name="ModeratorBegruessung">Hallo Moderator!</string>
+    <string name="notification_text">Du hast eine neue Bewertung. Sieh sie dir jetzt an !</string>
+    <string name="channel_name">Moderator Benachrichtigungen</string>
 </resources>

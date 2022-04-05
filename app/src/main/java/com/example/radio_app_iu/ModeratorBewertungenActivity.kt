@@ -12,8 +12,10 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.airbnb.paris.extensions.style
-import com.example.radio_app_iu.com.example.radio_app_iu.DatenbankKlasse
 import com.example.radio_app_iu.databinding.ActivityModeratorBewertungenBinding
+import android.content.Intent
+import android.os.Build
+import androidx.annotation.RequiresApi
 
 private lateinit var binding: ActivityModeratorBewertungenBinding
 
@@ -23,16 +25,14 @@ class ModeratorBewertungenActivity : AppCompatActivity() {
         binding = ActivityModeratorBewertungenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var radioHostEvaluationCounter = StubEvaluationDB.radioHostEvaluationList.size
-        val currentRadioHost = RadioStation().stubGetCurrentRadioHost()
-        val username = intent.getStringExtra("username").toString()
-
+        //calculate the average rating
         var summe = 0.0
         StubEvaluationDB.radioHostEvaluationList.forEach { it ->
             summe += it.returnRating()
         }
         val durchschnitt = summe / (StubEvaluationDB.radioHostEvaluationList.size)
 
+        //function to add new evaluations to the view
         fun lesen() {
             if (StubEvaluationDB.radioHostEvaluationList.isNotEmpty()) {
                 binding.lyBewertungen.removeAllViews()
@@ -59,40 +59,20 @@ class ModeratorBewertungenActivity : AppCompatActivity() {
             }
         }
 
+        //update the evaluations and the average rating
         binding.buEintraegeAktualisieren.setOnClickListener {
             lesen()
             if (durchschnitt.isNaN())
             else binding.tvBewertungenDurchschnitt.text = "Durchschnitts Rating: %.1f".format(durchschnitt)
         }
 
-        //Handler with Looper
-        val handling = Handler(Looper.getMainLooper())
-
-        //creating Runnable object
-        val event = object : Runnable {
-            override fun run() {
-
-                //if logged in radio host is current radio host:
-                if(username == currentRadioHost && StubEvaluationDB.radioHostEvaluationList.size > radioHostEvaluationCounter){
-                    Toast.makeText(applicationContext, "$username, du hast eine neue Bewertung erhalten!", Toast.LENGTH_SHORT).show()
-                    radioHostEvaluationCounter = StubEvaluationDB.radioHostEvaluationList.size
-                }
-                handling.postDelayed(this, 8000L)
-            }
-        }
-
-        //calling the Handler with Looper at onCreate
-        handling.postDelayed(event, 0L)
-
-        //logout stops the Handler with Runnable
         binding.backbutton.setOnClickListener{
-            handling.removeCallbacks(event)
             finish()
         }
     }
 
 
-
+    //menu gets inflated to be used
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater : MenuInflater = menuInflater
         inflater.inflate(R.menu.headmenu, menu)
