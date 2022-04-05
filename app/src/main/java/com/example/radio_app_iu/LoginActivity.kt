@@ -35,9 +35,6 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var radioHostEvaluationCounter = StubEvaluationDB.radioHostEvaluationList.size
-        val currentRadioHost = RadioStation().stubGetCurrentRadioHost()
-
         //greeting the logged-in moderator
         val username = intent.getStringExtra("username").toString()
         binding.tvModeratorBegruessung.text = "Hallo %s!".format(username)
@@ -82,16 +79,33 @@ class LoginActivity : AppCompatActivity() {
         //Handler with Looper
         val handling = Handler(Looper.getMainLooper())
 
+        //handler variables
+        var radioHostEvaluationCounter = StubEvaluationDB.radioHostEvaluationList.size
+        var playlistEvaluationCounter = StubEvaluationDB.playlistEvaluationList.size
+        var wishSongCounter = StubEvaluationDB.wishSongList.size
+        val currentRadioHost = RadioStation().stubGetCurrentRadioHost()
+
         //creating Runnable object
         val event = object : Runnable {
             override fun run() {
 
                 //if logged in radio host is current radio host:
-                if(username == currentRadioHost && StubEvaluationDB.radioHostEvaluationList.size > radioHostEvaluationCounter){
-                    Toast.makeText(applicationContext, "$username, du hast eine neue Bewertung erhalten!", Toast.LENGTH_SHORT).show()
-                    radioHostEvaluationCounter = StubEvaluationDB.radioHostEvaluationList.size
+                if (username == currentRadioHost) {
+
+                    if (StubEvaluationDB.radioHostEvaluationList.size > radioHostEvaluationCounter) {
+                        createAndSendNotification("$username, du hast eine neue Moderator-Bewertung erhalten!")
+                        radioHostEvaluationCounter = StubEvaluationDB.radioHostEvaluationList.size
+                    }
+                    if (StubEvaluationDB.playlistEvaluationList.size > playlistEvaluationCounter) {
+                        createAndSendNotification("$username, du hast eine neue Playlist-Bewertung erhalten!")
+                        playlistEvaluationCounter = StubEvaluationDB.playlistEvaluationList.size
+                    }
+                    if (StubEvaluationDB.wishSongList.size > wishSongCounter) {
+                        createAndSendNotification("$username, du hast einen neuen Songwunsch erhalten!")
+                        wishSongCounter = StubEvaluationDB.wishSongList.size
+                    }
+                    handling.postDelayed(this, 8000L)
                 }
-                handling.postDelayed(this, 8000L)
             }
         }
 
@@ -100,12 +114,11 @@ class LoginActivity : AppCompatActivity() {
     }
 
     //function for Notification
-    @RequiresApi(Build.VERSION_CODES.O)
-    private fun createAndSendNotification() {
+    private fun createAndSendNotification(Nachricht: String) {
         val pendingIntent = PendingIntent.getActivity(this, 0, Intent(this, LoginActivity::class.java), PendingIntent.FLAG_UPDATE_CURRENT)
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle(getString(R.string.app_name))
-            .setContentText(getString(R.string.notification_text))
+            .setContentText(Nachricht)
             .setSmallIcon(R.mipmap.ic_launcher_round)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setContentIntent(pendingIntent)

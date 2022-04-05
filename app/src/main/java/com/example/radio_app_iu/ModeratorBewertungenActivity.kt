@@ -2,20 +2,14 @@ package com.example.radio_app_iu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import com.airbnb.paris.extensions.style
 import com.example.radio_app_iu.databinding.ActivityModeratorBewertungenBinding
-import android.content.Intent
-import android.os.Build
-import androidx.annotation.RequiresApi
 
 private lateinit var binding: ActivityModeratorBewertungenBinding
 
