@@ -83,9 +83,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:background="#00FFFFFF"
-        android:contentDescription="back"
+        android:contentDescription="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/logout" />
+        app:srcCompat="@drawable/back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

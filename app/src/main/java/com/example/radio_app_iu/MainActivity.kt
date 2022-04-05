@@ -19,6 +19,7 @@ val dateTimeFormatter = DateTimeFormatter.ofPattern("d.M.y H:m:ss")
 
 class MainActivity : AppCompatActivity() {
     private val datenbank = DatenbankKlasse(this)
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +32,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buModAktualisieren.setOnClickListener {
-            if (binding.etBewertungstext.text.toString().isNotEmpty() && binding.etNickname.text.toString().isNotEmpty() && binding.etRating.text.toString().isNotEmpty()
+            if (binding.etBewertungstext.text.toString()
+                    .isNotEmpty() && binding.etNickname.text.toString()
+                    .isNotEmpty() && binding.etRating.text.toString().isNotEmpty()
             ) {
                 //variables receiving the input of the EditTexts
                 val text = binding.etBewertungstext.text.toString()
@@ -42,49 +45,46 @@ class MainActivity : AppCompatActivity() {
                 val radioHostTimestamp = dateTimeFormatter.format(time).toString()
 
                 //creates a WishSong object and puts it in the WishSongList of the StubEvaluationDB Class
-                val radioHostEvaluationObject = RadioHostEvaluation(id, text, nickname, rating, "da", radioHostTimestamp)
+                val radioHostEvaluationObject =
+                    RadioHostEvaluation(id, text, nickname, rating, "da", radioHostTimestamp)
                 StubEvaluationDB.radioHostEvaluationList.add(radioHostEvaluationObject)
 
                 binding.etBewertungstext.setText("")
                 binding.etNickname.setText("")
                 binding.etRating.setText("")
 
-                Toast.makeText(this, "Bewertung abgesendet", Toast.LENGTH_SHORT).show()
             }
-            else {
-                Toast.makeText(this, "Bitte Bewertung, Rating UND Nickname eingeben!", Toast.LENGTH_SHORT).show()
+
+            binding.buSongwunschAktualisieren.setOnClickListener {
+                if (binding.etBewertungstext1.text.toString()
+                        .isNotEmpty() && binding.etNickname1.text.toString().isNotEmpty()
+                ) {
+                    //variables receiving the input of the EditTexts
+                    val wishSongText = binding.etBewertungstext1.text.toString()
+                    val wishSongNickname = binding.etNickname1.text.toString()
+                    val idWishSong = StubEvaluationDB.wishSongList.size + 1
+                    val time = LocalDateTime.now()
+                    val dateTimeFormatter = DateTimeFormatter.ofPattern("d.M.y H:m:ss")
+                    val wishsongTimestamp = dateTimeFormatter.format(time).toString()
+
+
+                    //creates a WishSong object and puts it in the WishSongList of the StubEvaluationDB Class
+                    val wishSongObject =
+                        WishSong(idWishSong, wishSongText, wishSongNickname, wishsongTimestamp)
+                    StubEvaluationDB.wishSongList.add(wishSongObject)
+
+                    binding.etBewertungstext1.setText("")
+                    binding.etNickname1.setText("")
+
+                    Toast.makeText(this, "Wunschsong abgesendet", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(
+                        this,
+                        "Bitte Wunschsong UND Nickname eingeben!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
         }
-
-        binding.buSongwunschAktualisieren.setOnClickListener {
-            if (binding.etBewertungstext1.text.toString().isNotEmpty() && binding.etNickname1.text.toString().isNotEmpty()
-            ) {
-                //variables receiving the input of the EditTexts
-                val wishSongText = binding.etBewertungstext1.text.toString()
-                val wishSongNickname = binding.etNickname1.text.toString()
-                val idWishSong = StubEvaluationDB.wishSongList.size + 1
-                val time = LocalDateTime.now()
-                val dateTimeFormatter = DateTimeFormatter.ofPattern("d.M.y H:m:ss")
-                val wishsongTimestamp = dateTimeFormatter.format(time).toString()
-
-
-                //creates a WishSong object and puts it in the WishSongList of the StubEvaluationDB Class
-                val wishSongObject = WishSong(idWishSong, wishSongText, wishSongNickname, wishsongTimestamp)
-                StubEvaluationDB.wishSongList.add(wishSongObject)
-
-                binding.etBewertungstext1.setText("")
-                binding.etNickname1.setText("")
-
-                Toast.makeText(this, "Wunschsong abgesendet", Toast.LENGTH_SHORT).show()
-            }
-            else {
-                Toast.makeText(this, "Bitte Wunschsong UND Nickname eingeben!", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-    override fun onStop() {
-        super.onStop()
-        datenbank.close()
     }
 }
