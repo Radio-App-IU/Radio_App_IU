@@ -1,10 +1,11 @@
 package com.example.radio_app_iu
 
+
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -22,10 +23,7 @@ import androidx.core.app.NotificationManagerCompat
 import com.airbnb.paris.extensions.style
 
 private lateinit var binding: ActivityLoginBinding
-private val logincheck = StubServerLoginCheck()
-private const val NOTIFICATION_ID = 42
-private const val CHANNEL_ID = "channel01"
-private var username = ""
+private var username = "Daniel"
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
                     val song = it.returnWishedSong()
                     val nickname = it.returnNickname()
                     val time = it.returnTimestamp()
-                    val daten = "%s:\n%s %s".format(nickname, song, time)
+                    val daten = "%s:\n%s\n%s".format(nickname, song, time)
                     val tvNeu = TextView(this)
                     binding.lySongWunsch.addView(tvNeu)
                     val lp = LinearLayout.LayoutParams(
@@ -63,19 +61,27 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.buModeratorBewertungen.setOnClickListener {
-            startActivity(Intent(this, ModeratorBewertungenActivity::class.java))
+            startActivity(Intent(this, ModeratorBewertungenActivity::class.java).putExtra("username",username))
+            activityWechsel()
         }
 
         binding.buPlaylistBewertungen.setOnClickListener {
             startActivity(Intent(this, PlaylistBewertungenActivity::class.java))
+            activityWechsel()
         }
 
         binding.buEintraegeAktualisieren.setOnClickListener {
             lesen()
         }
 
-        //calling the Handler with Looper at onCreate
-        handling.postDelayed(eventToast, 0L)
+        //calling the Toast Handler with Looper at onCreate
+        handlingToast.postDelayed(eventToast, 0L)
+
+        //create the NotificationChannel at onCreate
+        createNotificationChannel()
+
+        //calling the Notification Handler with Looper at onCreate
+        handlingNotification.postDelayed(eventNotification, 0L)
     }
 
     //menu gets inflated to be used
@@ -91,37 +97,22 @@ class LoginActivity : AppCompatActivity() {
         return true
     }
 
+    //start Notification and stop Toast when mod leaves the app
     override fun onPause() {
+        handlingToast.removeCallbacks(eventToast)
         super.onPause()
-        //calling the Handler with Looper for Notification at onStop
-        handling.postDelayed(eventNotification, 0L)
-        handling.removeCallbacks(eventToast)
     }
 
+    //start Toast and stop Notifications when mod is back
     override fun onResume() {
+        handlingToast.postDelayed(eventToast, 0L)
         super.onResume()
-        handling.removeCallbacks(eventNotification)
     }
 
-    //function for Notification
-    private fun createAndSendNotification(Nachricht: String) {
-        val pendingIntent = PendingIntent.getActivity(this, 0, Intent(this, LoginActivity::class.java), PendingIntent.FLAG_UPDATE_CURRENT)
-        val builder = NotificationCompat.Builder(this, CHANNEL_ID)
-            .setContentTitle(getString(R.string.app_name))
-            .setContentText(Nachricht)
-            .setSmallIcon(R.mipmap.ic_launcher_round)
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-            .setContentIntent(pendingIntent)
-            .setAutoCancel(false)
-        val manager = NotificationManagerCompat.from(this)
-        val channel = NotificationChannel(CHANNEL_ID, getString(R.string.channel_name),
-            NotificationManager.IMPORTANCE_DEFAULT)
-        manager.createNotificationChannel(channel)
-        manager.notify(NOTIFICATION_ID, builder.build())
-    }
 
     //Handler with Looper
-    val handling = Handler(Looper.getMainLooper())
+    val handlingToast = Handler(Looper.getMainLooper())
+    val handlingNotification = Handler(Looper.getMainLooper())
 
     //handler variables
     var radioHostEvaluationCounter = StubEvaluationDB.radioHostEvaluationList.size
@@ -151,8 +142,45 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(applicationContext,"$username, du hast einen neuen Songwunsch erhalten!", Toast.LENGTH_SHORT).show()
                     wishSongCounter = StubEvaluationDB.wishSongList.size
                 }
-                handling.postDelayed(this, 8000L)
             }
+            handlingToast.postDelayed(this, 8000L)
+        }
+    }
+
+    //Notification Values
+    private val NOTIFICATION_ID = 42
+    private val CHANNEL_ID = "channel01"
+
+    //function to create the NotificationChannel
+    private fun createNotificationChannel() {
+        val name = "Moderator Notification"
+        val descriptionText = "Benachrichtigung über neue Einträge der User"
+        val importance = NotificationManager.IMPORTANCE_DEFAULT
+        val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
+            description = descriptionText
+        }
+        val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.createNotificationChannel(channel)
+
+    }
+    //function to send the Notification
+    private fun sendNotification(Nachricht:String) {
+        val intent = Intent(this, LoginActivity::class.java)
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+        val builder = NotificationCompat.Builder(this, CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setContentTitle("Neue Hörerbeiträge")
+            .setContentText(Nachricht)
+            .setContentIntent(pendingIntent)
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setAutoCancel(true)
+            .setSilent(false)
+            .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+            .setOnlyAlertOnce(true)
+            .setStyle(NotificationCompat.BigTextStyle().bigText(Nachricht))
+
+        with(NotificationManagerCompat.from(this)) {
+            notify(NOTIFICATION_ID, builder.build())
         }
     }
 
@@ -160,27 +188,56 @@ class LoginActivity : AppCompatActivity() {
     val eventNotification = object : Runnable {
         override fun run() {
 
-            //if logged in radio host is current radio host:
-            if (username == currentRadioHost) {
+            //send a notification if at least one new entry is available
+            if (username == currentRadioHost &&
+                StubEvaluationDB.radioHostEvaluationList.size > radioHostEvaluationCounter ||
+                StubEvaluationDB.playlistEvaluationList.size > playlistEvaluationCounter ||
+                StubEvaluationDB.wishSongList.size > wishSongCounter) {
+                var notificationText = "$username, du hast neue Einträge erhalten:"
 
                 //if a new radioHostEvaluation is available, Notify the User
                 if (StubEvaluationDB.radioHostEvaluationList.size > radioHostEvaluationCounter) {
-                    createAndSendNotification("$username, du hast eine neue Moderator-Bewertung erhalten!")
+                    notificationText += "\nNeue Moderator-Bewertung"
                     radioHostEvaluationCounter = StubEvaluationDB.radioHostEvaluationList.size
                 }
                 //if a new playlistEvaluation is available, Notify the User
                 if (StubEvaluationDB.playlistEvaluationList.size > playlistEvaluationCounter) {
-                    createAndSendNotification("$username, du hast eine neue Playlist-Bewertung erhalten!")
+                    notificationText += "\nNeue Playlist-Bewertung"
                     playlistEvaluationCounter = StubEvaluationDB.playlistEvaluationList.size
                 }
-                //if a new Songwish is available, Notify the User
+                //if a new Wish for a Song is available, Notify the User
                 if (StubEvaluationDB.wishSongList.size > wishSongCounter) {
-                    createAndSendNotification("$username, du hast einen neuen Songwunsch erhalten!")
+                    notificationText += "\nNeuer Song Wunsch"
                     wishSongCounter = StubEvaluationDB.wishSongList.size
                 }
-                handling.postDelayed(this, 8000L)
+                sendNotification(notificationText)
             }
+            handlingNotification.postDelayed(this, 8000L)
         }
     }
 
+    // if the user changes activity and the handler did not activate, this function will show the toast
+    private fun activityWechsel() {
+        if(username == currentRadioHost &&
+            StubEvaluationDB.radioHostEvaluationList.size > radioHostEvaluationCounter ||
+            StubEvaluationDB.playlistEvaluationList.size > playlistEvaluationCounter ||
+            StubEvaluationDB.wishSongList.size > wishSongCounter) {
+
+            //if a new radioHostEvaluation is available, Notify the User
+            if (StubEvaluationDB.radioHostEvaluationList.size > radioHostEvaluationCounter) {
+                Toast.makeText(applicationContext, "$username, du hast eine neue Moderator-Bewertung erhalten!", Toast.LENGTH_SHORT).show()
+                radioHostEvaluationCounter = StubEvaluationDB.radioHostEvaluationList.size
+            }
+            //if a new playlistEvaluation is available, Notify the User
+            if (StubEvaluationDB.playlistEvaluationList.size > playlistEvaluationCounter) {
+                Toast.makeText(applicationContext,"$username, du hast eine neue Playlist-Bewertung erhalten!", Toast.LENGTH_SHORT).show()
+                playlistEvaluationCounter = StubEvaluationDB.playlistEvaluationList.size
+            }
+            //if a new Songwish is available, Notify the User
+            if (StubEvaluationDB.wishSongList.size > wishSongCounter) {
+                Toast.makeText(applicationContext,"$username, du hast einen neuen Songwunsch erhalten!", Toast.LENGTH_SHORT).show()
+                wishSongCounter = StubEvaluationDB.wishSongList.size
+            }
+        }
+    }
 }

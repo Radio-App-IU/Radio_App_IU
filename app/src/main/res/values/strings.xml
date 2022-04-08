@@ -16,4 +16,5 @@
     <string name="ModeratorBegruessung">Hallo Moderator!</string>
     <string name="notification_text">Du hast eine neue Bewertung. Sieh sie dir jetzt an !</string>
     <string name="channel_name">Moderator Benachrichtigungen</string>
+    <string name="Nachricht">Hallo</string>
 </resources>

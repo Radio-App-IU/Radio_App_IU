@@ -56,8 +56,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             binding.buSongwunschAktualisieren.setOnClickListener {
-                if (binding.etBewertungstext1.text.toString()
-                        .isNotEmpty() && binding.etNickname1.text.toString().isNotEmpty()
+                if (binding.etBewertungstext1.text.toString().isNotEmpty() && binding.etNickname1.text.toString().isNotEmpty()
                 ) {
                     //variables receiving the input of the EditTexts
                     val wishSongText = binding.etBewertungstext1.text.toString()
