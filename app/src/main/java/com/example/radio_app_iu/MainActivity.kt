@@ -85,10 +85,6 @@ class MainActivity : AppCompatActivity() {
                 true
             }
         }
-        /*binding.infobutton.setOnClickListener{
-            startActivity(Intent(this, TestActivity::class.java))
-        }entfernen*/
-
     }
     //creating options menu headmenu.xml when creating Main Activity
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

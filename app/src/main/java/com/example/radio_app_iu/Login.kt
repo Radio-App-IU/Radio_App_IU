@@ -50,7 +50,7 @@ class Login : AppCompatActivity() {
                         name = it.third
                     }
                 }
-                    val intent = Intent(this, TestActivity::class.java).putExtra("username", name)
+                    val intent = Intent(this, postLoginActivity::class.java).putExtra("username", name)
                     startActivity(intent)
             }
             else Toast.makeText(this, "Login nicht erfolgreich!", Toast.LENGTH_SHORT).show()
