@@ -14,10 +14,6 @@
             android:exported="false"
             android:screenOrientation="sensorPortrait"/>
         <activity
-            android:name=".TestActivity"
-            android:exported="false"
-            android:screenOrientation="sensorPortrait"/>
-        <activity
             android:name=".Evaluation"
             android:exported="false"
             android:screenOrientation="sensorPortrait"/>
