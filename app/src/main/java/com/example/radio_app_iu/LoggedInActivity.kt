@@ -15,20 +15,20 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.TextView
-import com.example.radio_app_iu.databinding.ActivityLoginBinding
+import com.example.radio_app_iu.databinding.ActivityLoggedinBinding
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.airbnb.paris.extensions.style
 
-private lateinit var binding: ActivityLoginBinding
+private lateinit var binding: ActivityLoggedinBinding
 private var username = "Daniel"
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
+        binding = ActivityLoggedinBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         //greeting the logged-in moderator
