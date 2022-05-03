@@ -25,7 +25,7 @@ import com.airbnb.paris.extensions.style
 private lateinit var binding: ActivityLoggedinBinding
 private var username = "Daniel"
 
-class LoginActivity : AppCompatActivity() {
+class LoggedInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoggedinBinding.inflate(layoutInflater)
@@ -165,7 +165,7 @@ class LoginActivity : AppCompatActivity() {
     }
     //function to send the Notification
     private fun sendNotification(Nachricht:String) {
-        val intent = Intent(this, LoginActivity::class.java)
+        val intent = Intent(this, LoggedInActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_launcher_foreground)

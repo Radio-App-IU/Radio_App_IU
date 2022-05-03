@@ -19,10 +19,6 @@
             android:exported="false"
             android:screenOrientation="sensorPortrait" />
         <activity
-            android:name=".LoginActivity"
-            android:exported="false"
-            android:screenOrientation="sensorPortrait" />
-        <activity
             android:name=".WishSongActivity"
             android:exported="false"
             android:screenOrientation="sensorPortrait"/>
