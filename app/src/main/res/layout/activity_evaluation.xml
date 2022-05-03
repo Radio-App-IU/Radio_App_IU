@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Evaluation">
+
+    <ImageView
+        android:id="@+id/ivViewblue2"
+        android:layout_width="833dp"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/bgdesc"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/blueview" />
+
+    <ImageView
+        android:id="@+id/ivOnestaranchor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/onestar"
+        app:layout_constraintEnd_toStartOf="@+id/ivTwostaranchor"
+        app:layout_constraintStart_toEndOf="@+id/etNickname"
+        app:layout_constraintTop_toBottomOf="@+id/etAnchorevaluationbox"
+        app:srcCompat="@drawable/star1" />
+
+    <ImageView
+        android:id="@+id/ivTwostaranchor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/twostars"
+        app:layout_constraintEnd_toStartOf="@+id/ivThreestaranchor"
+        app:layout_constraintStart_toEndOf="@+id/ivOnestaranchor"
+        app:layout_constraintTop_toBottomOf="@+id/etAnchorevaluationbox"
+        app:srcCompat="@drawable/star2" />
+
+    <ImageView
+        android:id="@+id/ivThreestaranchor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/threestars"
+        app:layout_constraintEnd_toStartOf="@+id/ivFourstaranchor"
+        app:layout_constraintStart_toEndOf="@+id/ivTwostaranchor"
+        app:layout_constraintTop_toBottomOf="@+id/etAnchorevaluationbox"
+        app:srcCompat="@drawable/star2" />
+
+    <ImageView
+        android:id="@+id/ivFourstaranchor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/fourstars"
+        app:layout_constraintEnd_toStartOf="@+id/ivFivestaranchor"
+        app:layout_constraintStart_toEndOf="@+id/ivThreestaranchor"
+        app:layout_constraintTop_toBottomOf="@+id/etAnchorevaluationbox"
+        app:srcCompat="@drawable/star2" />
+
+    <ImageView
+        android:id="@+id/ivFivestaranchor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/fivestars"
+        app:layout_constraintStart_toEndOf="@+id/ivFourstaranchor"
+        app:layout_constraintTop_toBottomOf="@+id/etAnchorevaluationbox"
+        app:srcCompat="@drawable/star2" />
+
+    <ImageButton
+        android:id="@+id/ibBackbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="530dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/etPlaylistevaluationbox"
+        android:layout_width="332dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/custom_input2"
+        android:cursorVisible="true"
+        android:ellipsize="none"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:gravity="start"
+        android:hint="@string/playlisthint"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine|text"
+        android:isScrollContainer="true"
+        android:maxLines="10"
+        android:padding="5dp"
+        android:scrollbars="vertical"
+        android:textColor="@color/betweenblue"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/etAnchorevaluationbox"
+        android:layout_width="332dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/custom_input2"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:gravity="start"
+        android:hint="@string/anchorhint"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine|text"
+        android:isScrollContainer="true"
+        android:maxLines="10"
+        android:padding="5dp"
+        android:scrollbars="vertical"
+        android:textColor="@color/darkblue"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNickname2"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/etNickname"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/custom_input2"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:hint="@string/nickhint"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:maxLength="14"
+        android:maxLines="1"
+        android:padding="5dp"
+        android:textColor="@color/darkblue"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/etAnchorevaluationbox"
+        app:layout_constraintTop_toBottomOf="@+id/etAnchorevaluationbox"
+        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/ibOkbutton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/transparent"
+        android:contentDescription="@string/ok"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/etNickname"
+        app:layout_constraintTop_toBottomOf="@+id/etAnchorevaluationbox"
+        app:srcCompat="@drawable/done"
+        app:tint="@color/green"
+        tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
+
+    <EditText
+        android:id="@+id/etNickname2"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/custom_input2"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:hint="@string/nickhint"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:maxLength="14"
+        android:maxLines="1"
+        android:padding="5dp"
+        android:textColor="@color/betweenblue"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/etPlaylistevaluationbox"
+        app:layout_constraintTop_toBottomOf="@+id/etPlaylistevaluationbox"
+        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/ibOkbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/transparent"
+        android:contentDescription="@string/ok"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintStart_toEndOf="@+id/etNickname2"
+        app:layout_constraintTop_toBottomOf="@+id/etPlaylistevaluationbox"
+        app:srcCompat="@drawable/done"
+        app:tint="@color/green"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/ivOnestar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/onestar"
+        app:layout_constraintEnd_toStartOf="@+id/ivTwostars"
+        app:layout_constraintStart_toEndOf="@+id/etNickname2"
+        app:layout_constraintTop_toBottomOf="@+id/etPlaylistevaluationbox"
+        app:srcCompat="@drawable/star1" />
+
+    <ImageView
+        android:id="@+id/ivTwostars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/twostars"
+        app:layout_constraintEnd_toStartOf="@+id/ivThreestars"
+        app:layout_constraintStart_toEndOf="@+id/ivOnestar"
+        app:layout_constraintTop_toBottomOf="@+id/etPlaylistevaluationbox"
+        app:srcCompat="@drawable/star2" />
+
+    <ImageView
+        android:id="@+id/ivThreestars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/threestars"
+        app:layout_constraintEnd_toStartOf="@+id/ivFourstars"
+        app:layout_constraintStart_toEndOf="@+id/ivTwostars"
+        app:layout_constraintTop_toBottomOf="@+id/etPlaylistevaluationbox"
+        app:srcCompat="@drawable/star2" />
+
+    <ImageView
+        android:id="@+id/ivFourstars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/fourstars"
+        app:layout_constraintEnd_toStartOf="@+id/ivFivestars"
+        app:layout_constraintStart_toEndOf="@+id/ivThreestars"
+        app:layout_constraintTop_toBottomOf="@+id/etPlaylistevaluationbox"
+        app:srcCompat="@drawable/star2" />
+
+    <ImageView
+        android:id="@+id/ivFivestars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/fivestars"
+        app:layout_constraintStart_toEndOf="@+id/ivFourstars"
+        app:layout_constraintTop_toBottomOf="@+id/etPlaylistevaluationbox"
+        app:srcCompat="@drawable/star2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.radio_app_iu" >
+    package="com.example.radio_app_iu">
 
     <application
         android:allowBackup="true"
@@ -23,8 +23,21 @@
             android:exported="false"
             android:screenOrientation="sensorPortrait" />
         <activity
+            android:name=".WishSongActivity"
+            android:exported="false"
+            android:screenOrientation="sensorPortrait"/>
+        <activity
+            android:name=".Evaluation"
+            android:exported="false"
+            android:screenOrientation="sensorPortrait"/>
+        <activity
+            android:name=".Login"
+            android:exported="false"
+            android:screenOrientation="sensorPortrait"/>
+        <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:screenOrientation="sensorPortrait">>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -4,6 +4,8 @@
 
     <item
         android:id="@+id/item1"
+        android:icon="@drawable/loginbutton"
+        android:title="@string/login"
         android:icon="@drawable/logout"
         android:title="@string/logout"
         app:showAsAction="ifRoom" />

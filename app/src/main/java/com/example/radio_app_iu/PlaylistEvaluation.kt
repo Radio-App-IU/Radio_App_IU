@@ -23,6 +23,6 @@ class PlaylistEvaluation (var idPlaylistEvaluation : Int = 0,
     }
 
     fun returnTimestamp() : String {
-        return this.playlistEvaluation
+        return this.playlistTimestamp
     }
 }

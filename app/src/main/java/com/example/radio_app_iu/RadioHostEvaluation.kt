@@ -27,3 +27,4 @@ class RadioHostEvaluation (var idRadioHostEvaluation : Int = 0,
         return this.radioHostTimestamp
     }
 }
+

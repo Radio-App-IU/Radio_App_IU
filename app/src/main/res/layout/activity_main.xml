@@ -1,96 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/SenderName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/SenderName"
-        android:textSize="@dimen/Überschrift1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065" />
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="225dp"
-        android:layout_height="225dp"
-        android:layout_marginTop="28dp"
+        android:id="@+id/ivViewblue"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/bgdesc"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SenderName"
-        app:srcCompat="@android:drawable/ic_menu_gallery"
+        app:srcCompat="@drawable/blueview" />
+
+    <Button
+        android:id="@+id/buEvaluate"
+        android:layout_width="153dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="serif-monospace"
+        android:background="@drawable/button"
+        android:text="@string/evaluate"
+        android:textColor="@color/lightblue"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/darkblue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buWishSong"
+        android:layout_width="153dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/button"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="serif-monospace"
+        android:text="@string/wishSong"
+        android:textColor="@color/lightblue"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/darkblue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.617"
+        app:layout_constraintStart_toEndOf="@+id/buEvaluate" />
+
+    <ImageView
+        android:id="@+id/ivAlbum"
+        android:layout_width="234dp"
+        android:layout_height="209dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="88dp"
+        android:contentDescription="@string/descAlbum"
+        android:cropToPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/album"
         tools:ignore="ImageContrastCheck" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:contentDescription="@string/IBContent"
-        android:padding="0dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+    <ImageView
+        android:id="@+id/ivPlaybutton"
+        android:layout_width="158dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/descPlaybutton"
+        android:focusable="auto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toEndOf="@+id/SenderName"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.246"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:contentDescription="@string/IBContent"
-        android:padding="0dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.34"
-        app:srcCompat="@android:drawable/ic_media_play" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/buPlaybuttoninvisible2"
+        app:layout_constraintTop_toBottomOf="@id/tvSongOutput"
+        app:srcCompat="@drawable/playbutton2" />
 
     <Button
-        android:id="@+id/WunschButton"
-        android:layout_width="@dimen/ButtonBreite"
-        android:layout_height="wrap_content"
-        android:text="@string/WunschButton"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/buPlaybuttoninvisible"
+        android:layout_width="158dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/transparent"
+        android:gravity="center"
+        android:text="@string/playbuttoninvisible"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/BewertenButton"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSongOutput"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/BewertenButton"
-        android:layout_width="@dimen/ButtonBreite"
-        android:layout_height="wrap_content"
-        android:text="@string/BewertenButton"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/buPlaybuttoninvisible2"
+        android:layout_width="158dp"
+        android:layout_height="144dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/transparent"
+        android:gravity="center"
+        android:text="@string/playbuttoninvisible"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.175"
+        app:layout_constraintHorizontal_bias="0.407"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
-        app:layout_constraintVertical_bias="0.413" />
+        app:layout_constraintTop_toBottomOf="@id/tvSongOutput" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvSongOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/SongName"
-        android:text="@string/AktuellerSong"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:textColor="#8CFFF5"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivAlbum" />
+
+    <ImageView
+        android:id="@+id/ivBlueInfobox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/infobox"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/blueinfobox" />
+
+    <TextView
+        android:id="@+id/tvInfobox"
+        android:layout_width="240dp"
+        android:layout_height="223dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="319dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBlueInfobox"
+        app:layout_constraintEnd_toEndOf="@+id/ivAlbum"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="@+id/ivAlbum"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvInfoText"
+        android:layout_width="230dp"
+        android:layout_height="214dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="205dp"
+        android:layout_marginBottom="316dp"
+        android:fontFamily="serif-monospace"
+        android:textColor="@color/betweenblue"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBlueInfobox"
+        app:layout_constraintEnd_toEndOf="@+id/ivBlueInfobox"
+        app:layout_constraintHorizontal_bias="0.257"
+        app:layout_constraintStart_toStartOf="@+id/ivBlueInfobox"
+        app:layout_constraintTop_toTopOf="@+id/ivBlueInfobox"
+        app:layout_constraintVertical_bias="0.005" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
