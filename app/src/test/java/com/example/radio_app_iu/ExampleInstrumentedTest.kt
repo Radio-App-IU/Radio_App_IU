@@ -26,31 +26,31 @@ class MainActivityTests {
 
     @Test
     fun albumDisplayed() {
-        onView(withId(R.id.album)).check(matches(isDisplayed()))
+        onView(withId(R.id.ivAlbum)).check(matches(isDisplayed()))
     }
 
     @Test
     fun evaluateButtonClickable() {
-        onView(allOf(withId(R.id.buttonEvaluate))).perform(click())
+        onView(allOf(withId(R.id.buEvaluate))).perform(click())
     }
 
     @Test
     fun wishSongClickable() {
-        onView(allOf(withId(R.id.wishSong))).perform(click())
+        onView(allOf(withId(R.id.buWishSong))).perform(click())
     }
 
     @Test
     fun playButtonClickable() {
-        onView(allOf(withId(R.id.playbutton))).perform(click())
+        onView(allOf(withId(R.id.buPlaybuttoninvisible))).perform(click())
     }
 
     @Test
     fun infoTextDisplayed() {
-        onView(withId(R.id.infoText)).check(matches(isDisplayed()))
+        onView(withId(R.id.tvInfoText)).check(matches(isDisplayed()))
     }
 
     @Test
     fun infoTextEmpty() {
-        onView(allOf(withId(R.id.infoText))).check(matches(withText("")))
+        onView(allOf(withId(R.id.tvInfoText))).check(matches(withText("")))
     }
 }
