@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="BewertungenÜberschrift">30sp</dimen>
+    <dimen name="BewertungenAktualisieren">20sp</dimen>
     <dimen name="Überschrift1">35sp</dimen>
     <dimen name="PaddingLoginBild">0dp</dimen>
     <dimen name="ButtonBreite">120dp</dimen>
