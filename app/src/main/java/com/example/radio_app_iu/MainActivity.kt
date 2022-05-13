@@ -6,7 +6,6 @@ import android.graphics.Color
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.*
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.radio_app_iu.databinding.ActivityMainBinding
 
@@ -89,13 +88,13 @@ class MainActivity : AppCompatActivity() {
     //creating options menu headmenu.xml when creating Main Activity
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater : MenuInflater = menuInflater
-        inflater.inflate(R.menu.headmenu, menu)
+        inflater.inflate(R.menu.headmenu_login, menu)
         return true
     }
 
     //program that will be executed if specific item of OptionsMenu is clicked
     override fun onOptionsItemSelected(item : MenuItem): Boolean {
-            if(item.getItemId() == R.id.item1){
+            if(item.getItemId() == R.id.item2){
                startActivity(Intent(this, Login::class.java))
             }
         return true

@@ -87,13 +87,18 @@ class LoggedInActivity : AppCompatActivity() {
     //menu gets inflated to be used
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater : MenuInflater = menuInflater
-        inflater.inflate(R.menu.headmenu, menu)
+        inflater.inflate(R.menu.headmenu_logout, menu)
         return true
     }
 
     //program that will be executed if specific item of OptionsMenu is clicked
     override fun onOptionsItemSelected(item : MenuItem): Boolean {
-        finish()
+
+        Toast.makeText(this, "Logout erfolgreich!", Toast.LENGTH_SHORT).show()
+
+        if(item.getItemId() == R.id.item1){
+            startActivity(Intent(this, MainActivity::class.java))
+        }
         return true
     }
 
