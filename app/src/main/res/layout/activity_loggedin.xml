@@ -6,15 +6,15 @@
     android:layout_height="match_parent"
     android:background="#142149"
     android:padding="20dp"
-    tools:context=".LoginActivity">
+    tools:context=".LoggedInActivity">
 
     <TextView
         android:id="@+id/tvSongWunschUeberschrift"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="64dp"
         android:text="@string/SongWunschUeberschrift"
-        android:textColor="#FFFFFF"
+        android:textColor="#55CF99"
         android:textSize="@dimen/BewertungenÜberschrift"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,9 +26,9 @@
         android:id="@+id/svSongWunsch"
         android:layout_width="346dp"
         android:layout_height="267dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSongWunschUeberschrift">
 
@@ -76,6 +76,7 @@
         android:layout_height="70dp"
         android:backgroundTint="#55CF99"
         android:text="@string/BuModeratorBewertungen"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.059"
@@ -89,6 +90,7 @@
         android:layout_height="70dp"
         android:backgroundTint="#55CF99"
         android:text="@string/BuPlaylistBewertungen"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.871"

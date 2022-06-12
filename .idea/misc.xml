@@ -26,6 +26,14 @@
         <entry key="..\:/Users/fege/AndroidStudioProjects/Radio_App_IU/app/src/main/res/layout/login_fragment.xml" value="0.28177083333333336" />
         <entry key="..\:/Users/fege/AndroidStudioProjects/Radio_App_IU/app/src/main/res/menu/headmenu.xml" value="0.5" />
         <entry key="..\:/Users/fege/AndroidStudioProjects/Radio_App_IU/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.34" />
+        <entry key="app/src/main/res/drawable/custom_input2.xml" value="0.2245" />
+        <entry key="app/src/main/res/layout/activity_evaluation.xml" value="0.31566619873046875" />
+        <entry key="app/src/main/res/layout/activity_loggedin.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2824000482973845" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_moderator_bewertungen.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_playlist_bewertungen.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_wish_song.xml" value="0.21467391304347827" />
         <entry key="app/src/main/res/menu/headmenu.xml" value="0.24270833333333333" />
         <entry key="app/src/main/res/menu/headmenu_login.xml" value="0.24270833333333333" />
         <entry key="app/src/main/res/menu/headmenu_logout.xml" value="0.24270833333333333" />
@@ -37,5 +45,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.3098958333333333" />
+      </ProjectState>
+    </option>
   </component>
 </project>

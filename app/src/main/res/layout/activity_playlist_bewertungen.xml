@@ -10,7 +10,7 @@
     <ScrollView
         android:id="@+id/svBewertungen"
         android:layout_width="350dp"
-        android:layout_height="500dp"
+        android:layout_height="410dp"
         android:contentDescription="@string/BewertungenPlaylistBeschreibung"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,10 +42,11 @@
         android:id="@+id/tvBewertungenUeberschrift"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
         android:text="@string/BewertungenPlaylistUeberschrift"
-        android:textColor="#FFFFFF"
+        android:textColor="#55CF99"
         android:textSize="@dimen/BewertungenÜberschrift"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/svBewertungen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,9 +69,9 @@
         android:id="@+id/tvBewertungenDurchschnitt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text=""
         android:textColor="#FFFFFF"
         android:textSize="@dimen/BewertungenAktualisieren"
-        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/svBewertungen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,6 +87,7 @@
         android:contentDescription="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/back" />
+        app:srcCompat="@drawable/back"
+        app:tint="#FFFFFF" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
