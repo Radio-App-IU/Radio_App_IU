@@ -7,6 +7,7 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.radio_app_iu.databinding.ActivityMainBinding
 
 //values and variables used in several methods of this activity
@@ -24,6 +25,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setPauseButton()
+
+        binding.tvInfoText.visibility = View.INVISIBLE
 
         //onClicklistener for the playbutton
         binding.buPlaybuttoninvisible.setOnClickListener {
@@ -67,6 +70,8 @@ class MainActivity : AppCompatActivity() {
       // displays information by clicking on infobutton
       binding.ibInfobutton.setOnClickListener{
           if (infoClickCounter % 2 == 0){
+              binding.tvInfoText.visibility = View.VISIBLE
+              binding.ivAlbum.visibility = View.INVISIBLE
               if (stubPlayer.isPlaying) {
 
                   binding.tvInfoText.setText(
@@ -74,13 +79,13 @@ class MainActivity : AppCompatActivity() {
                               nextLine + playlist.getAlbumName() + nextLine + nextLine + playlist.getSongYear() + nextLine + nextLine + playlist.getSongLength()
                   )
               } else {
-                  binding.tvInfoText.setText(nextLine + "Keine Informationen verfügbar!")
+                  binding.tvInfoText.setText(nextLine + "Keine" + nextLine + "Informationen" + nextLine + "verfügbar!")
               }
               binding.tvInfobox.setBackgroundResource(R.drawable.blueinfobox)
           }
           else {
-              binding.tvInfoText.setText("")
-              binding.tvInfobox.setBackgroundColor(Color.TRANSPARENT)
+              binding.tvInfoText.visibility = View.INVISIBLE
+              binding.ivAlbum.visibility = View.VISIBLE
           }
           infoClickCounter += 1
       }
