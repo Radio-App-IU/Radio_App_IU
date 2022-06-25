@@ -30,35 +30,7 @@ class MainActivity : AppCompatActivity() {
         binding.tvInfoText.visibility = View.INVISIBLE
 
         //onClicklistener for the playbutton
-        /**
-        binding.buPlaybuttoninvisible.setOnClickListener {
-            binding.ivPlaybutton.setImageResource(R.drawable.playbutton1)
 
-            //sets this button invisible/the pausebutton visible
-            binding.buPlaybuttoninvisible.visibility = View.INVISIBLE
-            binding.buPlaybuttoninvisible2.visibility = View.VISIBLE
-
-            //sets the title and interpret of the current song
-            binding.tvSongOutput.setText(playlist.getSong())
-
-            //sets album cover image
-            binding.ivAlbum.setImageResource(playlist.getAlbumCover())
-
-            //calls the method to play the song
-            playSong()
-        }
-        //onClickListener for the pausebutton
-        binding.buPlaybuttoninvisible2.setOnClickListener {
-            binding.ivPlaybutton.setImageResource(R.drawable.playbutton2)
-
-            //sets this button invisible/the playbutton visible
-            binding.buPlaybuttoninvisible2.visibility = View.INVISIBLE
-            binding.buPlaybuttoninvisible.visibility = View.VISIBLE
-
-            //calls the method to mute the current song
-            muteSong()
-        }
-        **/
         binding.ibButtonPlay.setOnClickListener{
 
             if(playButtonCounter % 2 == 0){
