@@ -9,14 +9,16 @@
 
     <ScrollView
         android:id="@+id/svBewertungen"
-        android:layout_width="350dp"
-        android:layout_height="410dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/BewertungenModeratorBeschreibung"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.408">
+        app:layout_constraintVertical_bias="0.408"
+        app:layout_constraintHeight_percent="0.7"
+        app:layout_constraintWidth_percent="0.9">
 
         <LinearLayout
             android:id="@+id/lyBewertungen"
@@ -68,7 +70,7 @@
     <TextView
         android:id="@+id/tvBewertungenDurchschnitt"
         android:layout_width="wrap_content"
-        android:layout_height="20sp"
+        android:layout_height="wrap_content"
         android:text=""
         android:textColor="#FFFFFF"
         android:textSize="@dimen/BewertungenAktualisieren"
