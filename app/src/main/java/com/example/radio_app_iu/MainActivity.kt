@@ -15,6 +15,7 @@ private lateinit var binding: ActivityMainBinding
 private var stubPlayer = MediaPlayer()
 private val playlist = StubPlaylist
 private var nextLine = "\n"
+private var infoClickCounter = 0
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility")
@@ -63,27 +64,27 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, WishSongActivity::class.java))
         }
 
-        //OnTouchListener for tvInfobox
-        binding.tvInfobox.setOnTouchListener { v, event ->
-            if (event.action == MotionEvent.ACTION_DOWN) {
+      // displays information by clicking on infobutton
+      binding.ibInfobutton.setOnClickListener{
+          if (infoClickCounter % 2 == 0){
+              if (stubPlayer.isPlaying) {
 
-                if(stubPlayer.isPlaying){
+                  binding.tvInfoText.setText(
+                      nextLine + playlist.getSongTitle() + nextLine + nextLine + playlist.getSongInterpret() + nextLine +
+                              nextLine + playlist.getAlbumName() + nextLine + nextLine + playlist.getSongYear() + nextLine + nextLine + playlist.getSongLength()
+                  )
+              } else {
+                  binding.tvInfoText.setText(nextLine + "Keine Informationen verfügbar!")
+              }
+              binding.tvInfobox.setBackgroundResource(R.drawable.blueinfobox)
+          }
+          else {
+              binding.tvInfoText.setText("")
+              binding.tvInfobox.setBackgroundColor(Color.TRANSPARENT)
+          }
+          infoClickCounter += 1
+      }
 
-                    binding.tvInfoText.setText(nextLine + playlist.getSongTitle() + nextLine + nextLine + playlist.getSongInterpret() + nextLine +
-                            nextLine + playlist.getAlbumName() + nextLine + nextLine + playlist.getSongYear() + nextLine + nextLine + playlist.getSongLength())
-                }
-                else {
-                    binding.tvInfoText.setText(nextLine + "Keine Informationen verfügbar!")
-                }
-                binding.tvInfobox.setBackgroundResource(R.drawable.blueinfobox)
-                true
-            }
-            else {
-                    binding.tvInfoText.setText("")
-                    binding.tvInfobox.setBackgroundColor(Color.TRANSPARENT)
-                true
-            }
-        }
     }
     //creating options menu headmenu.xml when creating Main Activity
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

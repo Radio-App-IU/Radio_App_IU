@@ -151,6 +151,7 @@
         android:layout_marginEnd="205dp"
         android:layout_marginBottom="316dp"
         android:fontFamily="serif-monospace"
+        android:gravity="center"
         android:textColor="@color/betweenblue"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -160,6 +161,24 @@
         app:layout_constraintStart_toStartOf="@+id/ivBlueInfobox"
         app:layout_constraintTop_toTopOf="@+id/ivBlueInfobox"
         app:layout_constraintVertical_bias="0.005" />
+
+    <ImageButton
+        android:id="@+id/ibInfobutton"
+        android:layout_width="54dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="279dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/buWishSong"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvInfoText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/info"
+        app:tint="@color/lightblue"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
