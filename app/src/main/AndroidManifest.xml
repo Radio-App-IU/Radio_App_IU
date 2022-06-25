@@ -21,14 +21,17 @@
         <activity
             android:name=".WishSongActivity"
             android:exported="false"
+            android:windowSoftInputMode="adjustPan"
             android:screenOrientation="sensorPortrait"/>
         <activity
             android:name=".Evaluation"
             android:exported="false"
+            android:windowSoftInputMode="adjustPan"
             android:screenOrientation="sensorPortrait"/>
         <activity
             android:name=".Login"
             android:exported="false"
+            android:windowSoftInputMode="adjustPan"
             android:screenOrientation="sensorPortrait"/>
         <activity
             android:name=".LoggedInActivity"
