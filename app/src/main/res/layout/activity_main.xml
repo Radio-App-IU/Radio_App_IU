@@ -54,61 +54,12 @@
         app:srcCompat="@drawable/album"
         tools:ignore="ImageContrastCheck" />
 
-    <ImageView
-        android:id="@+id/ivPlaybutton"
-        android:layout_width="158dp"
-        android:layout_height="145dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="@string/descPlaybutton"
-        android:focusable="auto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/buPlaybuttoninvisible2"
-        app:layout_constraintTop_toBottomOf="@id/tvSongOutput"
-        app:srcCompat="@drawable/playbutton2" />
-
-    <Button
-        android:id="@+id/buPlaybuttoninvisible"
-        android:layout_width="158dp"
-        android:layout_height="145dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/transparent"
-        android:gravity="center"
-        android:text="@string/playbuttoninvisible"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvSongOutput"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <Button
-        android:id="@+id/buPlaybuttoninvisible2"
-        android:layout_width="158dp"
-        android:layout_height="144dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/transparent"
-        android:foregroundTintMode="add"
-        android:gravity="center"
-        android:text="@string/playbuttoninvisible"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvSongOutput" />
-
     <TextView
         android:id="@+id/tvSongOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:gravity="center"
         android:textColor="#8CFFF5"
@@ -138,7 +89,7 @@
         android:id="@+id/tvInfoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#55CF99"
+        android:background="@drawable/rounded_corner_green"
         android:fontFamily="serif-monospace"
         android:gravity="center"
         android:paddingHorizontal="10pt"
@@ -155,14 +106,25 @@
         android:id="@+id/ibInfobutton"
         android:layout_width="54dp"
         android:layout_height="56dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="90dp"
         android:background="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/ivPlaybutton"
+        app:layout_constraintBottom_toTopOf="@+id/ibButtonPlay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.716"
-        app:layout_constraintStart_toEndOf="@+id/ivPlaybutton"
         app:srcCompat="@drawable/info"
         app:tint="@color/lightblue"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/ibButtonPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="43dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/buWishSong"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/playbutton_1"
         tools:ignore="SpeakableTextPresentCheck" />
 
 

@@ -17,6 +17,7 @@ private var stubPlayer = MediaPlayer()
 private val playlist = StubPlaylist
 private var nextLine = "\n"
 private var infoClickCounter = 0
+private var playButtonCounter = 0
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility")
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         binding.tvInfoText.visibility = View.INVISIBLE
 
         //onClicklistener for the playbutton
+        /**
         binding.buPlaybuttoninvisible.setOnClickListener {
             binding.ivPlaybutton.setImageResource(R.drawable.playbutton1)
 
@@ -56,6 +58,22 @@ class MainActivity : AppCompatActivity() {
             //calls the method to mute the current song
             muteSong()
         }
+        **/
+        binding.ibButtonPlay.setOnClickListener{
+
+            if(playButtonCounter % 2 == 0){
+                playSong()
+                binding.ibButtonPlay.setImageResource(R.drawable.playbutton_2)
+                //sets the title and interpret of the current song
+                binding.tvSongOutput.setText(playlist.getSong())
+                //sets album cover image
+                binding.ivAlbum.setImageResource(playlist.getAlbumCover())
+                } else {
+                binding.ibButtonPlay.setImageResource(R.drawable.playbutton_1)
+                muteSong()
+            }
+            playButtonCounter+=1
+        }
 
         //starting EvaluationActivity
         binding.buEvaluate.setOnClickListener{
@@ -81,7 +99,6 @@ class MainActivity : AppCompatActivity() {
               } else {
                   binding.tvInfoText.setText(nextLine + "Keine" + nextLine + "Informationen" + nextLine + "verfügbar!")
               }
-              binding.tvInfobox.setBackgroundResource(R.drawable.blueinfobox)
           }
           else {
               binding.tvInfoText.visibility = View.INVISIBLE
@@ -125,9 +142,8 @@ class MainActivity : AppCompatActivity() {
     //if there's a change to another activity and the player is playing, the information will be set
     private fun setPauseButton(){
         if(stubPlayer.isPlaying){
-            binding.ivPlaybutton.setImageResource(R.drawable.playbutton1)
-            binding.buPlaybuttoninvisible.visibility = View.INVISIBLE
-            binding.buPlaybuttoninvisible2.visibility = View.VISIBLE
+            playButtonCounter = 1
+            binding.ibButtonPlay.setImageResource(R.drawable.playbutton_2)
             binding.tvSongOutput.setText(playlist.getSong())
             binding.ivAlbum.setImageResource(playlist.getAlbumCover())
         }
