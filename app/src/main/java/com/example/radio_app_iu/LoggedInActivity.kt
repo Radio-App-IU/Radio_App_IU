@@ -21,9 +21,10 @@ import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.airbnb.paris.extensions.style
+import java.util.logging.Logger.global
 
 private lateinit var binding: ActivityLoggedinBinding
-private var username = "Daniel"
+private var username = ""
 
 class LoggedInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
